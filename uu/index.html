@@ -1,0 +1,1276 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://raw.githubusercontent.com/wzk0/photo/main/favicon.png">
+  <link rel="icon" href="https://raw.githubusercontent.com/wzk0/photo/main/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="听话的便当">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言这几天在捣弄之前的旧电脑, 虽然最后没有做到像维修工那样尽善尽美的地步.. 但是, 我还是通过U盘的方式运行了一个原生的Ubuntu系统! 具体怎么操作,安装之后又有哪些使用技巧,怎么安装一系列常用的国产软件(QQ,微信,钉钉等) 如果你对这些问题感兴趣,就继续往下看吧!  准备开始之前,起码要有的东西有:  一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初次接触Ubuntu的各种技巧">
+<meta property="og:url" content="https://wzk0.github.io/uu/index.html">
+<meta property="og:site_name" content="便当的梅开四度">
+<meta property="og:description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言这几天在捣弄之前的旧电脑, 虽然最后没有做到像维修工那样尽善尽美的地步.. 但是, 我还是通过U盘的方式运行了一个原生的Ubuntu系统! 具体怎么操作,安装之后又有哪些使用技巧,怎么安装一系列常用的国产软件(QQ,微信,钉钉等) 如果你对这些问题感兴趣,就继续往下看吧!  准备开始之前,起码要有的东西有:  一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/uu.jpg">
+<meta property="article:published_time" content="2022-01-25T01:42:52.000Z">
+<meta property="article:modified_time" content="2022-05-22T06:12:10.864Z">
+<meta property="article:author" content="听话的便当">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/uu.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>初次接触Ubuntu的各种技巧 - 便当的梅开四度</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>便当的梅开四度</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/friends/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://raw.githubusercontent.com/wzk0/photo/main/uu.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="初次接触Ubuntu的各种技巧"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-01-25 09:42" pubdate>
+          2022年1月25日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          7.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          60 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">初次接触Ubuntu的各种技巧</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    <!-- compatible with older versions-->
+                    本文最后更新于：2 个月前
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/wzk0/photo/main/uu.jpg">点击获得封面头图</a></p>
+</blockquote>
+<blockquote>
+<p>此文章使用<code>CC-BY-NC</code>协议，协议详情介绍<a href="https://wzk0.github.io/bk/">请看此文</a></p>
+</blockquote>
+<hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这几天在捣弄之前的旧电脑,</p>
+<p>虽然最后没有做到像维修工那样尽善尽美的地步..</p>
+<p><strong>但是,</strong></p>
+<p>我还是通过U盘的方式运行了一个原生的Ubuntu系统!</p>
+<p>具体怎么操作,安装之后又有哪些使用技巧,怎么安装一系列常用的国产软件(QQ,微信,钉钉等)</p>
+<p>如果你对这些问题感兴趣,就继续往下看吧!</p>
+<hr>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>开始之前,起码要有的东西有:</p>
+<ul>
+<li><p>一台电脑(好坏没关系,能开机就行)</p>
+</li>
+<li><p>一个U盘(大小起码16G,32G或以上是最好的选择)</p>
+</li>
+</ul>
+<p class="note note-danger">U盘在过程中需要被格式化,请先备份里面的重要文件!</p>
+
+<hr>
+<h2 id="1-制作启动盘"><a href="#1-制作启动盘" class="headerlink" title="1.制作启动盘"></a>1.制作启动盘</h2><p>首先,我们要去<a target="_blank" rel="noopener" href="https://cn.ubuntu.com/download/desktop">Ubuntu官方中文网站</a>下载一个Ubuntu镜像.</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/1.png" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<p><del>最好是选择<code>Ubuntu 20.04.3 LTS</code>,是目前最稳定的一个版本.</del></p>
+<p>最新稳定版出了:22.04!</p>
+<hr>
+<p>下载完镜像后,打开<a target="_blank" rel="noopener" href="https://rufus.ie/zh/">Rufus官方中文网站</a>,下载<code>Rufus</code>以制作启动盘.</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2.png" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<p class="note note-primary">Rufus无需安装,打开.exe文件即可执行.</p>
+
+<hr>
+<p>打开<code>Rufus</code>后,我们要进行以下操作</p>
+<ol>
+<li><p>插入U盘;</p>
+</li>
+<li><p><code>设备</code>选择刚刚插入的U盘;</p>
+</li>
+<li><p><code>引导类型</code>选择<code>镜像文件</code>,并且选择中刚刚下载的Ubuntu镜像;</p>
+</li>
+<li><p>其它选项不用管,如果你想长期使用Ubuntu,可以把<code>持久分区</code>拉满(我就是);</p>
+</li>
+</ol>
+<p class="note note-info">关于持久分区功能的详细介绍,请看: https://zh.codepre.com/how-to-5341.html</p>
+
+<ol start="5">
+<li><p>点击开始(会提示格式化设备);</p>
+</li>
+<li><p>完成时,进度条会变绿,此时点击<code>关闭</code>即可(不要再点一遍开始!!);</p>
+</li>
+<li><p>拔出U盘.</p>
+</li>
+</ol>
+<hr>
+<h2 id="2-启动Ubuntu"><a href="#2-启动Ubuntu" class="headerlink" title="2.启动Ubuntu"></a>2.启动Ubuntu</h2><p>步骤有以下几个:</p>
+<ol>
+<li>先搜索一下自己的电脑主板可以通过哪种方式启动U盘系统盘;</li>
+</ol>
+<p class="note note-info">这里是一些参考:</p>
+
+<table>
+<thead>
+<tr>
+<th>主板品牌</th>
+<th>启动按键</th>
+<th>笔记本品牌</th>
+<th>启动按键</th>
+<th>台式机品牌</th>
+<th>启动按键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>华硕主板</td>
+<td>F8</td>
+<td>联想笔记本</td>
+<td>F12</td>
+<td>联想台式机</td>
+<td>F12</td>
+</tr>
+<tr>
+<td>技嘉主板</td>
+<td>F12</td>
+<td>宏基笔记本</td>
+<td>F12</td>
+<td>惠普台式机</td>
+<td>F12</td>
+</tr>
+<tr>
+<td>微星主板</td>
+<td>F11</td>
+<td>华硕笔记本</td>
+<td>ESC</td>
+<td>宏基台式机</td>
+<td>F12</td>
+</tr>
+<tr>
+<td>映泰主板</td>
+<td>F9</td>
+<td>惠普笔记本</td>
+<td>F9</td>
+<td>戴尔台式机</td>
+<td>ESC</td>
+</tr>
+<tr>
+<td>梅捷主板</td>
+<td>ESC或F12</td>
+<td>联想Thinkpad</td>
+<td>F12</td>
+<td>神舟台式机</td>
+<td>F12</td>
+</tr>
+<tr>
+<td>七彩虹主板</td>
+<td>ESC或F11</td>
+<td>戴尔笔记本</td>
+<td>F12</td>
+<td>华硕台式机</td>
+<td>F8</td>
+</tr>
+<tr>
+<td>华擎主板</td>
+<td>F11</td>
+<td>神舟笔记本</td>
+<td>F12</td>
+<td>方正台式机</td>
+<td>F12</td>
+</tr>
+<tr>
+<td>斯巴达克主板</td>
+<td>ESC</td>
+<td>东芝笔记本</td>
+<td>F12</td>
+<td>清华同方台式机</td>
+<td>F12</td>
+</tr>
+<tr>
+<td>昂达主板</td>
+<td>F11</td>
+<td>三星笔记本</td>
+<td>F12</td>
+<td>海尔台式机</td>
+<td>F12</td>
+</tr>
+<tr>
+<td>双敏主板</td>
+<td>ESC</td>
+<td>IBM笔记本</td>
+<td>F12</td>
+<td>明基台式机</td>
+<td>F8</td>
+</tr>
+<tr>
+<td>翔升主板</td>
+<td>F10</td>
+<td>富士通笔记本</td>
+<td>F12</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>精英主板</td>
+<td>ESC或F11</td>
+<td>海尔笔记本</td>
+<td>F12</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>冠盟主板</td>
+<td>F11或F12</td>
+<td>方正笔记本</td>
+<td>F12</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>富士康主板</td>
+<td>ESC或F12</td>
+<td>清华同方笔记本</td>
+<td>F12</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>顶星主板</td>
+<td>F11或F12</td>
+<td>微星笔记本</td>
+<td>F11</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>铭瑄主板</td>
+<td>ESC</td>
+<td>明基笔记本</td>
+<td>F9</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>盈通主板</td>
+<td>F8</td>
+<td>技嘉笔记本</td>
+<td>F12</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>捷波主板</td>
+<td>ESC</td>
+<td>Gateway笔记本</td>
+<td>F12</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Intel主板</td>
+<td>F12</td>
+<td>eMachines笔记本</td>
+<td>F12</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>致铭主板</td>
+<td>F11</td>
+<td>苹果笔记本</td>
+<td>长按”option”键</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>(我的主机是华硕,但是ESC也能启动)</p>
+<ol start="2">
+<li><p>把电脑关机,并且插入U盘</p>
+</li>
+<li><p>开机,在显示主板画面的时候迅速按几下<code>启动快捷键</code>(参照上方表格)</p>
+</li>
+<li><p>随后,进入这个画面的时候,选择<code>Ubuntu</code>(就是第一项),然后回车:</p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/3.jpg" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<p>然后进入非常精致的开机画面(华硕是这样):</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/4.jpg" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<ol start="5">
+<li>之后,成功地进入Ubuntu!</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/5.png" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<p>看到上图这个画面后,可以选择直接点击右上角的叉关闭(如果不打算安装Ubuntu在本地的话);</p>
+<p>如果要安装以长期使用,会经历一个比较复杂的分区过程:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/5.jpg" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<ul>
+<li><p>如果要分区,最好选择新外接一个硬盘,使用原电脑的硬盘会导致数据丢失;</p>
+</li>
+<li><p>如果在上面的Rufus制作过程中,选择了<code>持久分区</code>,并且<code>持久分区</code>比较大时,无需安装即可直接使用.</p>
+</li>
+<li><p>如果原电脑没有硬盘,而自己这个启动盘大小又很小时(我建议 没有128G就不要分区),千万不要分区,直接点右上角叉掉这个安装过程即可(否则会将U盘再次格式化)</p>
+</li>
+</ul>
+<hr>
+<h2 id="3-使用Ubuntu"><a href="#3-使用Ubuntu" class="headerlink" title="3.使用Ubuntu"></a>3.使用Ubuntu</h2><h3 id="内置"><a href="#内置" class="headerlink" title="内置"></a>内置</h3><ul>
+<li><p>Firefox(火狐)浏览器;</p>
+</li>
+<li><p>基础的播放器和文本编辑器(这可是个电脑系统啊);</p>
+</li>
+<li><p>支持打开<code>.doc</code>,<code>.docx</code>,以及其他常用的办公格式文件的工具;</p>
+</li>
+<li><p>你在Termux上可以做到的一切,在Ubuntu都能得到更快的实现.</p>
+</li>
+</ul>
+<h3 id="语言与输入法"><a href="#语言与输入法" class="headerlink" title="语言与输入法"></a>语言与输入法</h3><p>主要就是一些设置问题!</p>
+<p>首先我们点击主页面左下角那个九个点的东西:,并且在搜索框输入<code>settings</code>:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/6.png" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<p>之后滚动到最下面<code>Region &amp; Language</code></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/7.png" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<p>把<code>language</code>改成<code>China</code>或者<code>Chinese</code>(有哪个就选哪个)</p>
+<p><code>formats</code>是日期格式,也可以修改;</p>
+<p>改完语言后,提示重启(绿色的<code>restart</code>),点击之后会提示60秒后注销,或者点击<code>log out</code>直接注销即可.</p>
+<p>重启之后,回到刚刚设置的页面,选择输入法:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/8.png" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<p>选择<code>智能拼音</code>即可.</p>
+<p>时间什么的,也可以在设置找到!</p>
+<h3 id="代理工具-Clash"><a href="#代理工具-Clash" class="headerlink" title="代理工具(Clash)"></a>代理工具(Clash)</h3><p><code>Clash for Windows</code>的制作者同时也做了适用于Linux的发行版!</p>
+<p>官方地址: <a target="_blank" rel="noopener" href="https://github.com/Fndroid/clash_for_windows_pkg/releases">https://github.com/Fndroid/clash_for_windows_pkg/releases</a></p>
+<p>使用方法:</p>
+<p>点击<a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.19.7/Clash.for.Windows-0.19.7-x64-linux.tar.gz">此链接</a>下载0.19.7版本的二进制包;</p>
+<p class="note note-info">直接点击链接即可,已经使用了加速下载.</p>
+
+<ul>
+<li><p>下载完成后,右键此文件,解压缩;</p>
+</li>
+<li><p>打开解压缩完的文件夹;</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/11.png" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<ul>
+<li><p>右键空白处,在终端打开;</p>
+</li>
+<li><p>输入指令:</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./cfw<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>或者右键cfw这个文件,修改属性为可执行,然后双击打开.</p>
+</blockquote>
+<ul>
+<li>随后会弹出界面:</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/9.png" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<p><del>之后的操作和<code>Clash for Windows</code>就一样啦</del></p>
+<p>但是,可能你还是不知道到底怎么用:</p>
+<p>首先,我们在clash设置一个port:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220129220705.png" srcset="/img/loading.gif" lazyload alt="我这里是6666"></p>
+<p>随后,打开系统设置,找到<code>网络</code>,</p>
+<p>把网络代理设置为<code>手动</code>:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220129221213.png" srcset="/img/loading.gif" lazyload></p>
+<p>前面填写<code>127.0.0.1</code>或者本地IP,</p>
+<p>后面的端口填写在clash里自定义的那个;</p>
+<hr>
+<p>如果想要关闭clash,先在任务栏(顶栏)右键clash小猫咪图标,</p>
+<p>点击最下面的<code>quit</code>:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220129222620.png" srcset="/img/loading.gif" lazyload></p>
+<p>随后打开系统设置&#x2F;网络,把网络代理选项改为关闭;</p>
+<p>还有一种方法,是直接在clash里选择<code>direct</code></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220129222746.png" srcset="/img/loading.gif" lazyload></p>
+<p>这样就可以不走代理了!</p>
+<hr>
+<h3 id="截屏-x2F-录屏"><a href="#截屏-x2F-录屏" class="headerlink" title="截屏&#x2F;录屏"></a>截屏&#x2F;录屏</h3><p>有多种方式可以截屏:</p>
+<ol>
+<li>快捷键:<ul>
+<li>如果<strong>需要保存截屏</strong><ul>
+<li>特定区域: <code>Shift + PrintScrennSysRq</code> </li>
+<li>整个屏幕: <code>PrintScrennSysRq</code></li>
+<li>当前窗口: <code>ALT + PrintScrennSysRq</code></li>
+</ul>
+</li>
+<li>如果<strong>需要保存到剪切板</strong><ul>
+<li>特定区域: <code>Ctrl + Shift + PrintScrennSysRq</code> </li>
+<li>整个屏幕: <code>Ctrl + PrintScrennSysRq</code></li>
+<li>当前窗口: <code>Ctrl + ALT + PrintScrennSysRq</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p class="note note-info">规律:保存到剪切板的有Ctrl.</p>
+
+<ol start="2">
+<li>内置的截屏工具:</li>
+</ol>
+<p>搜索<code>screenshot</code>即可:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/screenshot.png" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<hr>
+<p>Ubuntu自带录屏工具,如果你只想录一小会儿屏幕时,可以同时按快捷键:</p>
+<p><code>Ctrl + Shift + ALT + R</code></p>
+<p>但是这里也有一个更好用,无时间限制,免费的录屏工具:<a target="_blank" rel="noopener" href="https://linuxecke.volkoh.de/vokoscreen/vokoscreen.html">vokoscreen</a></p>
+<p>可以直接通过apt安装,在终端输入指令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install vokoscreen<br></code></pre></td></tr></table></figure>
+
+<p>只不过版本不是最新版.如果要下载最新版,可以用下方的蓝奏云链接:</p>
+<p><a target="_blank" rel="noopener" href="https://wangzhuoke.lanzoul.com/iY6xjzaxn5g">https://wangzhuoke.lanzoul.com/iY6xjzaxn5g</a></p>
+<p>同时还需要安装一些依赖:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install ffmpeg i965-va-driver intel-media-va-driver libaacs0 libaom0 libass9 libavcodec58 libavdevice58 libavfilter7 libavformat58 libavresample4 libavutil56 libbdplus0 libbluray2 libbs2b0 libchromaprint1 libcodec2-0.9 libdc1394-22 libdc1394-25 libdc1394-utils libdouble-conversion3 libfftw3-double3 libflite1 libgme0 libigdgmm11 liblilv-0-0 libmysofa1 libnorm1 libopenal-data libopenal1 libopenmpt0 libpcre2-16-0 libpgm-5.2-0 libpostproc55 libqt5core5a libqt5dbus5 libqt5gui5 libqt5network5 libqt5svg5 libqt5test5 libqt5widgets5 libqt5x11extras5 librubberband2 libsdl2-2.0-0 libserd-0-0 libshine3 libsnappy1v5 libsndio7.0 libsord-0-0 libsratom-0-0 libssh-gcrypt-4 libswresample3 libswscale5 libva-drm2 libva-x11-2 libva2 libvdpau1 libvidstab1.1 libx264-155 libx265-179 libxcb-xinerama0 libxcb-xinput0 libxvidcore4 libzmq5 libzvbi-common libzvbi0 mesa-va-drivers mesa-vdpau-drivers qt5-gtk-platformtheme qttranslations5-l10n va-driver-all vdpau-driver-all -y<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="一些软件的安装"><a href="#一些软件的安装" class="headerlink" title="一些软件的安装"></a>一些软件的安装</h3><hr>
+<h4 id="exe软件-Windows平台的安装包"><a href="#exe软件-Windows平台的安装包" class="headerlink" title=".exe软件(Windows平台的安装包)"></a>.exe软件(Windows平台的安装包)</h4><p>在Ubuntu上运行exe程序,听起来似乎是天方夜谭,</p>
+<p>但是这里有一个非常强大的工具—-wine</p>
+<hr>
+<h5 id="wine的简介"><a href="#wine的简介" class="headerlink" title="wine的简介"></a>wine的简介</h5><p>在此之前,需要知道<code>wine</code>这个东西是什么:</p>
+<p>就像你可以在Windows上使用<code>Docker</code>创建容器一样,<code>wine</code>相当于Linux上的<code>Windows容器</code>,</p>
+<p>有了它,大部分Windows的.exe文件就能直接进行运行,安装.</p>
+<p>那么怎么安装<code>wine</code>呢?</p>
+<hr>
+<h5 id="wine的安装"><a href="#wine的安装" class="headerlink" title="wine的安装"></a>wine的安装</h5><p>首先,需要打开终端:</p>
+<p><code>Ctrl + ALT + T</code>即可.</p>
+<p>随后,更新一下软件包:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt update -y &amp;&amp; sudo apt upgrade -y<br></code></pre></td></tr></table></figure>
+
+<p class="note note-danger">这不是在Termux上,大部分指令都需要管理员权限,所以执行apt相关的指令时,注意加上前缀 sudo.</p>
+
+<p class="note note-info">第一次更新可能会耗费比较旧的时间.这段时间不妨听听歌:</p>
+
+<iframe src="//player.bilibili.com/player.html?aid=848064212&bvid=BV1RL4y1b74T&cid=411484540&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<hr>
+<p>更新完软件包后,需要输入开启32位系统架构支持:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo dpkg --add-architecture i386 <br></code></pre></td></tr></table></figure>
+
+<p>下载添加仓库密钥：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -nc https://dl.winehq.org/wine-builds/winehq.key<br>sudo apt-key add winehq.key<br></code></pre></td></tr></table></figure>
+
+<p>添加仓库:</p>
+<p>Ubuntu 20.04:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo add-apt-repository <span class="hljs-string">&#x27;deb https://dl.winehq.org/wine-builds/ubuntu/</span><br><span class="hljs-string"></span><br><span class="hljs-string">focal main&#x27;</span><br><br><span class="hljs-comment">##输入完指令后,会卡在一个待输入状态,输入 focal main&#x27; (单引号不能删)</span><br></code></pre></td></tr></table></figure>
+
+<p>Ubuntu 21.10:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo add-apt-repository <span class="hljs-string">&#x27;deb https://dl.winehq.org/wine-builds/ubuntu/</span><br><span class="hljs-string"></span><br><span class="hljs-string">groovy main&#x27;</span><br><br><span class="hljs-comment">##同上</span><br></code></pre></td></tr></table></figure>
+
+<p>接着更新软件包:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt update<br></code></pre></td></tr></table></figure>
+
+<p>然后安装wine:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install wine -y<br></code></pre></td></tr></table></figure>
+
+<p>此时,你的Ubuntu就能运行.exe程序啦!</p>
+<p>比如说我要下载微信:</p>
+<ul>
+<li><p>打开微信官网: <a target="_blank" rel="noopener" href="https://pc.weixin.qq.com/">https://pc.weixin.qq.com/</a></p>
+</li>
+<li><p>点击<code>立即下载</code>,随后在下载完成后文件所在的文件夹右键空白处,在终端中打开,</p>
+</li>
+<li><p>然后执行:</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">wine xxx.exe<br><br><span class="hljs-comment">##xxx是下载的微信安装包的名字</span><br></code></pre></td></tr></table></figure>
+
+<p>就会弹出页面,进行安装等操作了,和Windows一模一样!</p>
+<hr>
+<h4 id="一些软件的Ubuntu版本"><a href="#一些软件的Ubuntu版本" class="headerlink" title="一些软件的Ubuntu版本"></a>一些软件的Ubuntu版本</h4><p>Telegram,网易云,钉钉和QQ官方都有其Ubuntu版本(QQ的比较丑)</p>
+<hr>
+<h5 id="Telegram"><a href="#Telegram" class="headerlink" title="Telegram"></a>Telegram</h5><ol>
+<li>直接在应用商店搜索<code>Telegram</code>下载:</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/sft.png" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<ol start="2">
+<li>点击链接下载: <a target="_blank" rel="noopener" href="https://telegram.org/dl/desktop/linux">https://telegram.org/dl/desktop/linux</a></li>
+</ol>
+<p>下载完成后右键解压,随后会发现两个文件:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/tg.png" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<p>双击那个<code>Telegram</code>即可.</p>
+<hr>
+<h5 id="钉钉"><a href="#钉钉" class="headerlink" title="钉钉"></a>钉钉</h5><ol>
+<li><p>点击链接下载: <a target="_blank" rel="noopener" href="https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Release/com.alibabainc.dingtalk_1.2.0.132_amd64.deb">https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Release/com.alibabainc.dingtalk_1.2.0.132_amd64.deb</a></p>
+</li>
+<li><p>在下载好的文件所在文件夹右键空白处打开终端,输入指令:</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo dpkg -i *.deb<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="QQ"><a href="#QQ" class="headerlink" title="QQ"></a>QQ</h5><p>选择合适的安装包: <a target="_blank" rel="noopener" href="https://im.qq.com/linuxqq/download.html">https://im.qq.com/linuxqq/download.html</a></p>
+<p>官方在下方也贴有安装方式.</p>
+<hr>
+<h5 id="网易云"><a href="#网易云" class="headerlink" title="网易云"></a>网易云</h5><ol>
+<li><p>点击链接下载: <a target="_blank" rel="noopener" href="https://d1.music.126.net/dmusic/netease-cloud-music_1.2.1_amd64_ubuntu_20190428.deb">https://d1.music.126.net/dmusic/netease-cloud-music_1.2.1_amd64_ubuntu_20190428.deb</a></p>
+</li>
+<li><p>在下载好的文件所在文件夹右键空白处打开终端,输入指令:</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo dpkg -i *.deb<br></code></pre></td></tr></table></figure>
+<hr>
+<p>这里有一个更好的选择:</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/qier222/YesPlayMusic/">开源的第三方超简洁网易云!</a></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220131150703.png" srcset="/img/loading.gif" lazyload alt="官方声明的功能"></p>
+<p>实测:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220131150748.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220131150847.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220131151119.png" srcset="/img/loading.gif" lazyload alt="没有评论,清爽!"></p>
+<p>使用方法:</p>
+<p>从 <a target="_blank" rel="noopener" href="https://github.com/qier222/YesPlayMusic/releases">https://github.com/qier222/YesPlayMusic/releases</a> 下载相应的版本.</p>
+<p>(不知道架构的话就下载<code>AppImage</code>)</p>
+<p><code>.deb</code>文件安装方法与其他一样:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo dpkg -i xxx.deb<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="PicGo图床"><a href="#PicGo图床" class="headerlink" title="PicGo图床"></a>PicGo图床</h5><p>官方文档: <a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/">https://picgo.github.io/PicGo-Doc/</a></p>
+<p>这个图床有多好用就不多说了:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220131152101.png" srcset="/img/loading.gif" lazyload></p>
+<p>同时支持<code>插件</code>,<code>剪切板导入</code>以及<code>微博图床、七牛图床、腾讯云COS、又拍云、GitHub、SM.MS、阿里云OSS、Imgur</code>.</p>
+<p>直接点击此链接下载(已加速): <a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/Molunerfinn/PicGo/releases/download/v2.3.0/PicGo-2.3.0.AppImage">https://ghproxy.com/https://github.com/Molunerfinn/PicGo/releases/download/v2.3.0/PicGo-2.3.0.AppImage</a></p>
+<p>同时在终端输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install xclip<br></code></pre></td></tr></table></figure>
+
+<p>随后修改<code>AppImage</code>文件属性为<code>可执行</code>(详情见后.)</p>
+<hr>
+<h4 id="一般通用的方法"><a href="#一般通用的方法" class="headerlink" title="一般通用的方法:"></a>一般通用的方法:</h4><p>常见的,有<code>snap</code>,<code>.deb</code>,<code>tar.gz/xz</code>,<code>AppImage</code>,以及上面提到的<code>wine</code>.</p>
+<p class="note note-danger">不要经常使用wine,最好是自己多去找找想安装的软件的安装包,或是找第三方替代.</p>
+
+<hr>
+<h5 id="应用商店"><a href="#应用商店" class="headerlink" title="应用商店"></a>应用商店</h5><p>Ubuntu自带的应用商店使用的是<code>snap</code>源:</p>
+<p><strong>也就是说:</strong></p>
+<p>你可以安装任何在 <a target="_blank" rel="noopener" href="https://snapcraft.io/">https://snapcraft.io/</a> 上找到的软件.</p>
+<p>在每一个软件页面,都有详细的安装方式:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/az.png" srcset="/img/loading.gif" lazyload alt="安装"></p>
+<p>这种安装形式,可以类比为安卓里,从谷歌商店下载软件.</p>
+<hr>
+<h5 id="deb后缀"><a href="#deb后缀" class="headerlink" title=".deb后缀"></a><code>.deb</code>后缀</h5><p>直接双击文件或者在文件所在文件夹右键空白处打开终端,输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo dpkg -i 名字.deb<br></code></pre></td></tr></table></figure>
+
+<p>这种安装形式,可以类比为安卓里,下载别人发给你的安装包(.apk)</p>
+<hr>
+<h5 id="AppImage"><a href="#AppImage" class="headerlink" title="AppImage"></a><code>AppImage</code></h5><p>有时候,某个软件官方发布了一个编译好的版本,但却不是<code>.deb</code>后缀的,</p>
+<p>此时我们只需右键文件,打开权限,把下面的<code>允许执行文件</code>勾上就行:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/app.png" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<p>然后双击就能打开软件了!</p>
+<p>这种安装形式,可以类比为安卓里,下载别人的游戏存档.(大概)</p>
+<hr>
+<h5 id="从源码编译tar-xz-gz"><a href="#从源码编译tar-xz-gz" class="headerlink" title="从源码编译tar.xz/gz"></a>从源码编译<code>tar.xz/gz</code></h5><p>通常有两种可能:</p>
+<ul>
+<li><p>如果解压缩完,文件很少,或是看见的可执行文件,点击可执行文件即可;</p>
+</li>
+<li><p>如果解压缩完是一大堆文件,还没有可执行文件的,一般就需要自己编译了.</p>
+</li>
+</ul>
+<hr>
+<p><strong>举个例子:</strong></p>
+<p>我的nano版本是4.8:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/4.8.png" srcset="/img/loading.gif" lazyload alt="版本"></p>
+<p>而我现在要安装<code>nano 6.0.0</code>,官方提供了<code>tar.xz</code>结尾的一个文件,</p>
+<p>解压缩之后发现了一些有特征的文件:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/nn.png" srcset="/img/loading.gif" lazyload alt="nano"></p>
+<ul>
+<li><p><code>configure</code>文件:用来设置一些配置,比如安装路径什么的;</p>
+</li>
+<li><p><code>Makefile</code>文件:可以编译的文件.</p>
+</li>
+</ul>
+<hr>
+<p>所以第一步,输入指令进行检查和配置:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./configure<br></code></pre></td></tr></table></figure>
+
+<p class="note note-info">也可以输入 ./configure --help 查看详细配置帮助.</p>
+
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/wr.png" srcset="/img/loading.gif" lazyload alt="报错"></p>
+<p>但是!如上图可以看到,报错了:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">configure: error: <br>  *** No curses lib was found.  Please install the curses header files<br>  *** from libncurses-dev (Debian), ncurses-devel (Fedora), or similar.<br>  *** (Or install ncurses from https://ftp.gnu.org/gnu/ncurses/.)<br></code></pre></td></tr></table></figure>
+
+<p>具体就是让我们再下载安装一个啥,</p>
+<p>好,那就打开他这个链接安装吧!</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/uc.png" srcset="/img/loading.gif" lazyload alt="安装"></p>
+<p>如上图,这个东西也是一个<code>tar.xz</code>包,我们给他解压缩,发现和<code>nano</code>解压缩完有异曲同工之处:</p>
+<p>那我们也编译一下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./configure<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/sc.png" srcset="/img/loading.gif" lazyload alt="成功"></p>
+<p>可以看到,这次的成功了!</p>
+<p>接下来,我们输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">make<br></code></pre></td></tr></table></figure>
+
+<p>之后进入编译,会等待一会儿.</p>
+<p>编译完成后,输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">make install<br></code></pre></td></tr></table></figure>
+
+<p>可以看到,又报错了:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/sudo.png" srcset="/img/loading.gif" lazyload alt="报错"></p>
+<p>权限不足,我们需要在指令前加上<code>sudo</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo make install<br></code></pre></td></tr></table></figure>
+
+<p>好了!这次不知道成功与否.但是看样子没报错.</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/unk.png" srcset="/img/loading.gif" lazyload></p>
+<p>那么我们就继续安装<code>nano</code>吧</p>
+<hr>
+<p>回到nano的文件夹,</p>
+<p>再次输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./configure<br></code></pre></td></tr></table></figure>
+
+<p>成功了!这次检查通过:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/nsc.png" srcset="/img/loading.gif" lazyload></p>
+<p>按照上面一样的步骤,我们输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">make<br></code></pre></td></tr></table></figure>
+
+<p>不出意料的通过了!</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/tongg.png" srcset="/img/loading.gif" lazyload></p>
+<p>最后,输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo make install<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/unn.png" srcset="/img/loading.gif" lazyload></p>
+<p>不知道成功与否,我们重新打开终端验证一下:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/%E6%88%90%E5%8A%9F.png" srcset="/img/loading.gif" lazyload></p>
+<p>成功了!升级到了6.0.0版本!</p>
+<hr>
+<p>那如果我们想卸载呢?</p>
+<p>只需在编译完的文件夹打开终端输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo make uninstall<br></code></pre></td></tr></table></figure>
+
+<p>然后,就显示没有nano这个选项了:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/zero.png" srcset="/img/loading.gif" lazyload></p>
+<p>这种安装形式,类似于安卓开发者的调试安装(可能).</p>
+<hr>
+<h3 id="卡死处理-x2F-关机"><a href="#卡死处理-x2F-关机" class="headerlink" title="卡死处理&#x2F;关机"></a>卡死处理&#x2F;关机</h3><p>如果U盘容量过小,或者CPU不太好,</p>
+<p>Ubuntu可能会出现卡死的情况.</p>
+<p>这时,千万不要直接拔电源!</p>
+<p>可以按以下的操作进行快捷键重启:</p>
+<p>同时按住<code>Ctrl ALT PrintScreen</code>三个键,几秒钟之后松开<code>PrintScreen</code>,然后按照顺序输入以下字母:<code>r e i s u b</code>(反过来是<code>busier</code>)</p>
+<p>然后你的系统就会自动关机了.</p>
+<hr>
+<p>正常关机的方式:点击右上角<code>关机</code>.</p>
+<p>或者在终端输入:<code>sudo reboot</code></p>
+<hr>
+<p><img src="/img/thdbd.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>我是<strong>听话的便当</strong>.</p>
+<p>Bye~❛‿˂̵✧</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/EDITOR/" class="category-chain-item">EDITOR</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/">#Linux</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/bu/" title="让你的Ubuntu更有果子味">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">让你的Ubuntu更有果子味</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/pc/" title="手机？-&gt;电脑！">
+                        <span class="hidden-mobile">手机？-&gt;电脑！</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'wzk0/discuss');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo搭建</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid主题</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

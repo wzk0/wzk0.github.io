@@ -1,0 +1,798 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://raw.githubusercontent.com/wzk0/photo/main/favicon.png">
+  <link rel="icon" href="https://raw.githubusercontent.com/wzk0/photo/main/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="听话的便当">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言首先,祝各位读者新年快乐!🥳 如果老板们有闲钱,不妨给正在码字的便当一个奖励!🌑  前几天写了一篇Ubuntu的入门使用集, 十分的实用! 而今天,我们主要介绍一些浮于外表的东西— 通过安装主题让你的Ubuntu充满果子味!(指苹果) 最后的结果:  如果你心动了,那就接着往下看吧!  准备 一个Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让你的Ubuntu更有果子味">
+<meta property="og:url" content="https://wzk0.github.io/bu/index.html">
+<meta property="og:site_name" content="便当的梅开四度">
+<meta property="og:description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言首先,祝各位读者新年快乐!🥳 如果老板们有闲钱,不妨给正在码字的便当一个奖励!🌑  前几天写了一篇Ubuntu的入门使用集, 十分的实用! 而今天,我们主要介绍一些浮于外表的东西— 通过安装主题让你的Ubuntu充满果子味!(指苹果) 最后的结果:  如果你心动了,那就接着往下看吧!  准备 一个Ubuntu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/20220201231745.png">
+<meta property="article:published_time" content="2022-01-31T20:46:45.000Z">
+<meta property="article:modified_time" content="2022-05-01T03:39:55.000Z">
+<meta property="article:author" content="听话的便当">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/20220201231745.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>让你的Ubuntu更有果子味 - 便当的梅开四度</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>便当的梅开四度</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/friends/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://raw.githubusercontent.com/wzk0/photo/main/20220201231745.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="让你的Ubuntu更有果子味"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-02-01 04:46" pubdate>
+          2022年2月1日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          1.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          13 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">让你的Ubuntu更有果子味</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    <!-- compatible with older versions-->
+                    本文最后更新于：3 个月前
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/wzk0/photo/main/20220201231745.png">点击获得封面头图</a></p>
+</blockquote>
+<blockquote>
+<p>此文章使用<code>CC-BY-NC</code>协议，协议详情介绍<a href="https://wzk0.github.io/bk/">请看此文</a></p>
+</blockquote>
+<hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首先,祝各位读者新年快乐!🥳</p>
+<p>如果老板们有闲钱,不妨给正在码字的便当一个奖励!🌑</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201050242.png" srcset="/img/loading.gif" lazyload></p>
+<p>前几天写了一篇Ubuntu的入门使用集,</p>
+<p>十分的实用!</p>
+<p>而今天,我们主要介绍一些<code>浮于外表</code>的东西—</p>
+<p>通过安装主题让你的Ubuntu充满果子味!(指苹果)</p>
+<p>最后的结果:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201050754.png" srcset="/img/loading.gif" lazyload alt="差不多是这样的"></p>
+<p>如果你心动了,那就接着往下看吧!</p>
+<hr>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
+<li>一个Ubuntu系统的设备.</li>
+</ul>
+<hr>
+<h2 id="第一步-下载工具"><a href="#第一步-下载工具" class="headerlink" title="第一步 下载工具"></a>第一步 下载工具</h2><p>打开终端,输入以下指令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-add-repository universe<br><br>sudo apt install gnome-tweak-tool<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201051948.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p>以及</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install gnome-shell-extensions<br><br>sudo apt install dconf-editor<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201052245.png" srcset="/img/loading.gif" lazyload></p>
+<p>至此,工具下载完毕.</p>
+<hr>
+<h2 id="第二步-下载资源"><a href="#第二步-下载资源" class="headerlink" title="第二步 下载资源"></a>第二步 下载资源</h2><ul>
+<li>主题:(能让窗口的右上角变成苹果的三个点)</li>
+</ul>
+<p>打开这个网址: <a target="_blank" rel="noopener" href="https://www.gnome-look.org/p/1241688/">https://www.gnome-look.org/p/1241688/</a></p>
+<p>选择前两个文件下载(一个也行,<code>Dark</code>是黑色版本,比较好看)</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201053209.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<ul>
+<li>图标:(让一些软件和文件图标变样,不过我感觉不好看)</li>
+</ul>
+<p>打开这个网址: <a target="_blank" rel="noopener" href="https://www.gnome-look.org/p/1102582/">https://www.gnome-look.org/p/1102582/</a></p>
+<p>选择第二个<code>Cupertino-Catalina</code>下载:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201053642.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<ul>
+<li>顶栏:(左上角加上苹果图标)</li>
+</ul>
+<p>打开这个网址: <a target="_blank" rel="noopener" href="https://www.gnome-look.org/p/1220826/">https://www.gnome-look.org/p/1220826/</a></p>
+<p>同理,选择前两个文件下载(一个也行,<code>Dark</code>是黑色版本,比较好看)</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201054040.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<h2 id="第三步-解压与移动"><a href="#第三步-解压与移动" class="headerlink" title="第三步 解压与移动"></a>第三步 解压与移动</h2><p>如果都选择下载的话,现在你的下载文件夹中应该有三个压缩包:(我没下载图标,因为不太好看)</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201054440.png" srcset="/img/loading.gif" lazyload></p>
+<p>打开终端,输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo nautilus<br></code></pre></td></tr></table></figure>
+
+<p>之后会弹出来一个窗口:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201054659.png" srcset="/img/loading.gif" lazyload></p>
+<p>点击<code>文件系统根目录</code>,随后按下快捷键<code>Ctrl L</code>.</p>
+<p>然后输入这个路径:</p>
+<p><strong>&#x2F;usr&#x2F;share&#x2F;themes</strong></p>
+<p>然后把<code>主题</code>的那个压缩包移动进去并解压:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201055106.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p><code>图标</code>的压缩包与<code>主题</code>的操作方式一样,只不过<code>图标</code>的路径是:</p>
+<p><strong>&#x2F;usr&#x2F;share&#x2F;icons</strong></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201055316.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p><code>顶栏</code>这个方式有些不同:</p>
+<p>我们退出刚刚的那个文件管理器,点击系统自带的<code>文件</code>:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201055604.png" srcset="/img/loading.gif" lazyload></p>
+<p>点击<code>显示隐藏文件</code>,或者按<code>Ctrl H</code>,</p>
+<p>随后新建一个名为<code>.themes</code>的文件夹:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201055731.png" srcset="/img/loading.gif" lazyload></p>
+<p>然后把顶栏的压缩包解压进去.</p>
+<hr>
+<p>随后,搜索<code>Tweak</code>这个软件并打开:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201060006.png" srcset="/img/loading.gif" lazyload></p>
+<p>之后更换我们刚刚下载的主题,图标即可!</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201060140.png" srcset="/img/loading.gif" lazyload></p>
+<p class="note note-info">如果不显示的话请重启电脑,Shell用户主题未启用是正常现象,接下来会说明启用方法(Shell用户主题就是我上面说的顶栏)</p>
+
+<hr>
+<h2 id="第四步-设置"><a href="#第四步-设置" class="headerlink" title="第四步 设置"></a>第四步 设置</h2><p>现在已经有一些果子的雏形了,不过应用栏什么的还在侧边,或者在底边但是无法居中,</p>
+<p>我们接下来要做的就是打开dconf编辑器:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201060955.png" srcset="/img/loading.gif" lazyload></p>
+<p>按下快捷键<code>Ctrl L</code>,输入路径:</p>
+<p><strong>&#x2F;org&#x2F;gnome&#x2F;shell&#x2F;extensions&#x2F;dash-to-dock&#x2F;</strong></p>
+<p>翻动到下方这个位置:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201061442.png" srcset="/img/loading.gif" lazyload></p>
+<p>把这两个有<code>autohide</code>的东西打开;</p>
+<hr>
+<p>接着往下翻动到有<code>dock position</code>的地方,并且点进去:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201061651.png" srcset="/img/loading.gif" lazyload></p>
+<p>关闭<code>默认</code>,选择<code>bottom</code>:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201061810.png" srcset="/img/loading.gif" lazyload></p>
+<p>然后应用栏(dock)就会变到下面了!</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201062018.png" srcset="/img/loading.gif" lazyload></p>
+<p>接着我们返回上一级,在<code>dock position</code>的下面有一个选项<code>extend-height</code>,我们把它关闭掉:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201062204.png" srcset="/img/loading.gif" lazyload></p>
+<p>然后应用栏就会居中了!</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201062241.png" srcset="/img/loading.gif" lazyload></p>
+<p>如果你认为应用图标太大,可以点击<code>dash-max-icon-size</code>修改大小:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201062425.png" srcset="/img/loading.gif" lazyload></p>
+<p>随后,关闭dconf编辑器即可.</p>
+<hr>
+<h2 id="第五步-扩展"><a href="#第五步-扩展" class="headerlink" title="第五步 扩展"></a>第五步 扩展</h2><p>我们打开<code>优化（Tweak）</code>，在<code>扩展</code>中打开这三个选项：</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201224111.png" srcset="/img/loading.gif" lazyload></p>
+<p>随后重新启动一下，就会发现,原先灰色的Sehll主题可以选择了:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201224423.png" srcset="/img/loading.gif" lazyload></p>
+<p>至此.我们的果子味Ubuntu桌面,就安装好啦!</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/20220201225052.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p><img src="/img/thdbd.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>我是<strong>听话的便当</strong>.</p>
+<p>Bye~❛‿˂̵✧</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/EDITOR/" class="category-chain-item">EDITOR</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/">#Linux</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/lv/" title="一个小故事">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">一个小故事</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/uu/" title="初次接触Ubuntu的各种技巧">
+                        <span class="hidden-mobile">初次接触Ubuntu的各种技巧</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'wzk0/discuss');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo搭建</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid主题</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
