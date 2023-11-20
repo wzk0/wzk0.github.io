@@ -1,0 +1,781 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://raw.githubusercontent.com/wzk0/photo/main/favicon.png">
+  <link rel="icon" href="https://raw.githubusercontent.com/wzk0/photo/main/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="听话的便当">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言尽管文章标题是这个, 但RETBleed: WARNING: Spectre v2...这个报错是在我被内核折腾完后发生的. 所以我要先述说折腾的故事. 为什么被内核折腾我使用的电脑系统是Ubuntu 22.04.1 LTS(以下简用ub代之). ub有一个很大的特点就是: 稳. 稳向来都是一个中性词, 随着知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RETBleed: WARNING: Spectre v2...的解决办法及一次被内核折腾的经历">
+<meta property="og:url" content="https://wzk0.github.io/rbd/index.html">
+<meta property="og:site_name" content="便当的梅开四度">
+<meta property="og:description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言尽管文章标题是这个, 但RETBleed: WARNING: Spectre v2...这个报错是在我被内核折腾完后发生的. 所以我要先述说折腾的故事. 为什么被内核折腾我使用的电脑系统是Ubuntu 22.04.1 LTS(以下简用ub代之). ub有一个很大的特点就是: 稳. 稳向来都是一个中性词, 随着知识">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ghproxy.com/https://raw.githubusercontent.com/wzk0/photo/main/20221221cover.png">
+<meta property="article:published_time" content="2022-12-21T08:00:25.000Z">
+<meta property="article:modified_time" content="2023-11-09T16:04:50.646Z">
+<meta property="article:author" content="听话的便当">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ghproxy.com/https://raw.githubusercontent.com/wzk0/photo/main/20221221cover.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>RETBleed: WARNING: Spectre v2...的解决办法及一次被内核折腾的经历 - 便当的梅开四度</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/wave.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>便当的梅开四度</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/friends/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://ghproxy.com/https://raw.githubusercontent.com/wzk0/photo/main/20221221cover.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="RETBleed: WARNING: Spectre v2...的解决办法及一次被内核折腾的经历"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-12-21 16:00" pubdate>
+          2022年12月21日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          1.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">RETBleed: WARNING: Spectre v2...的解决办法及一次被内核折腾的经历</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    <!-- compatible with older versions-->
+                    本文最后更新于：11 天前
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p><a target="_blank" rel="noopener" href="https://ghproxy.com/https://raw.githubusercontent.com/wzk0/photo/main/20221221cover.png">点击获得封面头图</a></p>
+</blockquote>
+<blockquote>
+<p>此文章使用<code>CC-BY-NC</code>协议，协议详情介绍<a href="https://wzk0.github.io/bk/">请看此文</a></p>
+</blockquote>
+<hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>尽管文章标题是这个, 但<code>RETBleed: WARNING: Spectre v2...</code>这个报错是在我被内核折腾完后发生的.</p>
+<p>所以我要先述说折腾的故事.</p>
+<h2 id="为什么被内核折腾"><a href="#为什么被内核折腾" class="headerlink" title="为什么被内核折腾"></a>为什么被内核折腾</h2><p>我使用的电脑系统是<code>Ubuntu 22.04.1 LTS</code>(以下简用<code>ub</code>代之).</p>
+<p><code>ub</code>有一个很大的特点就是: 稳. <code>稳</code>向来都是一个中性词, 随着知识面的不断扩展, <code>稳</code>在我这儿逐渐变成了贬义词.</p>
+<p>为什么这么说呢? 又要从我的审美说起了(别着急马上到重点, 我这前面都是铺垫🌚).</p>
+<p>我很喜欢gtk风格的软件, 圆滑, 有质感. 但是apt中的gtk软件并不多, 同时那些开发者并没有发布编译好的软件包, 因此只能自己从源码编译.</p>
+<blockquote>
+<p>实际上, 他们发布了<code>flatpak</code>的包, 但是我非常不喜欢<code>flatpak</code>, 感觉它和系统没法完全融为一体.</p>
+</blockquote>
+<p>结果就在这编译的过程中遇到了问题: 太老了.</p>
+<p><code>ub</code>上有一个依赖始终无法安装: <code>libadwaita-1.2.0-1</code>(如果你可以安装请务必告诉我安装方法!).</p>
+<p>首先是通过apt, apt安装的版本是1.1; 接着我尝试从源码编译, 又遇到了新的依赖问题gtk4 4.9.1…</p>
+<p>就这样恶性循环, 版本号始终低那么一点点. 后来无意中了解到, <code>ub 22.04</code>取消了<code>libadwaita-1.2.0-1</code>!</p>
+<p>那这和折腾内核有什么关系呢???</p>
+<p>因为版本号过低, 于是我打算使用预发布的apt源. 就在我换了源, update, 然后upgrade完再重启后:</p>
+<p><strong>无法开机, 报错了! Kernel offset!</strong></p>
+<p>因此, 我踏上了<strong>被迫</strong>折腾内核的旅程.</p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>我赶紧拿出手机开始搜解决办法, 同时在tg群中求助.</p>
+<p>与此同时, 我也通过<code>recovery mode</code>重新进入到了桌面.</p>
+<p>怎么进入这个<code>mode</code>呢? 首先你需要在加载主版画面的时候狂按<code>ESC</code>, 直到加载出类似U盘启动盘的菜单画面.</p>
+<blockquote>
+<p>注意, <code>ESC</code>多按一下就会进到grub的指令界面, 所以按的时候要看屏幕, 不要按多了!</p>
+</blockquote>
+<p>显示菜单后, 移动到下面的<code>recovery mode</code>(当时比较慌乱, 没有记太清名字. 总之不是第一个选项)回车.</p>
+<p>然后会再显示一个界面, 似乎有一个什么什么boot, 大概是第一个选项, 回车.</p>
+<p>接着会看到一堆内核列表, 有些内核后面还有<code>(recovery)</code>. 我选择了-56版本.</p>
+<blockquote>
+<p>因为在换了预发布源update的时候, 看到了要更新的内核版本为-57, 所以选择一个比它低的.</p>
+</blockquote>
+<p>与此同时, 群友建议我先update. 于是我删除了<code>/etc/apt/sources.list</code>刚加的两行预发布源, 同时update了一下.</p>
+<p><img src="https://ghproxy.com/https://raw.githubusercontent.com/wzk0/photo/main/202212211646225.png" srcset="/img/loading.gif" lazyload></p>
+<p>没有过去! 通过分析报错, 大概知道了是因为显卡驱动的问题, 现有的驱动和最新的系统冲突了. 而且我用的是闭源的Nvidia驱动.</p>
+<p>于是, 在建议之下, 我purge了nvidia*, 同时autoremove了一些东西.</p>
+<p>然后purge了-57的内核, update过去了. 再次尝试重启:</p>
+<p><strong>成功!</strong></p>
+<p>重新进入到系统后, update时发现了新的错误:</p>
+<p><img src="https://ghproxy.com/https://raw.githubusercontent.com/wzk0/photo/main/202212211653950.png" srcset="/img/loading.gif" lazyload></p>
+<p>anbox, 似乎是我之前安装过的一个在linux模拟运行安卓软件的容器.</p>
+<p>反正也卸载了, 于是直接把报错提示的那个路径删除了.</p>
+<h2 id="RETBleed"><a href="#RETBleed" class="headerlink" title="RETBleed"></a>RETBleed</h2><p>尽管开机正常了, 却出现了一个新的提示:</p>
+<p><img src="https://ghproxy.com/https://raw.githubusercontent.com/wzk0/photo/main/202212211700752.png" srcset="/img/loading.gif" lazyload></p>
+<p>这个描述看起来就很恐怖了, 什么数据可能泄露. 一搜索, 好家伙, 居然是一个可执行漏洞!</p>
+<p>怎么解决呢? 很多篇文章都没有说怎么解决, 都是在提问.</p>
+<p>有些咨询文章提到这个漏洞已经在5.19版本的内核中解决了.</p>
+<p>而我现在的内核版本是<code>5.15.0-56</code>, 怎么之前开机的时候没有这个提示.</p>
+<p>想到先前被内核折腾的经历, 我打算升级内核了. 但是apt update和upgrade都是最新的. 更不会考虑使用预发布源了.</p>
+<p>于是搜索了怎么升级内核. 看到有一个方法: <code>sudo apt upgrade linux-image-generic</code>.</p>
+<p>奇怪, 我upgrade都提示最新了, upgrade单独一个包怎么可能提示呢?…</p>
+<p>但是执行之后, 还真有反应:</p>
+<p><img src="https://ghproxy.com/https://raw.githubusercontent.com/wzk0/photo/main/%E6%88%AA%E5%9B%BE%202022-12-21%2015-57-00.png" srcset="/img/loading.gif" lazyload></p>
+<p>microcode, 也有搜到RETBleed是一个对微处理器的攻击, 那这个upgrade大概有用吧.</p>
+<p><strong>再次重启, 提示消失!</strong></p>
+<blockquote>
+<p>关于有没有必要更新内核, 可以看这篇文章: <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_33525298/article/details/112200310">https://blog.csdn.net/weixin_33525298/article/details/112200310</a></p>
+</blockquote>
+<hr>
+<p>我是<strong>听话的便当</strong>.</p>
+<p><img src="/img/thdbd.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>Bye~❛‿˂̵✧</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/NOTE/" class="category-chain-item">NOTE</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/e22/" title="迟来的2022年终总结">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">迟来的2022年终总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/nkr/" title="比Clash更好的全设备/系统(除IOS)替代方案">
+                        <span class="hidden-mobile">比Clash更好的全设备/系统(除IOS)替代方案</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'wzk0/discuss');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo搭建</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid主题</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
