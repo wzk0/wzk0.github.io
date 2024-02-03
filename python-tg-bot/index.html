@@ -1,0 +1,828 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://raw.githubusercontent.com/wzk0/photo/main/favicon.png">
+  <link rel="icon" href="https://raw.githubusercontent.com/wzk0/photo/main/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="听话的便当">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文    😘提前祝大家农历新年快乐!🎉  前言定睛一看, 我好像已经有小半年没写过博客了… 不知道现在是否还有读者呢?  读到这篇的你请务必在评论区留个言!  然而, 也正好是一位我的博客的读者, 激起了我”写作”的欲望: 是他告诉我, 按照我旧文章的方法”折腾了几个小时无果”. 恰逢近日, 我重拾了对Telegram机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用pyTelegramBotAPI零基础搭建Telegram私聊机器人">
+<meta property="og:url" content="https://wzk0.github.io/python-tg-bot/index.html">
+<meta property="og:site_name" content="便当的梅开四度">
+<meta property="og:description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文    😘提前祝大家农历新年快乐!🎉  前言定睛一看, 我好像已经有小半年没写过博客了… 不知道现在是否还有读者呢?  读到这篇的你请务必在评论区留个言!  然而, 也正好是一位我的博客的读者, 激起了我”写作”的欲望: 是他告诉我, 按照我旧文章的方法”折腾了几个小时无果”. 恰逢近日, 我重拾了对Telegram机">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wzk0.github.io/img/thdbd.jpg">
+<meta property="article:published_time" content="2024-02-03T07:05:26.000Z">
+<meta property="article:modified_time" content="2024-02-03T09:03:35.282Z">
+<meta property="article:author" content="听话的便当">
+<meta property="article:tag" content="Telegram">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://wzk0.github.io/img/thdbd.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>使用pyTelegramBotAPI零基础搭建Telegram私聊机器人 - 便当的梅开四度</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/wave.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>便当的梅开四度</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/friends/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://ghproxy.com/https://raw.githubusercontent.com/wzk0/photo/main/index-for-my-blog.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="使用pyTelegramBotAPI零基础搭建Telegram私聊机器人"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-03 15:05" pubdate>
+          2024年2月3日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          5.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          45 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">使用pyTelegramBotAPI零基础搭建Telegram私聊机器人</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    <!-- compatible with older versions-->
+                    本文最后更新于：几秒前
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p><a href="">点击获得封面头图</a></p>
+</blockquote>
+<blockquote>
+<p>此文章使用<code>CC-BY-NC</code>协议，协议详情介绍<a href="https://wzk0.github.io/bk/">请看此文</a></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>😘提前祝大家农历新年快乐!🎉</p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>定睛一看, 我好像已经有小半年没写过博客了…</p>
+<p>不知道现在是否还有读者呢?</p>
+<blockquote>
+<p>读到这篇的你请务必在评论区留个言!</p>
+</blockquote>
+<p>然而, 也正好是一位我的博客的读者, 激起了我”写作”的欲望:</p>
+<p>是他告诉我, 按照我旧文章的方法”折腾了几个小时无果”.</p>
+<p>恰逢近日, 我重拾了对Telegram机器人的热情, 亦发现了一些前所未有的新鲜东西.</p>
+<p>于是在此分享给大家.</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
+<li><p>Telegram和翻墙工具;</p>
+</li>
+<li><p>电脑或安卓手机.</p>
+</li>
+</ul>
+<p>由于机器人由python编写, 所以我们还需要配好python环境:</p>
+<ul>
+<li>对于使用Mac或Windows的用户:</li>
+</ul>
+<p>下载并安装即可.</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">Mac</span> - https://www.python.org/ftp/python/<span class="hljs-number">3</span>.<span class="hljs-number">12</span>.<span class="hljs-number">1</span>/python-<span class="hljs-number">3</span>.<span class="hljs-number">12</span>.<span class="hljs-number">1</span>-macos11.pkg<br><br><span class="hljs-attribute">Windows</span> - https://www.python.org/ftp/python/<span class="hljs-number">3</span>.<span class="hljs-number">12</span>.<span class="hljs-number">1</span>/python-<span class="hljs-number">3</span>.<span class="hljs-number">12</span>.<span class="hljs-number">1</span>-amd64.exe<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>建议安装一个代码编辑器, 如<a target="_blank" rel="noopener" href="https://www.sublimetext.com/">Sublime Text</a></p>
+</blockquote>
+<ul>
+<li>对于使用Linux或安卓的用户:</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs awk">Linux - sudo apt/dnf install python3<br><br>安卓 - 下载并安装Termux - https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/termux/</span>termux-app<span class="hljs-regexp">/releases/</span>download<span class="hljs-regexp">/v0.118.0/</span>termux-app_v0.<span class="hljs-number">118.0</span>+github-debug_arm64-v8a.apk<br>		打开并输入 pkg update -y &amp;&amp; pkg upgrade -y &amp;&amp; pkg install python3 micro<br>		过程中如有卡住不动的现象请回车<br></code></pre></td></tr></table></figure>
+
+<p>安装好python环境后, 需要安装主角: pyTelegramBotAPI库</p>
+<p>打开系统的终端(Win用户可用win R快捷键, 输入cmd打开终端), 安卓则打开Termux即可, 输入:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">pip3 install pyTelegramBotAPI<br></code></pre></td></tr></table></figure>
+
+<p>接下来, 创建一个<code>bot.py</code>, 这就是我们的机器人啦:</p>
+<p>Win&#x2F;Linux&#x2F;Mac用户只需打开<code>Sublime Text</code>或其他编辑器, 左上角新建文件(File &gt; New file), 创建一个名为<code>bot.py</code>的文件即可.</p>
+<p>Termux用户输入<code>micro bot.py</code>, 继而使用<code>micro</code>编辑器编写机器人(保存快捷键: <code>Ctrl S</code>, 退出快捷键: <code>Ctrl Q</code>).</p>
+<p>在打开的<code>bot.py</code>中粘贴:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> telebot<br><br><span class="hljs-comment"># &#x27;&#x27;内粘贴你的bot token</span><br>API_TOKEN = <span class="hljs-string">&#x27;你的token&#x27;</span><br><br>bot = telebot.TeleBot(API_TOKEN)<br><br><span class="hljs-comment"># 处理 &#x27;/start&#x27; 和 &#x27;/help&#x27;</span><br><span class="hljs-meta">@bot.message_handler(<span class="hljs-params">commands=[<span class="hljs-string">&#x27;help&#x27;</span>, <span class="hljs-string">&#x27;start&#x27;</span>]</span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">send_welcome</span>(<span class="hljs-params">message</span>):<br>    bot.reply_to(message, <span class="hljs-string">&quot;你好, 欢迎使用此bot&quot;</span>)<br><br>bot.infinity_polling()<br></code></pre></td></tr></table></figure>
+
+<p>从 <a target="_blank" rel="noopener" href="https://t.me/BotFather">https://t.me/BotFather</a> 获取自己bot的token, 具体操作<a href="https://wzk0.github.io/tg-bt/">可看这里</a>, 并替换上述代码第四行<code>你的token</code>.</p>
+<p><code>Ctrl S</code>保存, 现在尝试运行一下.</p>
+<p>对于Win&#x2F;Mac用户, 在终端中输入<code>python3 </code>(记得有空格), 再把文件拖拽进终端(就像文件夹之间移动文件那样), 最后回车即可.</p>
+<p>对于Termux用户, 从屏幕左边缘向右滑, 点击下方的<code>NEW SESSION</code>以打开一个新的终端窗口, 在此窗口中输入<code>python3 bot.py</code>, 回车即可(这种情况默认是把<code>bot.py</code>放在了Termux默认的启动路径下, 即完全按照上述教程创建的文件).</p>
+<p>如果接下来什么反应都没有, 则说明机器人成功运行, 反而如果出现了一大堆文字, 则运行失败.</p>
+<blockquote>
+<p>可能的原因: 代理软件没开系统代理, 或没有安装<code>pyTelegramBotAPI</code>库.</p>
+</blockquote>
+<p>此时, 对Telegram中的bot发送<code>/help</code>或<code>/start</code>, 它们会向你发送<code>你好</code>的消息.</p>
+<p>接着, 在bot正在运行的终端中<code>Ctrl C</code>即可停止bot, 此后每次编辑完成后我们执行<code>运行 - 停止运行</code>这套流程即可对bot进行调试.</p>
+<p>至此, 准备工作结束啦!</p>
+<hr>
+<h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><p><code>python</code>作为代码世界里相当简单的一门语言, 向来都是很好入门的. 这篇文章并不打算详细讲解关于python的知识(就像之前那个Google Script机器人一样), 而打算让读者一知半解, 更多是直接套模板般做好自己的机器人.</p>
+<blockquote>
+<p>因为一开始我就是这样, 在一知半解中产生了兴趣, 最后逐渐主动去了解与创造, 渐渐摆脱了他人的模板. 如果这篇文章能让读者你对编程产生兴趣, 那我的终极目标算是达到了.</p>
+</blockquote>
+<p>研究上面的代码:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 处理 &#x27;/start&#x27; 和 &#x27;/help&#x27;</span><br><span class="hljs-meta">@bot.message_handler(<span class="hljs-params">commands=[<span class="hljs-string">&#x27;help&#x27;</span>, <span class="hljs-string">&#x27;start&#x27;</span>]</span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">send_welcome</span>(<span class="hljs-params">message</span>):<br>    bot.reply_to(message, <span class="hljs-string">&quot;你好, 欢迎使用此bot&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>我们可以复制这块代码 粘贴在其下方, 现在变成了:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 处理 &#x27;/start&#x27; 和 &#x27;/help&#x27;</span><br><span class="hljs-meta">@bot.message_handler(<span class="hljs-params">commands=[<span class="hljs-string">&#x27;help&#x27;</span>, <span class="hljs-string">&#x27;start&#x27;</span>]</span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">send_welcome</span>(<span class="hljs-params">message</span>):<br>    bot.reply_to(message, <span class="hljs-string">&quot;你好, 欢迎使用此bot&quot;</span>)<br><br><span class="hljs-comment"># 处理 &#x27;/start&#x27; 和 &#x27;/help&#x27;</span><br><span class="hljs-meta">@bot.message_handler(<span class="hljs-params">commands=[<span class="hljs-string">&#x27;help&#x27;</span>, <span class="hljs-string">&#x27;start&#x27;</span>]</span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">send_welcome</span>(<span class="hljs-params">message</span>):<br>    bot.reply_to(message, <span class="hljs-string">&quot;你好, 欢迎使用此bot&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>将下面那块进行如下处理:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 处理 &#x27;/bye&#x27;</span><br><span class="hljs-meta">@bot.message_handler(<span class="hljs-params">commands=[<span class="hljs-string">&#x27;bye&#x27;</span>]</span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">send_bye</span>(<span class="hljs-params">message</span>):<br>    bot.reply_to(message, <span class="hljs-string">&quot;再见&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>至此, 我们创建了一块能够处理<code>/bye</code>指令的代码, 仔细看, 每行都有变化, 但每行的变化都似乎只是改了个字符.</p>
+<p>的确如此, 此时我们保存代码运行bot, 对bot发送<code>/bye</code>, 它会回复我们<code>再见</code>.</p>
+<p>以此类比, 我们可以写出处理各种指令的不同的代码块, 这个代码块在python中称为<code>函数</code>.</p>
+<p>不过我们的目的是做出一个私聊bot: 当别的用户给机器人发消息时, 机器人会将消息转发给<code>我</code>, 当<code>我</code>给机器人回复消息时, 它会把消息转发给那个用户.</p>
+<p>那么, 我们该怎么写这个<code>函数</code>呢?</p>
+<p>逻辑大概如下: 判断发送消息的人是用户还是<code>我</code>, 如果是用户, 则将用户的消息转发给<code>我</code>; 如果是<code>我</code>, 则向<code>我</code>回复的那条消息的来源用户回复我的消息内容.</p>
+<p>所以我们需要一个函数来处理所有消息, 而不是上面那个简单的函数, 只能处理<code>指令</code>.</p>
+<p>代码如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">ADMIN=<span class="hljs-number">123123123</span><br><br><span class="hljs-meta">@bot.message_handler(<span class="hljs-params">func=<span class="hljs-keyword">lambda</span> message: <span class="hljs-literal">True</span></span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">for_message</span>(<span class="hljs-params">message</span>):<br>    <span class="hljs-keyword">if</span> ADMIN==message.chat.<span class="hljs-built_in">id</span>:<br>    	<span class="hljs-keyword">pass</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>pass</code>代表尚未写的代码.</p>
+</blockquote>
+<p>在这个函数中, 加入了一个<code>if</code>判断<code>id</code>是否等于<code>ADMIN</code>, 从而实现了上面判断是不是<code>我</code>的过程, 注意粘贴时将<code>123123123</code>改为自己的ID, 如果不知道ID可以向 <a target="_blank" rel="noopener" href="https://t.me/getmyid_bot">https://t.me/getmyid_bot</a> 发消息.</p>
+<p>先处理用户的消息, 即第二个<code>pass</code>的内容:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">bot.send_message(ADMIN,<span class="hljs-string">&#x27;来自 @%s [%s] 的消息:\n%s&#x27;</span>%(message.chat.username,message.chat.<span class="hljs-built_in">id</span>,message.text))<br></code></pre></td></tr></table></figure>
+
+<p>由于<code>pyTelegramBotAPI</code>这个库的某些问题, 无法获取转发消息的来源ID, 因此我们必须把用户的ID放在bot转发给我们的消息中, 继而我们可以获得ID, 再通过此ID向bot发消息, bot再进行转发.</p>
+<p>因此, 我们可以使用正则表达式处理第一个<code>pass</code>中获取用户ID的问题, 但是直接提取数字可能会有混淆问题, 这也是为什么在上面的语句中, 我使用<code>[]</code>包裹用户的ID的原因: 使其更好被正则匹配</p>
+<p>于是第一个<code>pass</code>如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> re<br>bot.send_message(re.findall(<span class="hljs-string">r&#x27;\[([^\]]+)\]&#x27;</span>,message.reply_to_message.text)[<span class="hljs-number">0</span>],message.text)<br></code></pre></td></tr></table></figure>
+
+<p>这条语句对<code>我</code>回复的那条消息进行解析, 得出由中括号包裹的用户ID, bot再向ID为此的用户发送<code>我</code>回复那条消息的内容.</p>
+<p>但假设我不小心没有<code>回复</code>内容, 而是直接发给bot一条消息.</p>
+<blockquote>
+<p>可以自己试一下, 会报错.</p>
+</blockquote>
+<p>因此, 我们可以加入一对<code>try</code>和<code>except</code>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">try</span>:<br>	bot.send_message(re.findall(<span class="hljs-string">r&#x27;\[([^\]]+)\]&#x27;</span>,message.reply_to_message.text)[<span class="hljs-number">0</span>],message.text)<br><span class="hljs-keyword">except</span>:<br>	bot.reply_to(message,<span class="hljs-string">&#x27;请回复一条其他用户转发的消息&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>作用是: 当<code>我</code>不小心没有回复消息而触发报错时, 向<code>我</code>发送一条提醒消息.</p>
+<p>综上, 这个函数的全部代码是:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@bot.message_handler(<span class="hljs-params">func=<span class="hljs-keyword">lambda</span> message: <span class="hljs-literal">True</span></span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">for_message</span>(<span class="hljs-params">message</span>):<br>    <span class="hljs-keyword">if</span> ADMIN==message.chat.<span class="hljs-built_in">id</span>:<br>    	<span class="hljs-keyword">try</span>:<br>    		bot.send_message(re.findall(<span class="hljs-string">r&#x27;\[([^\]]+)\]&#x27;</span>,message.reply_to_message.text)[<span class="hljs-number">0</span>],message.text)<br>    	<span class="hljs-keyword">except</span>:<br>    		bot.reply_to(message,<span class="hljs-string">&#x27;请回复一条其他用户转发的消息&#x27;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        bot.send_message(ADMIN,<span class="hljs-string">&#x27;来自 @%s [%s] 的消息:\n%s&#x27;</span>%(message.chat.username,message.chat.<span class="hljs-built_in">id</span>,message.text))<br></code></pre></td></tr></table></figure>
+
+<p>而整个<code>bot.py</code>的代码如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> telebot<br><span class="hljs-keyword">import</span> re<br><br>API_TOKEN = <span class="hljs-string">&#x27;你的token&#x27;</span><br>ADMIN=<span class="hljs-number">123123123</span><br><br>bot=telebot.TeleBot(API_TOKEN)<br><br><span class="hljs-comment"># 处理 &#x27;/start&#x27; 和 &#x27;/help&#x27;</span><br><span class="hljs-meta">@bot.message_handler(<span class="hljs-params">commands=[<span class="hljs-string">&#x27;help&#x27;</span>, <span class="hljs-string">&#x27;start&#x27;</span>]</span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">send_welcome</span>(<span class="hljs-params">message</span>):<br>    bot.reply_to(message,<span class="hljs-string">&#x27;你好&#x27;</span>)<br><br><span class="hljs-comment"># 处理 &#x27;/bye&#x27;</span><br><span class="hljs-meta">@bot.message_handler(<span class="hljs-params">commands=[<span class="hljs-string">&#x27;bye&#x27;</span>]</span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">send_bye</span>(<span class="hljs-params">message</span>):<br>    bot.reply_to(message, <span class="hljs-string">&quot;再见&quot;</span>)<br><br><span class="hljs-meta">@bot.message_handler(<span class="hljs-params">func=<span class="hljs-keyword">lambda</span> message: <span class="hljs-literal">True</span></span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">for_message</span>(<span class="hljs-params">message</span>):<br>    <span class="hljs-keyword">if</span> ADMIN==message.chat.<span class="hljs-built_in">id</span>:<br>    	<span class="hljs-keyword">try</span>:<br>    		bot.send_message(re.findall(<span class="hljs-string">r&#x27;\[([^\]]+)\]&#x27;</span>,message.reply_to_message.text)[<span class="hljs-number">0</span>],message.text)<br>    	<span class="hljs-keyword">except</span>:<br>    		bot.reply_to(message,<span class="hljs-string">&#x27;请回复一条其他用户转发的消息&#x27;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        bot.send_message(ADMIN,<span class="hljs-string">&#x27;来自 @%s [%s] 的消息:\n%s&#x27;</span>%(message.chat.username,message.chat.<span class="hljs-built_in">id</span>,message.text))<br><br>bot.infinity_polling()<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其实完全零基础的读者是比较难理解上面的内容的, 但还是那句话, 希望能够激起这部分读者的兴趣, 从而自主地去研究, 探索.</p>
+</blockquote>
+<hr>
+<p>我是<strong>听话的便当</strong>.</p>
+<p><img src="/img/thdbd.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>Bye~❛‿˂̵✧</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/EDITOR/" class="category-chain-item">EDITOR</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Telegram/" class="print-no-link">#Telegram</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/fix-dnf-problem-caused-by-release-version-number/" title="解决由Linux发行版版本号导致的dnf 404问题">
+                        <span class="hidden-mobile">解决由Linux发行版版本号导致的dnf 404问题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'wzk0/discuss');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo搭建</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid主题</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
