@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Linux 单片机把玩之 我用香橙派Zero 3 做服务器</title>
+    <link href="/my-orangepi-zero-3/"/>
+    <url>/my-orangepi-zero-3/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>此文章使用<code>CC-BY-NC</code>协议，协议详情介绍<a href="https://wzk0.github.io/bk/">请看此文</a></p></blockquote><hr><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>大家龙年大吉! 便当拜个晚年.</p><p>“拥有一个服务器”是我刚接触互联网时一个最<code>憧憬, 禁忌, 梦幻</code>的梦.</p><p>憧憬和梦幻不过多解释, 禁忌是因为未成年的实名(使命? 或许都有)限制.</p><p>如今, 我上了大学, 有了充足的时间和略多的金钱, 终于狠狠心, 花<code>99米</code>入了香橙派Zero 3 这块小小的单片机.</p><blockquote><p>单片机, 全称单片微型计算机. 其实无论是香橙派还是树莓派还是什么派, 严格来说都应该叫”单板机”. 可见维基百科: <a href="https://zh.wikipedia.org/wiki/%E5%8D%95%E7%89%87%E6%9C%BA">单片机</a> 和 <a href="https://zh.wikipedia.org/wiki/%E5%8D%95%E6%9D%BF%E6%9C%BA">单板机</a>, 谨向咬文嚼字的读者说明, 看不懂也无所谓.</p></blockquote><p>你可能要问了: 不是说服务器是梦吗? 跟这什么香橙派, 什么单片机有什么关系?</p><p>诶, 有关系!</p><p>网络上大家说的”我买了个服务器&#x2F;我买了个腾讯云”其实是”我租了一台云服务器(VPS)的简略说法”, 高性能的服务器实体往往都是以集群的方式存放在企业管理的机房内, 消费者得到的是<code>使用服务器的期限</code>, 时间一到又要继续付费.</p><p>而我购入的这个派, 实际上就是一个<code>巴掌大的服务器</code>!</p><p>你可能又要问了: 巴掌大能干嘛?! 这东西什么配置?</p><p>正所谓一分价钱一分货, 99块钱能买到什么配置诸君可自行想象. 我以自己亲身测出来数据说明一下:</p><ul><li>CPU: <code>i5-12500H</code>单线程计算5000位圆周率的时间是11.056秒, 而香橙派Zero 3是一分半钟(以人类的视角来看没多大差距, 但以计算机的视角来看相差了可不止几辈子)</li><li>内存: 正常PC&#x2F;笔记本8G&#x2F;16G起步, 此派的内存最低为1G, 还有1.5&#x2F;2&#x2F;4G的配置</li><li>储存: 固态机械通通不能用, 派比硬盘还小, 只能使用tf卡作储存, 我购入了闪迪的64G储存卡</li></ul><p>如此辣鸡的配置, Windows是肯定装不了的, 但是配上Linux, 只能说是绰绰有余了.</p><p>Linux有那么神奇? 没错, Linux就是那么神奇, 几乎有着<code>变废为宝</code>的神奇效果, 再烂的硬件也能重获新生.</p><blockquote><p>除非这个硬件真的物理上的烂了…</p></blockquote><p>如果你打算并已经购入了相关派, 那么可以继续往下阅读. 没有阅读欲望的读者至此已经被我硬灌了一些东西, 不如善始善终.</p><p>好了, 接下来就不一会扯Linux, 一会扯服务器了. 咱们专心来把玩一下这小巧精致的香橙派Zero 3.</p><blockquote><p>注: 后面的内容会牵扯到Linux的知识, 我会尽量对我的操作进行解释. 如有疑问, 可在评论区提出.</p></blockquote><h2 id="玩之前我做了些什么"><a href="#玩之前我做了些什么" class="headerlink" title="玩之前我做了些什么"></a>玩之前我做了些什么</h2><p>官方的文档非常非常详细, 安装系统的流程我不再赘述. 简单说明一下安装完成之后我做了些什么.</p><blockquote><p>我安装的是官方提供的 Debian 12 桌面版, 内存是1.5G.</p></blockquote><p>因为进到路由器后台查看派的IP, 再用ssh连接的方法太麻烦, 我直接用一根microHDMI线接到显示器上, 很快配好了WIFI, 蓝牙等信息, 顺带把密码改了一下.</p><p>改用户密码:</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo passwd orangepi<br></code></pre></td></tr></table></figure><p>改root密码:</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo passwd<br></code></pre></td></tr></table></figure><p>后来想改用户名, 网上搜了一些教程, 只能说有风险, 不建议尝试.</p><p>接着更新软件包(更新这步我其实是上来就干的)</p><p>打开终端执行:</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo apt update -y &amp;&amp; sudo apt upgrade -y<br></code></pre></td></tr></table></figure><p>以更新所有软件包.</p><p>更新完成后, 即使没有要求, 建议重启一下.</p><h2 id="我是怎么玩的"><a href="#我是怎么玩的" class="headerlink" title="我是怎么玩的"></a>我是怎么玩的</h2><h3 id="翻墙"><a href="#翻墙" class="headerlink" title="翻墙"></a>翻墙</h3><p>万事翻为先.</p><p>由于派的CPU架构是ARM, 再加上Linux的因素, 可以使用的翻墙软件少之又少.</p><p>提供三种思路:</p><ol><li><p>PC&#x2F;笔记本翻墙, 把局域网模式打开, 确保派和电脑在同一网络, 在派的终端输入&#96;export https_proxy&#x3D;xxx.xxx.xxx.xxx:xxxxx(开着翻墙软件的电脑的IP:端口号) 随后就可以进行一些需要翻墙的操作了, 例如从Github下文件之类的.</p></li><li><p>安卓手机如果root, 可在谷歌商店搜索<code>VPN热点</code>, 安装给予root权限后, 打开<code>WLAN热点</code>开关即可使用.</p></li><li><p>我之前写过一个<a href="https://github.com/wzk0/clash_tui">clash_tui</a>, 一个简易的clash终端版本, 这也是我现在正在使用的方案, 有兴趣的读者可以自行尝试.</p></li></ol><hr><h3 id="推荐的服务"><a href="#推荐的服务" class="headerlink" title="推荐的服务"></a>推荐的服务</h3><p>既然作为一个服务器了, 就理应跑一些服务. 不然这东西放在那吃灰吗?</p><h4 id="1-CasaOS-面板"><a href="#1-CasaOS-面板" class="headerlink" title="1. CasaOS 面板"></a>1. CasaOS 面板</h4><blockquote><p>强烈建议安装, 因为它可以充当一个应用商店, 我后面推荐的所有服务都是基于此一点即成的!</p></blockquote><p>可以到这个demo站看看样式: <a href="http://demo.casaos.io/">http://demo.casaos.io/</a> , 用户名和密码都是<code>casaos</code>.</p><p>安装CasaOS只需一条指令:</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">curl -fsSL https://get.casaos.io | sudo bash<br></code></pre></td></tr></table></figure><p>进入不算漫长的安装过程, 完成之后只需要在同一局域网下的任意设备浏览器输入派的IP地址即可.</p><p>可使用<code>ip addr</code>指令查看, 注意不是127那个.</p><p>如果正常打开页面显示的是英文, 只需左上角第二个长得像设置的图标里修改语言为简体中文即可.</p><h4 id="2-Memos-云便签-笔记"><a href="#2-Memos-云便签-笔记" class="headerlink" title="2. Memos 云便签+笔记"></a>2. Memos 云便签+笔记</h4><p>这个我真的非常喜欢, 界面简单清爽, 网页上没有任何图片, 全是简约的线条和文字.</p><p>demo站: <a href="https://demo.usememos.com/">https://demo.usememos.com/</a></p><blockquote><p>PS: 我现在就是用Memos写博客hhhh.</p></blockquote><p>安装只需在CasaOS面板的<code>App Store</code>里找到Memos, 点击<code>安装</code>即可.</p><h4 id="3-Nextcloud-云服务"><a href="#3-Nextcloud-云服务" class="headerlink" title="3. Nextcloud 云服务"></a>3. Nextcloud 云服务</h4><p>Nextcloud(下简称nc)是一个允许插件的自部署云服务. </p><p>什么意思呢?</p><p>现在nc的插件有photo, chat, todo, note等等, 等于说安装了nc就有了自己的云相册, 云盘, 聊天视频语音(即时通讯), 云待办, 云笔记. 无需担心会员, 无需担心限速, 因为这一切都是你的.</p><p>nc安装方式与Memos一样, 只需在<code>App Store</code>中搜索安装即可.</p><p>需要注意的是, nc在安装好后的一会是没法进行访问的, 需要等待几分钟.</p><h4 id="4-Alist-云盘列表"><a href="#4-Alist-云盘列表" class="headerlink" title="4. Alist 云盘列表"></a>4. Alist 云盘列表</h4><p>可以看作是一个云盘聚合服务, 为不同的云盘提供了统一的浏览, 下载, 分享入口.</p><p>安装方式同上.</p><p>需要注意, Alist安装完成后的用户名是<code>admin</code>, 密码在<code>右键Alist图标 &gt; 设置 &gt; 右上角终端与日志 &gt; 日志</code>里.</p><h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>其他的我也还在研究. 截至目前, 我的香橙派已经稳定运行了两天, 除了上述说的服务外, 还跑了我自己写的一个tg机器人和网站, 内存占用50%(1.5G).</p><p>总而言之, 香橙派Zero 3作为一款国产派, 口碑绝对没有那么不堪, 生态也没有说的那么差劲, 什么买回来就当摆设之类的.</p><p>相反, 我在这款国产派上看到了实打实的性价比, 相较于树莓派好了不止一星半点(极少称赞国货, 这次献给香橙派啦!)</p><hr><p>我是<strong>听话的便当</strong>.</p><p><img src="/img/thdbd.jpg"></p><p>Bye~❛‿˂̵✧</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>NOTE</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>Talk</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>使用pyTelegramBotAPI零基础搭建Telegram私聊机器人</title>
     <link href="/python-tg-bot/"/>
     <url>/python-tg-bot/</url>
