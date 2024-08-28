@@ -1,0 +1,1019 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/wzk0/photo/main/favicon.png">
+  <link rel="icon" href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/wzk0/photo/main/favicon.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="听话的便当">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="点击获得封面头图  写在前面:虽然之前发过不少Hexo的搭建与部署教程，但一直都很粗糙，所以这次准备认真地写一篇详细的使用Termux制作Hexo的攻略！  PS:本篇虽为Termux用户所写 但可能会提两嘴Windows和Linux用户，跳过即可.    我已经写好了一个方便Termux用户的一键Hexo脚本，点击这里查看！(不需要记忆那么多指令，输入几个数字完成部署！)   什么是HexoH">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Termux制作Hexo的详细攻略">
+<meta property="og:url" content="https://wzk0.github.io/hx/index.html">
+<meta property="og:site_name" content="便当的梅开四度">
+<meta property="og:description" content="点击获得封面头图  写在前面:虽然之前发过不少Hexo的搭建与部署教程，但一直都很粗糙，所以这次准备认真地写一篇详细的使用Termux制作Hexo的攻略！  PS:本篇虽为Termux用户所写 但可能会提两嘴Windows和Linux用户，跳过即可.    我已经写好了一个方便Termux用户的一键Hexo脚本，点击这里查看！(不需要记忆那么多指令，输入几个数字完成部署！)   什么是HexoH">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/Tumblr_l_56783869134384.jpg">
+<meta property="article:published_time" content="2021-11-26T09:38:14.000Z">
+<meta property="article:modified_time" content="2024-08-28T18:08:21.055Z">
+<meta property="article:author" content="听话的便当">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Termux">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/Tumblr_l_56783869134384.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>使用Termux制作Hexo的详细攻略 - 便当的梅开四度</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>便当的梅开四度</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/friends/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://raw.githubusercontent.com/wzk0/photo/main/Tumblr_l_56783869134384.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="使用Termux制作Hexo的详细攻略"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-11-26 17:38" pubdate>
+          2021年11月26日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          17 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">使用Termux制作Hexo的详细攻略</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/wzk0/photo/main/Tumblr_l_56783869134384.jpg">点击获得封面头图</a></p>
+</blockquote>
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面:"></a>写在前面:</h3><p><em>虽然之前发过不少Hexo的搭建与部署教程，但一直都很粗糙，所以这次准备认真地写一篇详细的<code>使用Termux制作Hexo的攻略</code>！</em></p>
+<blockquote>
+<p>PS:本篇虽为Termux用户所写 但可能会提两嘴Windows和Linux用户，跳过即可.</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>我已经写好了一个<code>方便Termux用户</code>的<code>一键Hexo脚本</code>，<a target="_blank" rel="noopener" href="https://github.com/wzk0/quick-hexo">点击这里查看！</a>(不需要记忆那么多指令，输入几个数字完成部署！)</p>
+</blockquote>
+<hr>
+<h2 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo"></a>什么是Hexo</h2><p>Hexo是一个Github上极高收藏数的项目.</p>
+<p>它以<code>免费</code>，<code>美观</code>，<code>快速</code>，<code>简单</code>等特点吸引了大量用户.</p>
+<p>而对于这些用户，我们通常称他们为<code>博客</code>.</p>
+<p>Hexo作为一个<code>高效易上手</code>的<code>博客写作工具</code>，已经渲染了百万个美观的网页(我瞎猜的🌚)</p>
+<p>其<code>Markdown --&gt; HTML</code>的<code>易写作性</code>也是我们<code>静态博客爱好者</code>的不二之选.</p>
+<p>话不多说，如果你想<code>完全免费地</code>建一个像你现在正在浏览的网站一样的网站，那我们就开始吧！</p>
+<hr>
+<h2 id="开始Hexo的准备"><a href="#开始Hexo的准备" class="headerlink" title="开始Hexo的准备"></a>开始Hexo的准备</h2><blockquote>
+<p>既然是<code>详细的教程</code>，那么就从安装开始吧！</p>
+</blockquote>
+<blockquote>
+<p>如果你还没有安装Termux，请从F-droid下载，或者<a target="_blank" rel="noopener" href="https://f-droid.org/repo/com.termux_117.apk">点击这里快速下载</a></p>
+</blockquote>
+<p>你需要安装的东西:<code>Git</code>，<code>Nodejs</code>，<code>ssh</code>.</p>
+<p>这里是<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Git的官方下载页面</a></p>
+<p>这里是<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">Nodejs的官方下载页面</a></p>
+<p>这里是<a target="_blank" rel="noopener" href="https://www.ssh.com/download/">ssh的官方下载页面</a></p>
+<ul>
+<li>如果你是Windows用户</li>
+</ul>
+<blockquote>
+<p>安装<code>Git</code>与<code>Nodejs</code>，要求系统版本起码为<code>Windows10</code>，并且添加到<code>环境变量</code>.</p>
+</blockquote>
+<ul>
+<li>如果你是Linux用户</li>
+</ul>
+<blockquote>
+<p>使用对应的包管理器进行安装即可(注意npm也要安装).</p>
+</blockquote>
+<ul>
+<li>如果你是Termux用户</li>
+</ul>
+<blockquote>
+<p>打开软件，输入<code>pkg install nodejs &amp;&amp; pkg install openssh &amp;&amp; pkg install git &amp;&amp; pkg install nano</code>即可</p>
+</blockquote>
+<blockquote>
+<p>Tips:nano是命令行编辑器.</p>
+</blockquote>
+<blockquote>
+<p>吐槽:还是我大Termux方便哈哈哈哈，不过电脑的大屏幕还是爽的(||๐_๐)</p>
+</blockquote>
+<hr>
+<p>上面几个东西安装完之后，来安装我们的Hexo吧！</p>
+<p>打开终端，输入指令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Tips:如果提示<code>npmNOT FOUND等字样</code>，说明是npm没有安装</p>
+</blockquote>
+<p>好了，至此，安装”大件”的工作全部完成！</p>
+<hr>
+<h2 id="生成与编辑"><a href="#生成与编辑" class="headerlink" title="生成与编辑"></a>生成与编辑</h2><p>打开终端，输入指令以生成名为<code>hx</code>的<code>Hexo文件夹</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init hx</span><br></pre></td></tr></table></figure>
+
+<p>此时如果报错:</p>
+<blockquote>
+<p>WARN  Failed to install dependencies. Please run ‘npm install’ in “&#x2F;data&#x2F;data&#x2F;com.termux&#x2F;files&#x2F;home&#x2F;hx” folder.</p>
+</blockquote>
+<p>则:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hx &amp;&amp; npm install</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Tips:这一步报错是因为依赖没有安装好.</p>
+</blockquote>
+<p>接下来，如果返回:</p>
+<blockquote>
+<p>found 0 vulnerabilities</p>
+</blockquote>
+<p>就说明成功了！</p>
+<p>查看下<code>hx文件夹</code>有哪些文件:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dir</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-26-19-39-44-47.jpg" srcset="/img/loading.gif" lazyload alt="有这些东西"></p>
+<p>其中，</p>
+<ul>
+<li><p><code>_config.yml</code>是网站的<code>配置文件</code>，在里面可以编辑例如你的<code>网站名</code>，<code>作者</code>，<code>描述</code>等信息.</p>
+</li>
+<li><p><code>source</code>内存放你的<code>页面</code>和<code>文章</code>(文章地址在<code>source/_posts</code>里).</p>
+</li>
+<li><p><code>themes</code>里存放着<code>博客主题</code>的<code>相关配置</code>与信息.</p>
+</li>
+</ul>
+<p>其他的一般没有用.</p>
+<hr>
+<p>接下来，让我们了解几个简单的<code>Hexo指令</code>吧！</p>
+<ul>
+<li>hexo init xxx<blockquote>
+<p>生成<code>Hexo文件夹</code>(即一个网站).</p>
+</blockquote>
+</li>
+<li>hexo new xxx<blockquote>
+<p>生成名为xxx的文章，位置在<code>~/hx/source/_post/xxx.md</code></p>
+</blockquote>
+</li>
+<li>hexo new page about<blockquote>
+<p>生成<code>about页面</code>，位置在<code>~/hx/source/about/index.md</code>，<code>about</code>可换.</p>
+</blockquote>
+</li>
+<li>hexo s<blockquote>
+<p>开启本地预览，通常网址为<code>http://localhost:4000</code></p>
+</blockquote>
+</li>
+<li>hexo g<blockquote>
+<p>渲染生成<code>HTML页面</code>，位置在<code>~/hx/public</code></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<p>编辑任务，只需编辑<code>_config.yml</code>即可，后续的<code>主题配置</code>后面再说.</p>
+<blockquote>
+<p>吐槽:这时候桌面的好处体现出来了——同时编辑好几个都没问题.</p>
+</blockquote>
+<blockquote>
+<p>Tips:看不懂的英语可以Google一下！</p>
+</blockquote>
+<blockquote>
+<p>Tips:nano的简单用法:<code>Ctrl O</code>是<code>保存</code>，<code>Ctrl X</code>是<code>退出</code>，编辑一个文件的指令是<code>nano xxx.xx</code>(记得加上后缀).</p>
+</blockquote>
+<blockquote>
+<p>Tips:Markdown的学习可<a target="_blank" rel="noopener" href="https://thdbd.gitbook.io/thdbd/article/3">点击此处</a></p>
+</blockquote>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>此时我们可以执行命令查看一下<code>本地预览</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>如果返回下列内容:</p>
+<blockquote>
+<p>INFO  Validating config<br>INFO  Start processing<br>INFO  Hexo is running at <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> . Press Ctrl+C to stop.</p>
+</blockquote>
+<p>则此时可在浏览器打开<code>http://localhost:4000</code>查看预览.</p>
+<hr>
+<p>什么?Hexo的原生主题太难看?</p>
+<p>没关系！现在我将说明<code>Hexo主题</code>的更换方法:</p>
+<p>首先，随便在Github上搜索一个Hexo主题，</p>
+<blockquote>
+<p>这里我以我网站的<code>flex-block</code>主题为例</p>
+</blockquote>
+<p>通常，一个对用户友好的主题都会说明<code>安装与配置方法</code>，</p>
+<p>譬如<code>flex-block</code>，给出了两种方法:</p>
+<blockquote>
+<p>如果是安装了Git:<br>进入你的网站目录并执行以下代码:<br><code>git clone https://github.com/miiiku/hexo-theme-flexblock.git ./themes/flex-block</code></p>
+</blockquote>
+<blockquote>
+<p>如果没有安装Git:<br>可以从<a target="_blank" rel="noopener" href="https://github.com/miiiku/hexo-theme-flexblock/archive/refs/heads/master.zip">https://github.com/miiiku/hexo-theme-flexblock/archive/refs/heads/master.zip</a><br>下载压缩包解压到你的网站目录下的theme文件夹下<br>重命名hexo-theme-flexblock-master为flex-block。</p>
+</blockquote>
+<p>此时你就会发现，在<code>themes文件夹</code>中多了一个刚刚安装的主题.</p>
+<p>进入这个<code>主题所在的文件夹</code>，查看一下有哪些文件，会发现:</p>
+<p>这里也有一个<code>_config.yml</code>！</p>
+<p>通常这个配置文件，包含许多自定义功能:</p>
+<p>譬如<code>是否开启评论</code>，<code>是否开启打赏</code>，<code>社交平台</code>等等.</p>
+<blockquote>
+<p>Tips:config是配置的意思，帮你查过了.</p>
+</blockquote>
+<blockquote>
+<p>Tips:中文开发者的主题中，config文件往往有中文注释.</p>
+</blockquote>
+<p>编辑就完事了！</p>
+<blockquote>
+<p>Tips:通用一般主题获取方式:<code>git clone 仓库地址.git ./themes</code></p>
+</blockquote>
+<p>之后，在<code>根目录</code>的<code>_config.yml</code>里，写入主题名如图所示:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-27-08-57-25-65.jpg" srcset="/img/loading.gif" lazyload alt="这里"></p>
+<h2 id="网页托管与上传"><a href="#网页托管与上传" class="headerlink" title="网页托管与上传"></a>网页托管与上传</h2><p>现在，我们的主题也选择并设置完了！</p>
+<p>接下来怎么让所有人都看见呢?</p>
+<p>众所周知，一个网站是需要<code>域名</code>，<code>托管后端</code>等要花钱的东西的.</p>
+<p><big><strong>但是！</strong></big></p>
+<p>既然开头说了，是<code>全免费</code>的，那么域名和其他的也一并不需要！</p>
+<p>我们只需要在Github创建一个名为<code>用户名.github.io</code>的仓库即可.</p>
+<blockquote>
+<p>如果不懂的话可以观看这个<a target="_blank" rel="noopener" href="https://b23.tv/lpFMOTX">哔哩哔哩视频教程~</a></p>
+</blockquote>
+<p>那么我们如何快速上传页面到<code>Github Pages</code>呢?</p>
+<ol>
+<li>编辑<code>根目录</code>(即<code>hx文件夹</code>)下的<code>_config.yml</code>，在最后几行<code>Deployment部分</code>添加如下字样:</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:用户名/用户名.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装hexo-deployer-git插件:</li>
+</ol>
+<p>输入:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="3">
+<li>返回根目录(<code>非hx文件夹</code>)</li>
+</ol>
+<p>输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span></span><br></pre></td></tr></table></figure>
+
+<p>即可返回.</p>
+<ol start="4">
+<li>在这个根目录下输入:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的名字&quot;</span><br><span class="line"></span><br><span class="line">git config --global user.email “你的邮箱”</span><br></pre></td></tr></table></figure>
+
+<p>添加过后可以输入:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name</span><br><span class="line"></span><br><span class="line">git config --global user.email</span><br></pre></td></tr></table></figure>
+
+<p>查看是否已经添加了Git账户.</p>
+<ol start="5">
+<li>输入:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>以生成ssh<code>公钥</code>和<code>私钥</code>.</p>
+<p>随后输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>然后复制这一串字符，在 <a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a> 添加这一段字符.</p>
+<ol start="6">
+<li>进入<code>hx文件夹</code>:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hx</span><br></pre></td></tr></table></figure>
+
+<p>输入指令上传:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果此时返回:<br>INFO  Deploy done: git<br>则说明成功了！打开用户名.github.io，刷新几次就有页面了 </p>
+</blockquote>
+<hr>
+<p>如果你觉得<code>ssh方式</code>太难太复杂看不懂，这里还有一种<code>Personal access tokens</code>的方法:</p>
+<p>打开这个网站以生成一个<code>Personal access tokens</code>:<a target="_blank" rel="noopener" href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></p>
+<p>随后编辑<code>根目录</code>(即<code>hx文件夹</code>)下的<code>_config.yml</code>，在最后几行<code>Deployment部分</code>添加如下字样:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/用户名/用户名.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips:与前面的区别是repo的格式.</p>
+</blockquote>
+<p>之后执行<code>hexo g -d</code>，会弹出<code>输入用户名和密码</code>字样，</p>
+<blockquote>
+<p>Tips:这些字当然是英文的.</p>
+</blockquote>
+<p>只需粘贴我们刚刚生成的<code>Personal access tokens</code>即可.</p>
+<p>唯一的缺点是每一次上传都要输入<code>Personal access tokens</code>.</p>
+<blockquote>
+<p>Tips:用户名和密码都是这串长长的东西.</p>
+</blockquote>
+<blockquote>
+<p>Tips:输入密码的时候，不会显示出来，所以不要傻乎乎地粘贴好几遍最后报错.</p>
+</blockquote>
+<blockquote>
+<p>我有一篇文章，对Git的基础使用进行了讲述，可以<a href="https://wzk0.github.io/gu/">点击这里</a>看看(写得非常详细🌚)</p>
+</blockquote>
+<hr>
+<p>此外 我还编写了一个Python脚本供不太清楚Hexo目录结构和方法的萌新使用！</p>
+<p>具体功能有如下几个:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211222_005506.jpg" srcset="/img/loading.gif" lazyload alt="功能"></p>
+<p>具体请查看: <a target="_blank" rel="noopener" href="https://github.com/wzk0/quick-hexo">https://github.com/wzk0/quick-hexo</a></p>
+<hr>
+<p>我是<code>听话的便当</code>，</p>
+<p>不懂的话可以在<a target="_blank" rel="noopener" href="https://t.me/hlx666">我的群组</a>讨论.</p>
+<p><strong>╭︎( ˙º˙)╯︎</strong></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/EDITOR/" class="category-chain-item">EDITOR</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+      
+        <a href="/tags/Termux/" class="print-no-link">#Termux</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>使用Termux制作Hexo的详细攻略</div>
+      <div>https://wzk0.github.io/hx/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>听话的便当</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年11月26日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-cc-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/pm/" title="Termux无服务器运行PagerMaid-Modify">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Termux无服务器运行PagerMaid-Modify</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/py/" title="第一个Python小程序全记录">
+                        <span class="hidden-mobile">第一个Python小程序全记录</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'wzk0/discuss');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo搭建</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid主题</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
