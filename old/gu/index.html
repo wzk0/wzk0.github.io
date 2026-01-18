@@ -1,0 +1,933 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="https://raw.githubusercontent.com/wzk0/photo/main/favicon.png">
+  <link rel="icon" href="https://raw.githubusercontent.com/wzk0/photo/main/favicon.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="听话的便当">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   这篇文章的阅读技巧:  注意分界线，这样读文章下来会发现内容是一块一块的 注意标题大小区分   今天在Tg看见了一个频道主遇到的问题:  什么?在线编辑无法用，只能删库重来了么?? 这也太让人难受了吧！ 因此，为了我们仓库的安全以及编辑的容易度，必须使用一种更快更好更稳定的方法. 所以今天，就要向大家科普一下已经是老">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一看就会的Git基础用法(Termux及Linux用户)">
+<meta property="og:url" content="https://wzk0.github.io/old/gu/index.html">
+<meta property="og:site_name" content="便当的梅开四度">
+<meta property="og:description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   这篇文章的阅读技巧:  注意分界线，这样读文章下来会发现内容是一块一块的 注意标题大小区分   今天在Tg看见了一个频道主遇到的问题:  什么?在线编辑无法用，只能删库重来了么?? 这也太让人难受了吧！ 因此，为了我们仓库的安全以及编辑的容易度，必须使用一种更快更好更稳定的方法. 所以今天，就要向大家科普一下已经是老">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211216_122618_748.jpg">
+<meta property="article:published_time" content="2021-12-26T06:38:35.000Z">
+<meta property="article:modified_time" content="2026-01-18T12:31:36.692Z">
+<meta property="article:author" content="听话的便当">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="Termux">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211216_122618_748.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>一看就会的Git基础用法(Termux及Linux用户) - 便当的梅开四度</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>便当的梅开四度</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/friends/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211216_122618_748.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="一看就会的Git基础用法(Termux及Linux用户)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-12-26 14:38" pubdate>
+          2021年12月26日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          19 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">一看就会的Git基础用法(Termux及Linux用户)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211216_122618_748.jpg">点击获得封面头图</a></p>
+</blockquote>
+<blockquote>
+<p>此文章使用<code>CC-BY-NC</code>协议，协议详情介绍<a href="https://wzk0.github.io/bk/">请看此文</a></p>
+</blockquote>
+<hr>
+<p><strong>这篇文章的阅读技巧:</strong></p>
+<ul>
+<li>注意分界线，这样读文章下来会发现内容是一块一块的</li>
+<li>注意标题大小区分</li>
+</ul>
+<hr>
+<p>今天在Tg看见了一个频道主遇到的问题:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_144431_067.jpg" srcset="/img/loading.gif" lazyload alt="问题"></p>
+<p>什么?在线编辑无法用，只能删库重来了么??</p>
+<p>这也太让人难受了吧！</p>
+<p>因此，为了我们仓库的安全以及编辑的容易度，必须使用一种<code>更快更好更稳定的方法</code>.</p>
+<p>所以今天，就要向大家科普一下<code>已经是老常客</code>却<code>很少物尽其用</code>的<code>Git</code>(对于我这种小白来说🌚)</p>
+<hr>
+<blockquote>
+<p>Tips:按照小白通常<code>灵魂三问</code>的顺序说明</p>
+</blockquote>
+<h1 id="Git是什么"><a href="#Git是什么" class="headerlink" title="Git是什么"></a>Git是什么</h1><p>我们来看看<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-hans/Git?wprov=sfla1">Wikipedia的说明</a></p>
+<blockquote>
+<p>Git<br>免费和开源的版本控制软件<br>是一个分散式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL释出。最初目的是为更好地管理Linux核心开发而设计。应注意的是，这与GNU Interactive Tools（一个类似Norton Commander（英语：Norton Commander）界面的文件管理器）不同。Git最初的开发动力来自于BitKeeper和Monotone。git最初只是作为一个可以被其他前端（比如Cogito或Stgit）包装的后端而开发的，但后来Git内核已经成熟到可以独立地用作版本控制。很多著名的软件都使用Git进行版本控制，其中包括Linux核心、X.Org服务器和OLPC内核等项目的开发流程。<br>Linus的又一个无心插柳柳成荫之作🌚(自己加的)</p>
+</blockquote>
+<p>那么Git和刚刚提到的频道主所说的<code>Github</code>有什么关系呢?</p>
+<p>我们来看看一位知乎人的说法:</p>
+<blockquote>
+<p>Git 是版本控制软件，目前最先进最流行的.<br>Github 是一个网站，用于广大开发者开源自己的代码，也提供私有仓库的付费功能，而它采用的版本控制软件就是Git.</p>
+</blockquote>
+<p>似乎说的已经很明白了，其实:</p>
+<p><strong>Git就相当于是Github的另一种使用方式(仅选取这两个对象来看)</strong></p>
+<p>现在的Github，可以直接在网页端在线编辑，而网页端编辑的弊端也显而易见了(eg:可怜的频道主)</p>
+<p>因此，我们使用Git这个工具来取代原先需要<code>在线编辑</code>，或是<code>拖拽选取文件</code>才能上传的方式.</p>
+<h1 id="Git怎么下载"><a href="#Git怎么下载" class="headerlink" title="Git怎么下载"></a>Git怎么下载</h1><blockquote>
+<p>如标题，不说明Windows用户的安装方法了</p>
+</blockquote>
+<p>只需要一行指令(<code>Termux</code>和<code>Ubuntu</code>用户):</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">apt <span class="hljs-keyword">install</span> git<br></code></pre></td></tr></table></figure>
+
+<p>如果是Termux用户，还可以再安装<code>nushell</code>这个生产力工具(其它用户自行搜索安装方法):</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">apt <span class="hljs-keyword">install</span> nushell<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果你还没有安装Termux，请从F-droid下载，或者<a target="_blank" rel="noopener" href="https://f-droid.org/repo/com.termux_117.apk">点击这里快速下载</a></p>
+</blockquote>
+<h1 id="Git怎么使用"><a href="#Git怎么使用" class="headerlink" title="Git怎么使用"></a>Git怎么使用</h1><p><strong>重点来了！</strong></p>
+<p>我们想想，平常使用Github的时候，要不然自己是<code>仓库的开发者</code>，要不然自己是<code>仓库的使用者</code>.</p>
+<p>而Git是对于开发者而言的工具，也有两种方式:</p>
+<ul>
+<li>把本地的仓库上传变成Github的仓库.</li>
+<li>把Github的仓库变成本地的仓库，编辑完再上传.</li>
+</ul>
+<p>差别就在于<code>建立仓库的方式</code>:</p>
+<ul>
+<li>在线建立</li>
+<li>本地生成</li>
+</ul>
+<blockquote>
+<p>这里推荐第一种，可以少输入几行指令🌚</p>
+</blockquote>
+<p>那么<code>在线建立</code>的方法十分简单，我们只需要打开github.com，再点击如图所示的<code>新建仓库标识按钮</code>即可:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_151214.jpg" srcset="/img/loading.gif" lazyload alt="建立"></p>
+<p>之后添加一个<code>README.md</code>(或者其它随便什么文件都行，因为仓库不能为空)</p>
+<p>如图所示，随便这里面写点啥:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_152718.jpg" srcset="/img/loading.gif" lazyload alt="README.md"></p>
+<p>随后将仓库整到本地来，输入指令:</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">git <span class="hljs-keyword">clone</span> <span class="hljs-title">仓库地址.git</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果是他人的仓库，先<code>Fork</code>一份，再<code>clone</code>自己Fork的仓库</p>
+</blockquote>
+<hr>
+<p>如果你在建库时，选择了<code>private(私有仓库)</code>，则会出现下面的提示:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_153122.jpg" srcset="/img/loading.gif" lazyload alt="提示"></p>
+<p>提示输入Github的用户名和密码，此时我们不能直接输入用户名和密码，不然一定会报错(因为Guthub已经取消了这种用户名密码明文登陆的方式)</p>
+<p>我们要在<code>https://github.com/settings/tokens</code>这个网址生成一个<code>Personal access tokens</code>，随后复制这个tokens，在输入用户名和密码的时候直接粘贴就可以了.</p>
+<blockquote>
+<p>PS:用户名就是tokens，密码直接回车就行</p>
+</blockquote>
+<hr>
+<p><code>本地生成</code>的话，只需要我们进入自己的本地仓库文件夹，输入指令即可:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">git <span class="hljs-keyword">init</span><br></code></pre></td></tr></table></figure>
+
+<p>如图所示，即完成:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_151909.jpg" srcset="/img/loading.gif" lazyload alt="完成"></p>
+<hr>
+<p>通过以上两种方式任意一种建立完仓库以后，我们该怎样在本地编辑之后并上传呢?</p>
+<hr>
+<h2 id="如果你选择了在线建立的那种方式"><a href="#如果你选择了在线建立的那种方式" class="headerlink" title="如果你选择了在线建立的那种方式:"></a>如果你选择了<code>在线建立</code>的那种方式:</h2><p>此时仓库里只有一个<code>README.md</code>文件，这时我们创建几个需要的文件以让这个README不再孤单:</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c">touch LICENSE  <span class="hljs-comment">//创建许可证</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>此处省略编辑，粘贴等等工作…</p>
+</blockquote>
+<p>OK！一切准备都完成了！现在只需上传到Github！</p>
+<p>通常，这时你的做法(电脑用户)应该会是:</p>
+<ul>
+<li>拖拽文件夹上传</li>
+</ul>
+<p>但是这种方法既慢，又有大小限制，且对Termux用户(无root)无用.</p>
+<p>此时我们输入接下来的几个指令:</p>
+<blockquote>
+<p>安装完nushell的用户可以输入<code>nu</code>以进入<code>生产力模式</code>(其实nu比较方便的地方就是<code>对指令的记忆与自动补全功能</code>)</p>
+</blockquote>
+<blockquote>
+<p>Tips:所有指令都是在<code>仓库的根目录</code>里执行的</p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">git <span class="hljs-built_in">add</span> * .<br></code></pre></td></tr></table></figure>
+
+<p>这个指令是什么意思呢?我们翻译一下:</p>
+<ul>
+<li><code>git</code>，指使用<code>git</code>，所以<code>git</code>此时做指令的主语；</li>
+<li><code>add</code>，指<code>添加文件</code>，<code>add</code>做指令的谓语；</li>
+<li><code>*</code>，指所有文件(通配符)，是指令的宾语；</li>
+<li>添加所有文件到哪呢?<code>.</code>做宾语补足语，指把所有文件添加到<code>git文件缓存区</code>，<code>.</code>是对这个区的简便称呼；</li>
+</ul>
+<p>好了！我们已经把<code>仓库的所有文件</code>添加到<code>git缓存区</code>了，这个缓存区的名字是<code>.</code>！</p>
+<hr>
+<p>接下来，输入另一个指令:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">git</span> commit -m <span class="hljs-string">&quot;这是关于许可证的第一次提交！🦄✨🌈&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>再按照<code>英语语法</code>的方式分析一下！:</p>
+<ul>
+<li><code>git</code>，指使用<code>git</code>，所以<code>git</code>此时做指令的主语；</li>
+<li><code>commit</code>，指<code>提交</code>，此时做指令的谓语；</li>
+<li><code>-m</code>，做状语，是对<code>commit</code>的修饰；</li>
+<li><code>&quot;一些内容&quot;</code>，做宾语，是对于<code>被修改文件</code>的描述；</li>
+</ul>
+<blockquote>
+<p>这里的被修改怎么理解:添加，删除，修改内容，都指<code>被修改</code></p>
+</blockquote>
+<p>完成！我们已经给<code>这次将要提交</code>的<code>缓存区的内容</code>加了一个修改描述！</p>
+<p>如图所示，即完成:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_225854.jpg" srcset="/img/loading.gif" lazyload alt="这里插入一张图片，git commit"></p>
+<hr>
+<p>接下来，输入最后一个指令:</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">git <span class="hljs-built_in">push</span> -u <span class="hljs-built_in">origin</span> main<br></code></pre></td></tr></table></figure>
+
+<p>最后分析一次！:</p>
+<ul>
+<li><code>git</code>，指使用<code>git</code>，所以<code>git</code>此时做指令的主语；</li>
+<li><code>push</code>，指<code>推送</code>，做谓语；</li>
+<li><code>-u</code>，一个状语；</li>
+<li><code>origin main</code>，指<code>main分支</code>(一个仓库可以有多个分支)，做宾语；</li>
+</ul>
+<p>回车后，此时又会进入<code>输入用户名和密码</code>的状态，我们把上面说过的<code>tokens</code>粘贴进去.</p>
+<p>如图所示，即完成:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_230229.jpg" srcset="/img/loading.gif" lazyload alt="这里插入一张图片，git push"></p>
+<p>成功！我们已经把本地的仓库内容全部推送到Github仓库啦！(不信可以去看看)</p>
+<hr>
+<p>可以看到，总共的指令一共有三条:</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-symbol">git</span> <span class="hljs-keyword">add</span> * . <span class="hljs-comment">//添加到缓存区</span><br><span class="hljs-symbol">git</span> commit -m <span class="hljs-string">&quot;内容&quot;</span> <span class="hljs-comment">//添加提交描述</span><br><span class="hljs-symbol">git</span> <span class="hljs-keyword">push</span> -u origin main <span class="hljs-comment">//推送到Github</span><br></code></pre></td></tr></table></figure>
+
+<p>记不住的话只需要编辑一个脚本(<code>nano git.sh</code>)，写入内容，每次<code>sh git.sh</code>就能快速上传啦！</p>
+<hr>
+<h2 id="如果你选择了本地生成的那种方式"><a href="#如果你选择了本地生成的那种方式" class="headerlink" title="如果你选择了本地生成的那种方式"></a>如果你选择了<code>本地生成</code>的那种方式</h2><p>首先，我们还是要在Github里建立一个仓库(因为最后是要到Github上的，所以网页创建仓库是<code>万事之根</code>)</p>
+<p>之后，在本地仓库中输入指令以<code>确定分支</code>:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">git branch -M <span class="hljs-selector-tag">main</span><br></code></pre></td></tr></table></figure>
+
+<p>像上面的<code>git push</code>一样，这一步指的是<code>确认默认主分支名为main</code>.</p>
+<p>接下来输入指令以<code>绑定</code>到仓库:</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs llvm">git remote <span class="hljs-keyword">add</span> origin git<span class="hljs-title">@github.com</span>:用户名/项目名.git<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>其实相比较<code>在线建立</code>的方式，就多输入了这两个指令而已🌚而且只需要输一次</p>
+</blockquote>
+<p>接着像上面<code>在线建立</code>的方法一样，输入三条指令即可:</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-symbol">git</span> <span class="hljs-keyword">add</span> * . <span class="hljs-comment">//添加到缓存区</span><br><span class="hljs-symbol">git</span> commit -m <span class="hljs-string">&quot;内容&quot;</span> <span class="hljs-comment">//添加提交描述</span><br><span class="hljs-symbol">git</span> <span class="hljs-keyword">push</span> -u origin main <span class="hljs-comment">//推送到Github</span><br></code></pre></td></tr></table></figure>
+<hr>
+<h1 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h1><p>其实文章挺简单的，但是为什么要专门拎出来长篇大论一番，是因为<code>当时我想用git的时候</code>，虽然搜了<code>很多文章</code>，但是都没有<code>较为仔细的解释</code>，导致我对这么多指令是<code>干啥的</code>，<code>接下来怎么弄</code>非常模糊，所以今天写了这篇文章，既算<code>加深了自己的印象</code>，又算是给<code>比我还小白的人</code>的一个<code>科普</code>吧，毕竟我便当的话还是<code>挺直白的</code>🌚而且<code>自认为</code>文章都很详细🌚</p>
+<p>希望大家喜欢！不懂的话可以与我私聊！</p>
+<hr>
+<p>我是<strong>听话的便当</strong>，</p>
+<p>Bye~ ♬︎*(๑ºั╰︎╯︎ºั๑)♡︎</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/EDITOR/" class="category-chain-item">EDITOR</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+      
+        <a href="/tags/Git/" class="print-no-link">#Git</a>
+      
+        <a href="/tags/Termux/" class="print-no-link">#Termux</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>一看就会的Git基础用法(Termux及Linux用户)</div>
+      <div>https://wzk0.github.io/old/gu/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>听话的便当</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年12月26日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-cc-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/old/hx-w/" title="Hexo无法被渲染到Page的处理">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hexo无法被渲染到Page的处理</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/old/er/" title="Python实用代码段收藏">
+                        <span class="hidden-mobile">Python实用代码段收藏</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'wzk0/discuss');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo搭建</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid主题</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
