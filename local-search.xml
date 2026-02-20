@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>2026年还能用的Telegram付费登录问题的解决方案</title>
+    <link href="/2026/fix-old-tg/"/>
+    <url>/2026/fix-old-tg/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>如果文章中的图片加载不出来, 请您考虑使用代理软件</p></blockquote><blockquote><p>此文章使用<code>CC-BY-NC</code>协议</p></blockquote><hr><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我在tg上的好友们的头像一个接一个地灰了.</p><p>一问怎么回事, 不是因为节点, 不是因为这个那个, 都是因为tg搞的付费登录政策.</p><blockquote><p>准确来说是付费验证码登录.</p></blockquote><p>今天给大家带来一个免费且至今能用的方案, 助你成功登上tg.</p><blockquote><p>仅限老用户, 新用户注册没办法.</p></blockquote><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>首先卸载手机上的tg, 下载:</p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">https:</span><span class="hljs-comment">//thdbd.lanzouq.com/b019voxu3i</span><br><br>密码:<span class="hljs-number">6666</span><br></code></pre></td></tr></table></figure><p>两个 <code>7z</code> 解压后是两个安装包, 安装.</p><blockquote><p><code>俄</code> 是俄版tg, 俄版仍然可以通过接收验证码登录; <code>旧</code> 则是旧版tg, 旧版可以通过向已登录的设备发送验证码, 以此登录.</p></blockquote><p>也就是说, 我们先用验证码(邮箱接收到的)登上 <code>俄版tg</code> , 随后通过向俄版tg发送验证码, 登录 <code>旧版tg</code> 以储存更新状态, 再更新至最新tg即可.</p><ol><li>登录俄版</li><li>登录旧版</li><li>更新至最新版</li></ol><hr><p>我是<strong>听话的便当</strong>.</p><p><img src="/img/thdbd.jpg"></p><p>Bye~❛‿˂̵✧</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>关于在openSUSE中LocalSend无法正常使用的解决办法</title>
     <link href="/2026/suse-localsend/"/>
     <url>/2026/suse-localsend/</url>
