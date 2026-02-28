@@ -1,0 +1,394 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="zh-CN"
+  dir="ltr"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>关于在openSUSE中LocalSend无法正常使用的解决办法 - 便当的梅开五度</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="
+如果文章中的图片加载不出来, 请您考虑使用代理软件.
+
+
+此文章使用 CC-BY-NC 协议.
+
+
+目录
+
+  
+      
+          章节
+          内容
+      
+  
+  
+      
+          前言
+          问题背景与现象描述
+      
+      
+          过程
+          防火墙端口配置解决方案
+      
+  
+
+
+前言
+LocalSend 是一款相当好用的局域网文件传输软件, 支持几乎全平台.
+不过自从前段时间我开始使用 openSUSE 后, 发现无论是flatpak版的 LocalSend , 还是 rpm / 二进制 版的启动后都无法正常使用.
+
+具体表现为: 扫描不到其他设备, 无论是什么网络, 且无法接收别的设备发送来的文件.
+
+这个问题遗留至今. 直到最近我购入了一个电纸书.
+为了方便传文件到电纸书上, 我终于决定改变现状.
+过程
+我能想到的最大的可能的错误原因就是防火墙.
+上一篇也提到, openSUSE 的一些默认策略个人感觉是很保守的, 所以自然而然想到这方面.
+于是查看了 LocalSend 的端口占用情况:
+
+先将 高级设置 勾选(红色箭头所指), 即可看到占用端口为 53317 (蓝色箭头所指).
+随后安装 firewall-config:
+sudo zypper in firewall-config
+打开, 并在 public (红色箭头所指)中添加(绿色箭头所指) 53317 端口, 协议为 TCP 和 UDP (如黄色框选).
+
+此时重启 LocalSend 即可." />
+  <meta name="author" content="便当的梅开五度" /><link rel="preload stylesheet" as="style" href="https://wzk0.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+
+  
+  <link rel="preload" as="image" href="https://wzk0.github.io/theme.svg" />
+
+  
+
+  <link rel="preload" as="image" href="https://wzk0.github.io/twitter.svg" /><link rel="preload" as="image" href="https://wzk0.github.io/github.svg" /><link rel="preload" as="image" href="https://wzk0.github.io/rss.svg" />
+
+  <script
+    defer
+    src="https://wzk0.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script><script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+
+  
+  <link
+    rel="icon"
+    href="https://wzk0.github.io/favicon.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://wzk0.github.io/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.152.1">
+  <meta itemprop="name" content="关于在openSUSE中LocalSend无法正常使用的解决办法">
+  <meta itemprop="description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
+此文章使用 CC-BY-NC 协议.
+目录 章节 内容 前言 问题背景与现象描述 过程 防火墙端口配置解决方案 前言 LocalSend 是一款相当好用的局域网文件传输软件, 支持几乎全平台.
+不过自从前段时间我开始使用 openSUSE 后, 发现无论是flatpak版的 LocalSend , 还是 rpm / 二进制 版的启动后都无法正常使用.
+具体表现为: 扫描不到其他设备, 无论是什么网络, 且无法接收别的设备发送来的文件.
+这个问题遗留至今. 直到最近我购入了一个电纸书.
+为了方便传文件到电纸书上, 我终于决定改变现状.
+过程 我能想到的最大的可能的错误原因就是防火墙.
+上一篇也提到, openSUSE 的一些默认策略个人感觉是很保守的, 所以自然而然想到这方面.
+于是查看了 LocalSend 的端口占用情况:
+先将 高级设置 勾选(红色箭头所指), 即可看到占用端口为 53317 (蓝色箭头所指).
+随后安装 firewall-config:
+sudo zypper in firewall-config 打开, 并在 public (红色箭头所指)中添加(绿色箭头所指) 53317 端口, 协议为 TCP 和 UDP (如黄色框选).
+此时重启 LocalSend 即可.">
+  <meta itemprop="datePublished" content="2026-02-27T21:14:24+08:00">
+  <meta itemprop="dateModified" content="2026-02-27T21:14:24+08:00">
+  <meta itemprop="wordCount" content="75">
+  <meta itemprop="keywords" content="Flutter,Fix"><meta property="og:url" content="https://wzk0.github.io/posts/suse-localsend-fix/">
+  <meta property="og:site_name" content="便当的梅开五度">
+  <meta property="og:title" content="关于在openSUSE中LocalSend无法正常使用的解决办法">
+  <meta property="og:description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
+此文章使用 CC-BY-NC 协议.
+目录 章节 内容 前言 问题背景与现象描述 过程 防火墙端口配置解决方案 前言 LocalSend 是一款相当好用的局域网文件传输软件, 支持几乎全平台.
+不过自从前段时间我开始使用 openSUSE 后, 发现无论是flatpak版的 LocalSend , 还是 rpm / 二进制 版的启动后都无法正常使用.
+具体表现为: 扫描不到其他设备, 无论是什么网络, 且无法接收别的设备发送来的文件.
+这个问题遗留至今. 直到最近我购入了一个电纸书.
+为了方便传文件到电纸书上, 我终于决定改变现状.
+过程 我能想到的最大的可能的错误原因就是防火墙.
+上一篇也提到, openSUSE 的一些默认策略个人感觉是很保守的, 所以自然而然想到这方面.
+于是查看了 LocalSend 的端口占用情况:
+先将 高级设置 勾选(红色箭头所指), 即可看到占用端口为 53317 (蓝色箭头所指).
+随后安装 firewall-config:
+sudo zypper in firewall-config 打开, 并在 public (红色箭头所指)中添加(绿色箭头所指) 53317 端口, 协议为 TCP 和 UDP (如黄色框选).
+此时重启 LocalSend 即可.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-27T21:14:24+08:00">
+    <meta property="article:modified_time" content="2026-02-27T21:14:24+08:00">
+    <meta property="article:tag" content="Flutter">
+    <meta property="article:tag" content="Fix">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="关于在openSUSE中LocalSend无法正常使用的解决办法">
+  <meta name="twitter:description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
+此文章使用 CC-BY-NC 协议.
+目录 章节 内容 前言 问题背景与现象描述 过程 防火墙端口配置解决方案 前言 LocalSend 是一款相当好用的局域网文件传输软件, 支持几乎全平台.
+不过自从前段时间我开始使用 openSUSE 后, 发现无论是flatpak版的 LocalSend , 还是 rpm / 二进制 版的启动后都无法正常使用.
+具体表现为: 扫描不到其他设备, 无论是什么网络, 且无法接收别的设备发送来的文件.
+这个问题遗留至今. 直到最近我购入了一个电纸书.
+为了方便传文件到电纸书上, 我终于决定改变现状.
+过程 我能想到的最大的可能的错误原因就是防火墙.
+上一篇也提到, openSUSE 的一些默认策略个人感觉是很保守的, 所以自然而然想到这方面.
+于是查看了 LocalSend 的端口占用情况:
+先将 高级设置 勾选(红色箭头所指), 即可看到占用端口为 53317 (蓝色箭头所指).
+随后安装 firewall-config:
+sudo zypper in firewall-config 打开, 并在 public (红色箭头所指)中添加(绿色箭头所指) 53317 端口, 协议为 TCP 和 UDP (如黄色框选).
+此时重启 LocalSend 即可.">
+
+  <link rel="canonical" href="https://wzk0.github.io/posts/suse-localsend-fix/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://wzk0.github.io/"
+      >便当的梅开五度</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  ><nav
+      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
+    ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/tags/"
+        >标签</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/categories/"
+        >分类</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >关于</a
+      ></nav><nav
+      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
+    >
+      <a
+        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/thd_bd"
+        target="_blank"
+        rel="me"
+      >twitter</a>
+      <a
+        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/wzk0"
+        target="_blank"
+        rel="me"
+      >github</a>
+      <a
+        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://wzk0.github.io/index.xml"
+        target="_blank"
+        rel="alternate"
+      >rss</a>
+    </nav>
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">关于在openSUSE中LocalSend无法正常使用的解决办法</h1><div class="text-xs antialiased opacity-60"><time>Feb 27, 2026</time></div></header>
+
+  <section><blockquote>
+<p>如果文章中的图片加载不出来, 请您考虑使用代理软件.</p>
+</blockquote>
+<blockquote>
+<p>此文章使用 <kbd>CC-BY-NC</kbd> 协议.</p>
+</blockquote>
+<hr>
+<h2 id="目录">目录</h2>
+<table>
+  <thead>
+      <tr>
+          <th>章节</th>
+          <th>内容</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="#%E5%89%8D%E8%A8%80">前言</a></td>
+          <td>问题背景与现象描述</td>
+      </tr>
+      <tr>
+          <td><a href="#%E8%BF%87%E7%A8%8B">过程</a></td>
+          <td>防火墙端口配置解决方案</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="前言">前言</h2>
+<p><a href="https://localsend.org/zh-CN"><kbd>LocalSend</kbd></a> 是一款相当好用的局域网文件传输软件, 支持几乎全平台.</p>
+<p>不过自从前段时间我开始使用 <kbd>openSUSE</kbd> 后, 发现无论是flatpak版的 <kbd>LocalSend</kbd> , 还是 <kbd>rpm</kbd> / <kbd>二进制</kbd> 版的启动后都无法正常使用.</p>
+<blockquote>
+<p>具体表现为: 扫描不到其他设备, 无论是什么网络, 且无法接收别的设备发送来的文件.</p>
+</blockquote>
+<p>这个问题遗留至今. 直到最近我购入了一个电纸书.</p>
+<p>为了方便传文件到电纸书上, 我终于决定改变现状.</p>
+<h2 id="过程">过程</h2>
+<p>我能想到的最大的可能的错误原因就是防火墙.</p>
+<p>上一篇也提到, <kbd>openSUSE</kbd> 的一些默认策略个人感觉是很保守的, 所以自然而然想到这方面.</p>
+<p>于是查看了 <kbd>LocalSend</kbd> 的端口占用情况:</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-20%2018%3A35%3A22.png" alt="如图所示"></p>
+<p>先将 <kbd>高级设置</kbd> 勾选(红色箭头所指), 即可看到占用端口为 <kbd>53317</kbd> (蓝色箭头所指).</p>
+<p>随后安装 <kbd>firewall-config</kbd>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo zypper in firewall-config
+</span></span></code></pre></div><p>打开, 并在 <kbd>public</kbd> (红色箭头所指)中添加(绿色箭头所指) <kbd>53317</kbd> 端口, 协议为 <kbd>TCP</kbd> 和 <kbd>UDP</kbd> (如黄色框选).</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-20%2019%3A47%3A16.png" alt="如图所示"></p>
+<p>此时重启 <kbd>LocalSend</kbd> 即可.</p>
+<p>如需后续永久使用, 只需要将左上角运行时改为永久, 随后像上面一样添加端口就行.</p>
+<blockquote>
+<p>如果仅添加了永久, 则需要重启电脑才能应用.</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-20%2019%3A49%3A26.png" alt="如图所示"></p>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://wzk0.github.io/tags/flutter">Flutter</a><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://wzk0.github.io/tags/fix">fix</a></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"><a class="ltr:pr-3 rtl:pl-3" href="https://wzk0.github.io/posts/telegram-login-fix/"><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>2026年还能用的Telegram付费登录问题的解决方案</span></a><a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href="https://wzk0.github.io/posts/suse-wine-fix/"><span>关于在openSUSE中无法使用flatpak Bottle/Steam/Wine相关应用的解决办法</span><span
+        class="ltr:ml-1.5 rtl:mr-1.5">→</span></a></nav><div class="giscus mt-24! text-black dark:text-white"></div>
+  <script src="https://giscus.app/client.js" data-repo="wzk0/my_giscus"
+    data-repo-id="R_kgDORaQsWQ" data-category="Announcements"
+    data-category-id="DIC_kwDORaQsWc4C3U14"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="0"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading="lazy" crossorigin="anonymous" async></script></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://wzk0.github.io/">便当的梅开五度</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

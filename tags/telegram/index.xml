@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Telegram on 便当的梅开五度</title>
+    <link>https://wzk0.github.io/tags/telegram/</link>
+    <description>Recent content in Telegram on 便当的梅开五度</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 27 Feb 2026 21:14:27 +0800</lastBuildDate>
+    <atom:link href="https://wzk0.github.io/tags/telegram/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2026年还能用的Telegram付费登录问题的解决方案</title>
+      <link>https://wzk0.github.io/posts/telegram-login-fix/</link>
+      <pubDate>Fri, 27 Feb 2026 21:14:27 +0800</pubDate>
+      <guid>https://wzk0.github.io/posts/telegram-login-fix/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;如果文章中的图片加载不出来, 请您考虑使用代理软件.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;此文章使用 &lt;kbd&gt;CC-BY-NC&lt;/kbd&gt; 协议.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;目录&#34;&gt;目录&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;章节&lt;/th&gt;&#xA;          &lt;th&gt;内容&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;#%E5%89%8D%E8%A8%80&#34;&gt;前言&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;问题背景说明&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;#%E6%AD%A5%E9%AA%A4&#34;&gt;步骤&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;俄版/旧版tg下载与登录流程&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;我在tg上的好友们的头像一个接一个地灰了.&lt;/p&gt;&#xA;&lt;p&gt;一问怎么回事, 不是因为节点, 不是因为这个那个, 都是因为tg搞的付费登录政策.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;准确来说是付费验证码登录.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;今天给大家带来一个免费且至今能用的方案, 助你成功登上tg.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;仅限老用户, 新用户注册没办法.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;步骤&#34;&gt;步骤&lt;/h2&gt;&#xA;&lt;p&gt;首先卸载手机上的tg, 下载:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://thdbd.lanzouq.com/b019voxu3i&#xA;&#xA;密码:6666&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;两个 &lt;kbd&gt;7z&lt;/kbd&gt; 解压后是两个安装包, 安装.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;kbd&gt;俄&lt;/kbd&gt; 是俄版tg, 俄版仍然可以通过接收验证码登录; &lt;kbd&gt;旧&lt;/kbd&gt; 则是旧版tg, 旧版可以通过向已登录的设备发送验证码, 以此登录.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;也就是说, 我们先用验证码(邮箱接收到的)登上 &lt;kbd&gt;俄版tg&lt;/kbd&gt; , 随后通过向俄版tg发送验证码, 登录 &lt;kbd&gt;旧版tg&lt;/kbd&gt; 以储存更新状态, 再更新至最新tg即可.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;登录俄版&lt;/li&gt;&#xA;&lt;li&gt;登录旧版&lt;/li&gt;&#xA;&lt;li&gt;更新至最新版&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+  </channel>
+</rss>
