@@ -2,7 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://wzk0.github.io/categories/learn/</loc>
+    <lastmod>2026-02-27T23:19:07+08:00</lastmod>
+  </url><url>
+    <loc>https://wzk0.github.io/tags/life-quality/</loc>
+    <lastmod>2026-02-27T23:19:07+08:00</lastmod>
+  </url><url>
+    <loc>https://wzk0.github.io/categories/note/</loc>
+    <lastmod>2026-02-27T23:19:07+08:00</lastmod>
+  </url><url>
     <loc>https://wzk0.github.io/posts/</loc>
+    <lastmod>2026-02-27T23:19:07+08:00</lastmod>
+  </url><url>
+    <loc>https://wzk0.github.io/tags/talk/</loc>
+    <lastmod>2026-02-27T23:19:07+08:00</lastmod>
+  </url><url>
+    <loc>https://wzk0.github.io/posts/change-to-hugo/</loc>
     <lastmod>2026-02-27T23:19:07+08:00</lastmod>
   </url><url>
     <loc>https://wzk0.github.io/</loc>
@@ -15,12 +30,6 @@
     <lastmod>2026-02-27T21:14:29+08:00</lastmod>
   </url><url>
     <loc>https://wzk0.github.io/tags/flutter/</loc>
-    <lastmod>2026-02-27T21:14:29+08:00</lastmod>
-  </url><url>
-    <loc>https://wzk0.github.io/categories/learn/</loc>
-    <lastmod>2026-02-27T21:14:29+08:00</lastmod>
-  </url><url>
-    <loc>https://wzk0.github.io/categories/note/</loc>
     <lastmod>2026-02-27T21:14:29+08:00</lastmod>
   </url><url>
     <loc>https://wzk0.github.io/posts/my-flutter/</loc>
@@ -53,17 +62,11 @@
     <loc>https://wzk0.github.io/tags/gnome/</loc>
     <lastmod>2026-02-27T21:14:18+08:00</lastmod>
   </url><url>
-    <loc>https://wzk0.github.io/tags/life-quality/</loc>
-    <lastmod>2026-02-27T21:14:18+08:00</lastmod>
-  </url><url>
     <loc>https://wzk0.github.io/posts/gnome-extension/</loc>
     <lastmod>2026-02-27T21:14:18+08:00</lastmod>
   </url><url>
     <loc>https://wzk0.github.io/posts/suse-and-fix/</loc>
     <lastmod>2026-02-27T21:14:15+08:00</lastmod>
-  </url><url>
-    <loc>https://wzk0.github.io/tags/talk/</loc>
-    <lastmod>2026-02-27T21:14:10+08:00</lastmod>
   </url><url>
     <loc>https://wzk0.github.io/posts/back/</loc>
     <lastmod>2026-02-27T21:14:10+08:00</lastmod>

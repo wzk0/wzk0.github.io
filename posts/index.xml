@@ -6,8 +6,15 @@
     <description>Recent content in Posts on 便当的梅开五度</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 27 Feb 2026 21:14:29 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Feb 2026 23:19:07 +0800</lastBuildDate>
     <atom:link href="https://wzk0.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从 Hexo 到 Hugo, 以及一些想说的话</title>
+      <link>https://wzk0.github.io/posts/change-to-hugo/</link>
+      <pubDate>Fri, 27 Feb 2026 23:19:07 +0800</pubDate>
+      <guid>https://wzk0.github.io/posts/change-to-hugo/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;如果文章中的图片加载不出来, 请您考虑使用代理软件.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;此文章使用 &lt;kbd&gt;CC-BY-NC&lt;/kbd&gt; 协议.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;目录&#34;&gt;目录&lt;/h2&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;如果您是本站的老读者, 一定见证过这样一件奇异的事:&lt;/p&gt;&#xA;&lt;p&gt;网站的框架, 域名和主题明明都是好好的, 却还是变来变去!&lt;/p&gt;&#xA;&lt;p&gt;没错, 这也就是本站站名的由来. 到了今天, 已经是第五次大变革.&lt;/p&gt;&#xA;&lt;p&gt;我好像就是如此一个人. 无论是手机系统, 电脑系统, 亦或是博客系统, 总是在稳定下来后想要换一换.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;那么-先回忆一下&#34;&gt;那么, 先回忆一下&lt;/h2&gt;&#xA;&lt;p&gt;第一次写博客, 用的是 &lt;kbd&gt;WordPress&lt;/kbd&gt;. 网站至今还在: &lt;a href=&#34;https://thdbd666666.wordpress.com/&#34;&gt;https://thdbd666666.wordpress.com/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;在那之前, 我也写过网站. 用那个什么 &lt;kbd&gt;所见即所得&lt;/kbd&gt; 的写 html 的软件一行一行敲的. 那会儿找到很好看的 css 和 js 都会写一个新网页扔里面. 不过严格来说, 并不能算 &lt;kbd&gt;网站&lt;/kbd&gt;, 因为我只是在浏览器里预览那些 html, 跳转也是如此.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/wzk0/photo/main/2026-02-27%2023%3A29%3A37.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;2021年7月10日, 已经过去这么久了&amp;hellip;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/wzk0/photo/main/2026-02-27%2023%3A36%3A09.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;当时就是觉得有一个自己的网站很酷, 于是有什么东西都想写下来.&lt;/p&gt;&#xA;&lt;p&gt;渐渐地, 因为会员限制, 主题限制, 以及 &lt;kbd&gt;&amp;ldquo;不酷&amp;rdquo;&lt;/kbd&gt; 的广告横幅, 我想换个方式了.&lt;/p&gt;&#xA;&lt;p&gt;用 WordPress 时, 我还不知道什么叫 &lt;kbd&gt;markdown&lt;/kbd&gt;, 也不知道所谓 &lt;kbd&gt;静态博客&lt;/kbd&gt; 和 &lt;kbd&gt;动态博客&lt;/kbd&gt;.&lt;/p&gt;&#xA;&lt;p&gt;我的关键词是 &lt;kbd&gt;免费建站&lt;/kbd&gt;, &lt;kbd&gt;博客&lt;/kbd&gt;. 这样一番搜索下来, 我才知道了上面这三个东西.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>一些flutter自用/好用的库推荐&#43;记录</title>
       <link>https://wzk0.github.io/posts/my-flutter/</link>

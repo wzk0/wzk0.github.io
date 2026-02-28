@@ -1,0 +1,624 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="zh-CN"
+  dir="ltr"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>从 Hexo 到 Hugo, 以及一些想说的话 - 便当的梅开五度</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="
+如果文章中的图片加载不出来, 请您考虑使用代理软件.
+
+
+此文章使用 CC-BY-NC 协议.
+
+
+目录
+
+前言
+如果您是本站的老读者, 一定见证过这样一件奇异的事:
+网站的框架, 域名和主题明明都是好好的, 却还是变来变去!
+没错, 这也就是本站站名的由来. 到了今天, 已经是第五次大变革.
+我好像就是如此一个人. 无论是手机系统, 电脑系统, 亦或是博客系统, 总是在稳定下来后想要换一换.
+
+那么, 先回忆一下
+第一次写博客, 用的是 WordPress. 网站至今还在: https://thdbd666666.wordpress.com/
+
+在那之前, 我也写过网站. 用那个什么 所见即所得 的写 html 的软件一行一行敲的. 那会儿找到很好看的 css 和 js 都会写一个新网页扔里面. 不过严格来说, 并不能算 网站, 因为我只是在浏览器里预览那些 html, 跳转也是如此.
+
+
+
+2021年7月10日, 已经过去这么久了&hellip;
+
+
+当时就是觉得有一个自己的网站很酷, 于是有什么东西都想写下来.
+渐渐地, 因为会员限制, 主题限制, 以及 &ldquo;不酷&rdquo; 的广告横幅, 我想换个方式了.
+用 WordPress 时, 我还不知道什么叫 markdown, 也不知道所谓 静态博客 和 动态博客.
+我的关键词是 免费建站, 博客. 这样一番搜索下来, 我才知道了上面这三个东西." />
+  <meta name="author" content="便当的梅开五度" /><link rel="preload stylesheet" as="style" href="https://wzk0.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+
+  
+  <link rel="preload" as="image" href="https://wzk0.github.io/theme.svg" />
+
+  
+
+  <link rel="preload" as="image" href="https://wzk0.github.io/twitter.svg" /><link rel="preload" as="image" href="https://wzk0.github.io/github.svg" /><link rel="preload" as="image" href="https://wzk0.github.io/rss.svg" />
+
+  <script
+    defer
+    src="https://wzk0.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script><script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+
+  
+  <link
+    rel="icon"
+    href="https://wzk0.github.io/favicon.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://wzk0.github.io/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.152.1">
+  <meta itemprop="name" content="从 Hexo 到 Hugo, 以及一些想说的话">
+  <meta itemprop="description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
+此文章使用 CC-BY-NC 协议.
+目录 前言 如果您是本站的老读者, 一定见证过这样一件奇异的事:
+网站的框架, 域名和主题明明都是好好的, 却还是变来变去!
+没错, 这也就是本站站名的由来. 到了今天, 已经是第五次大变革.
+我好像就是如此一个人. 无论是手机系统, 电脑系统, 亦或是博客系统, 总是在稳定下来后想要换一换.
+那么, 先回忆一下 第一次写博客, 用的是 WordPress. 网站至今还在: https://thdbd666666.wordpress.com/
+在那之前, 我也写过网站. 用那个什么 所见即所得 的写 html 的软件一行一行敲的. 那会儿找到很好看的 css 和 js 都会写一个新网页扔里面. 不过严格来说, 并不能算 网站, 因为我只是在浏览器里预览那些 html, 跳转也是如此.
+2021年7月10日, 已经过去这么久了…
+当时就是觉得有一个自己的网站很酷, 于是有什么东西都想写下来.
+渐渐地, 因为会员限制, 主题限制, 以及 “不酷” 的广告横幅, 我想换个方式了.
+用 WordPress 时, 我还不知道什么叫 markdown, 也不知道所谓 静态博客 和 动态博客.
+我的关键词是 免费建站, 博客. 这样一番搜索下来, 我才知道了上面这三个东西.">
+  <meta itemprop="datePublished" content="2026-02-27T23:19:07+08:00">
+  <meta itemprop="dateModified" content="2026-02-27T23:19:07+08:00">
+  <meta itemprop="wordCount" content="919">
+  <meta itemprop="keywords" content="Talk,Life Quality"><meta property="og:url" content="https://wzk0.github.io/posts/change-to-hugo/">
+  <meta property="og:site_name" content="便当的梅开五度">
+  <meta property="og:title" content="从 Hexo 到 Hugo, 以及一些想说的话">
+  <meta property="og:description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
+此文章使用 CC-BY-NC 协议.
+目录 前言 如果您是本站的老读者, 一定见证过这样一件奇异的事:
+网站的框架, 域名和主题明明都是好好的, 却还是变来变去!
+没错, 这也就是本站站名的由来. 到了今天, 已经是第五次大变革.
+我好像就是如此一个人. 无论是手机系统, 电脑系统, 亦或是博客系统, 总是在稳定下来后想要换一换.
+那么, 先回忆一下 第一次写博客, 用的是 WordPress. 网站至今还在: https://thdbd666666.wordpress.com/
+在那之前, 我也写过网站. 用那个什么 所见即所得 的写 html 的软件一行一行敲的. 那会儿找到很好看的 css 和 js 都会写一个新网页扔里面. 不过严格来说, 并不能算 网站, 因为我只是在浏览器里预览那些 html, 跳转也是如此.
+2021年7月10日, 已经过去这么久了…
+当时就是觉得有一个自己的网站很酷, 于是有什么东西都想写下来.
+渐渐地, 因为会员限制, 主题限制, 以及 “不酷” 的广告横幅, 我想换个方式了.
+用 WordPress 时, 我还不知道什么叫 markdown, 也不知道所谓 静态博客 和 动态博客.
+我的关键词是 免费建站, 博客. 这样一番搜索下来, 我才知道了上面这三个东西.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-27T23:19:07+08:00">
+    <meta property="article:modified_time" content="2026-02-27T23:19:07+08:00">
+    <meta property="article:tag" content="Talk">
+    <meta property="article:tag" content="Life Quality">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="从 Hexo 到 Hugo, 以及一些想说的话">
+  <meta name="twitter:description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
+此文章使用 CC-BY-NC 协议.
+目录 前言 如果您是本站的老读者, 一定见证过这样一件奇异的事:
+网站的框架, 域名和主题明明都是好好的, 却还是变来变去!
+没错, 这也就是本站站名的由来. 到了今天, 已经是第五次大变革.
+我好像就是如此一个人. 无论是手机系统, 电脑系统, 亦或是博客系统, 总是在稳定下来后想要换一换.
+那么, 先回忆一下 第一次写博客, 用的是 WordPress. 网站至今还在: https://thdbd666666.wordpress.com/
+在那之前, 我也写过网站. 用那个什么 所见即所得 的写 html 的软件一行一行敲的. 那会儿找到很好看的 css 和 js 都会写一个新网页扔里面. 不过严格来说, 并不能算 网站, 因为我只是在浏览器里预览那些 html, 跳转也是如此.
+2021年7月10日, 已经过去这么久了…
+当时就是觉得有一个自己的网站很酷, 于是有什么东西都想写下来.
+渐渐地, 因为会员限制, 主题限制, 以及 “不酷” 的广告横幅, 我想换个方式了.
+用 WordPress 时, 我还不知道什么叫 markdown, 也不知道所谓 静态博客 和 动态博客.
+我的关键词是 免费建站, 博客. 这样一番搜索下来, 我才知道了上面这三个东西.">
+
+  <link rel="canonical" href="https://wzk0.github.io/posts/change-to-hugo/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://wzk0.github.io/"
+      >便当的梅开五度</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  ><nav
+      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
+    ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/tags/"
+        >标签</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/categories/"
+        >分类</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >关于</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/4/"
+        >旧文章</a
+      ></nav><nav
+      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
+    >
+      <a
+        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/thd_bd"
+        target="_blank"
+        rel="me"
+      >twitter</a>
+      <a
+        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/wzk0"
+        target="_blank"
+        rel="me"
+      >github</a>
+      <a
+        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://wzk0.github.io/index.xml"
+        target="_blank"
+        rel="alternate"
+      >rss</a>
+    </nav>
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">从 Hexo 到 Hugo, 以及一些想说的话</h1><div class="text-xs antialiased opacity-60"><time>Feb 27, 2026</time></div></header>
+
+  <section><blockquote>
+<p>如果文章中的图片加载不出来, 请您考虑使用代理软件.</p>
+</blockquote>
+<blockquote>
+<p>此文章使用 <kbd>CC-BY-NC</kbd> 协议.</p>
+</blockquote>
+<hr>
+<h2 id="目录">目录</h2>
+<hr>
+<h2 id="前言">前言</h2>
+<p>如果您是本站的老读者, 一定见证过这样一件奇异的事:</p>
+<p>网站的框架, 域名和主题明明都是好好的, 却还是变来变去!</p>
+<p>没错, 这也就是本站站名的由来. 到了今天, 已经是第五次大变革.</p>
+<p>我好像就是如此一个人. 无论是手机系统, 电脑系统, 亦或是博客系统, 总是在稳定下来后想要换一换.</p>
+<hr>
+<h2 id="那么-先回忆一下">那么, 先回忆一下</h2>
+<p>第一次写博客, 用的是 <kbd>WordPress</kbd>. 网站至今还在: <a href="https://thdbd666666.wordpress.com/">https://thdbd666666.wordpress.com/</a></p>
+<blockquote>
+<p>在那之前, 我也写过网站. 用那个什么 <kbd>所见即所得</kbd> 的写 html 的软件一行一行敲的. 那会儿找到很好看的 css 和 js 都会写一个新网页扔里面. 不过严格来说, 并不能算 <kbd>网站</kbd>, 因为我只是在浏览器里预览那些 html, 跳转也是如此.</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-27%2023%3A29%3A37.png" alt=""></p>
+<blockquote>
+<p>2021年7月10日, 已经过去这么久了&hellip;</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-27%2023%3A36%3A09.png" alt=""></p>
+<p>当时就是觉得有一个自己的网站很酷, 于是有什么东西都想写下来.</p>
+<p>渐渐地, 因为会员限制, 主题限制, 以及 <kbd>&ldquo;不酷&rdquo;</kbd> 的广告横幅, 我想换个方式了.</p>
+<p>用 WordPress 时, 我还不知道什么叫 <kbd>markdown</kbd>, 也不知道所谓 <kbd>静态博客</kbd> 和 <kbd>动态博客</kbd>.</p>
+<p>我的关键词是 <kbd>免费建站</kbd>, <kbd>博客</kbd>. 这样一番搜索下来, 我才知道了上面这三个东西.</p>
+<p>以及我的梅开二度: <kbd>GitBook</kbd>: <a href="https://thdbd.gitbook.io/thdbd/">https://thdbd.gitbook.io/thdbd/</a>.</p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-27%2023%3A45%3A38.png" alt=""></p>
+<blockquote>
+<p><kbd>GitBook</kbd> 至今也是很好看啊, 感觉还是能派上一些用场的.</p>
+</blockquote>
+<p>正如那时所言, 学会 markdown 后, 加以 <kbd>GitBook</kbd> 真的很方便.</p>
+<p>不过后来知道了 <kbd>Hexo</kbd> 的存在后, 我又创建了第三个博客: <a href="https://thdbd.github.io/">https://thdbd.github.io/</a>.</p>
+<p>这也是一个 GitHub Pages, 不过用的是另一个账号.</p>
+<p>梅开三度, 我在此期间学会了不少东西: 学会 <kbd>git</kbd>, 学会 <kbd>python</kbd>, 学会写 <kbd>tg bot</kbd> 等等.</p>
+<p>这个时期也产出了大量的博客文章.</p>
+<p>直到那次换系统没备份, 丢了许多文章, 自那以后我才意识到备份的重要性.</p>
+<p>于是, 卷土重来, 梅开四度. 也就是本站的域名.</p>
+<p>梅开四度是时间存在最长的一 <kbd>季</kbd>. 我的博客阅读量上来了, 甚至开始有了评论.</p>
+<p>这些都让我欣喜若狂.</p>
+<p>不过我还是想换. 我想换主题, 想换个简洁一些的, 移动端 UI 美观的, 以及 <kbd>读感</kbd> 更好的.</p>
+<p>于是我想到了 <kbd>Hugo</kbd>, 于是我找到了 <kbd>Paper</kbd> 主题.</p>
+<p>其实在文章数量不多的情况下, Hugo 跟 Hexo 的生成速度相差不大, 而且我目前用的这个主题的功能也不如之前的多.</p>
+<p>可我还是换了.</p>
+<p>我想, 可能是因为在这些换来换去中, 我见过了太多的错, 踩了太多的坑, 即使遇到新的问题, 我也不怕了.</p>
+<p>我花了3个小时来设置我的新的网站.</p>
+<hr>
+<h2 id="转到-hugo-的一些操作">转到 Hugo 的一些操作</h2>
+<p><kbd>Gemini</kbd> 为我总结了一些差别:</p>
+<table>
+  <thead>
+      <tr>
+          <th>特性</th>
+          <th>Hexo</th>
+          <th>Hugo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>安装依赖</strong></td>
+          <td>需要 Node.js, npm</td>
+          <td>单一二进制文件（解压即用）</td>
+      </tr>
+      <tr>
+          <td><strong>文章目录</strong></td>
+          <td><kbd>source/_posts</kbd></td>
+          <td><kbd>content/posts</kbd></td>
+      </tr>
+      <tr>
+          <td><strong>静态资源</strong></td>
+          <td><kbd>source/images</kbd></td>
+          <td><kbd>static/images</kbd></td>
+      </tr>
+      <tr>
+          <td><strong>配置文件</strong></td>
+          <td><kbd>_config.yml</kbd></td>
+          <td><kbd>hugo.toml</kbd>（也支持 yaml/json）</td>
+      </tr>
+      <tr>
+          <td><strong>渲染引擎</strong></td>
+          <td>Nunjucks / Swig / EJS</td>
+          <td>Go Templates</td>
+      </tr>
+  </tbody>
+</table>
+<p>Hugo 存在于 openSUSE 的包管理器中, 且没什么依赖真是一件好事.</p>
+<p>我原先都是为了 Hexo 这碟醋装了 <kbd>nodejs</kbd>, <kbd>npm</kbd> 一系列依赖, 如今储存空间又大了一些.</p>
+<h3 id="建站">建站</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#a6e22e">hugo</span> new site 博客
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> 博客
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">git</span> init
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">git</span> submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
+</span></span></code></pre></div><p>四条命令完成建站.</p>
+<p>同时给大家分享一下我的配置文件:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#39;https://wzk0.github.io/&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#39;zh-CN&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#39;便当的梅开五度&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;paper&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">taxonomies</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">category</span> = <span style="color:#e6db74">&#39;categories&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tag</span> = <span style="color:#e6db74">&#39;tags&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">series</span> = <span style="color:#e6db74">&#39;series&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>]
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">renderer</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">unsafe</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># color style</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">color</span> = <span style="color:#e6db74">&#39;linen&#39;</span>                           <span style="color:#75715e"># linen, wheat, gray, light</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># header social icons</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">twitter</span> = <span style="color:#e6db74">&#39;thd_bd&#39;</span>               <span style="color:#75715e"># twitter.com/YOUR_TWITTER_ID</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">github</span> = <span style="color:#e6db74">&#39;wzk0&#39;</span>                 <span style="color:#75715e"># github.com/YOUR_GITHUB_ID</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">rss</span> = <span style="color:#66d9ef">true</span>                                <span style="color:#75715e"># show rss icon</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># home page profile</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># avatar = &#39;thdbd@qq.com&#39;                 # gravatar email or image url</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># name = &#39;听话的便当&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># bio = &#39;YOUR_BIO&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># misc</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">disableHLJS</span> = <span style="color:#66d9ef">false</span>                        <span style="color:#75715e"># disable highlight.js</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">disablePostNavigation</span> = <span style="color:#66d9ef">false</span>              <span style="color:#75715e"># disable post navigation</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">monoDarkIcon</span> = <span style="color:#66d9ef">true</span>                       <span style="color:#75715e"># show monochrome dark mode icon</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">gravatarCdn</span> = <span style="color:#e6db74">&#39;GRAVATAR_CDN_LINK&#39;</span>         <span style="color:#75715e"># e.g. &#39;https://cdn.v2ex.com/gravatar/&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">math</span> = <span style="color:#66d9ef">true</span>                               <span style="color:#75715e"># enable KaTeX math typesetting globally</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">localKatex</span> = <span style="color:#66d9ef">false</span>                        <span style="color:#75715e"># use local KaTeX js/css instead of CDN</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">favicon</span> = <span style="color:#e6db74">&#34;favicon.png&#34;</span>                   <span style="color:#75715e"># customize the default favicon</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">appleTouchIcon</span> = <span style="color:#e6db74">&#34;apple-touch-icon.png&#34;</span>   <span style="color:#75715e"># customize the default Apple touch icon</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># RTL supprot</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">direction</span> = <span style="color:#e6db74">&#34;ltr&#34;</span>                         <span style="color:#75715e"># RTL support for Right-to-left languages</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># giscus</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">giscus</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">repo</span> = <span style="color:#e6db74">&#39;wzk0/my_giscus&#39;</span>                 <span style="color:#75715e"># see https://giscus.app for more details</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">repoId</span> = <span style="color:#e6db74">&#39;xxxxx&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">category</span> = <span style="color:#e6db74">&#39;Announcements&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">categoryId</span> = <span style="color:#e6db74">&#39;xxxxx&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mapping</span> = <span style="color:#e6db74">&#39;pathname&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#39;light&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lang</span> = <span style="color:#e6db74">&#39;zh-CN&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;tags&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;标签&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/tags/&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;categories&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;分类&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/categories/&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;about&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;关于&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/about/&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">3</span>
+</span></span></code></pre></div><h3 id="配置">配置</h3>
+<p>对于 <kbd>标签</kbd>, <kbd>分类</kbd> 和 <kbd>关于</kbd> 三个页面, 使用以下指令新建:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#a6e22e">hugo</span> new content about.md
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">hugo</span> new content tags/_index.md
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">hugo</span> new content categories/_index.md
+</span></span></code></pre></div><p>对于 <kbd>标签</kbd> 和 <kbd>分类</kbd> 页面, 个人做了一些更改:</p>
+<blockquote>
+<p>👇 博客/themes/paper/layouts/_default/list.html</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{- define &#34;main&#34; -}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- if not .IsHome -}}
+</span></span><span style="display:flex;"><span>{{- if or (eq .Type &#34;tags&#34;) (eq .Type &#34;categories&#34;) -}}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mb-14&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  # {{ .Title }}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>{{- end -}}
+</span></span><span style="display:flex;"><span>{{- end -}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- $pages := .Pages -}}
+</span></span><span style="display:flex;"><span>{{- if .IsHome -}}
+</span></span><span style="display:flex;"><span>{{- $pages = where site.RegularPages &#34;Type&#34; &#34;in&#34; (site.Params.mainSections | default (slice &#34;posts&#34;)) -}}
+</span></span><span style="display:flex;"><span>{{- end -}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- $paginator := .Paginate $pages -}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- range $index, $page := $paginator.Pages -}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- if and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) -}}
+</span></span><span style="display:flex;"><span>{{- $avatar_url := $.Scratch.Get &#34;avatar_url&#34; -}}
+</span></span><span style="display:flex;"><span>{{- if or $avatar_url site.Params.name -}}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mb-12 flex items-center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  {{- if $avatar_url -}}
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;h-24 w-24 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-3 ltr:mr-5 ltr:-ml-1 rtl:-mr-1 rtl:ml-5 dark:bg-white/90!&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;not-prose my-0 h-full w-full rounded-full bg-black/5! hover:animate-spin dark:bg-black/80!&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{- $avatar_url -}}&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{- site.Params.name | default site.Title -}}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  {{- end -}}
+</span></span><span style="display:flex;"><span>  {{- if site.Params.name -}}
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mt-3 mb-1 text-2xl font-medium text-black dark:text-white&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      {{- site.Params.name -}}
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;break-words&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      {{- site.Params.bio | default (print `A personal blog by ` site.Params.name) -}}
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  {{- end -}}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>{{- end -}}
+</span></span><span style="display:flex;"><span>{{- end -}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;relative my-10 first-of-type:mt-0 last-of-type:mb-0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  {{- if gt .Weight 0 -}}
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mb-1 inline-block text-xs tracking-wider text-orange-500&#34;</span>&gt;精选置顶&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>  {{- end -}}
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">h2</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-0!&#34;</span>&gt;{{- .Title -}}&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">time</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-xs antialiased opacity-60&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    Created @{{- .Date | time.Format &#34;:date_medium&#34; -}}
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">time</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;absolute inset-0 text-[0px]&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{- .Permalink -}}&#34;</span>&gt;{{- .Title -}}&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">section</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- end -}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- if gt $paginator.TotalPages 1 -}}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">nav</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mt-14 flex&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  {{- if $paginator.HasPrev -}}
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn not-prose&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{- $paginator.Prev.URL -}}&#34;</span>&gt;← 上一页&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>  {{- end -}}
+</span></span><span style="display:flex;"><span>  {{- if $paginator.HasNext -}}
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn not-prose ml-auto&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{- $paginator.Next.URL -}}&#34;</span>&gt;下一页 →&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>  {{- end -}}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">nav</span>&gt;
+</span></span><span style="display:flex;"><span>{{- end -}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- end -}}
+</span></span></code></pre></div><h3 id="写法">写法</h3>
+<p>Hugo 支持 <kbd>Rich Content</kbd>, 同时我觉得 Paper 的 <kbd>code</kbd> 样式有点丑, 而 <kbd><kbd></kbd> 标签作为 code 似乎更适合.</p>
+<p>遂写一个 <kbd>fish</kbd> 函数处理:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">md2kbd</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">python3</span> <span style="color:#a6e22e">-c</span> <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">import re, os
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">pattern = re.compile(r&#39;(?s)```.*?```|`([^`\\n]+)`&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">def replace(m):
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    if m.group(0).startswith(&#39;```&#39;): return m.group(0)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    return f&#39;&lt;kbd&gt;{m.group(1)}&lt;/kbd&gt;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">for f in [f for f in os.listdir(&#39;.&#39;) if f.endswith(&#39;.md&#39;)]:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    with open(f, &#39;r+&#39;) as file:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        content = file.read()
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        file.seek(0)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        file.write(pattern.sub(replace, content))
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        file.truncate()
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    print(f&#39;Done: {f}&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>执行后会自动把所有 <kbd>`</kbd> 变为 <kbd>&lt; kbd &gt;</kbd>.</p>
+<hr>
+<h2 id="关于旧文章的处理办法">关于旧文章的处理办法</h2>
+<p>由于 Hugo <code>front matter</code> 的 <code>date</code>, <code>tags</code> 和 <code>categories</code> 的命名规则与 Hexo 不同.</p>
+<p>于是我打算将旧文章统一放在 <code>/4</code> 下面. 因此让 <code>Gemini</code> 编写一个 <code>fish</code> 函数来手动处理 <code>hugo build</code> 的产物.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">bup</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">set</span> <span style="color:#a6e22e">-l</span> repo_dir <span style="color:#e6db74">&#34;wzk0.github.io&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">set</span> <span style="color:#a6e22e">-l</span> source_dir <span style="color:#f92672">(</span><span style="color:#a6e22e">pwd</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">set</span> <span style="color:#a6e22e">-l</span> current_time <span style="color:#f92672">(</span><span style="color:#a6e22e">date</span> <span style="color:#e6db74">&#34;+%Y-%m-%d %H:%M:%S&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">test</span> <span style="color:#a6e22e">-d</span> $repo_dir
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">cd</span> $repo_dir
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">find</span> . <span style="color:#a6e22e">-maxdepth</span> <span style="color:#ae81ff">1</span> ! <span style="color:#a6e22e">-name</span> <span style="color:#e6db74">&#39;.git&#39;</span> ! <span style="color:#a6e22e">-name</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#a6e22e">-exec</span> rm <span style="color:#a6e22e">-rf</span> <span style="color:#f92672">{}</span> +
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cp</span> <span style="color:#a6e22e">-R</span> $source_dir/public/* .
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">test</span> <span style="color:#a6e22e">-d</span> <span style="color:#e6db74">&#34;</span>$source_dir<span style="color:#e6db74">/old_blog_backup&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">mkdir</span> <span style="color:#a6e22e">-p</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">cp</span> <span style="color:#a6e22e">-R</span> $source_dir/old_blog_backup/* <span style="color:#ae81ff">4</span>/
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;📤 正在从仓库目录推送...&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">git</span> add .
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">git</span> commit <span style="color:#a6e22e">-m</span> <span style="color:#e6db74">&#34;更新时间: </span>$current_time<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> git push origin <span style="color:#f92672">(</span><span style="color:#a6e22e">git</span> branch <span style="color:#a6e22e">--show-current</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;✨ 部署成功！&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;❌ 推送失败&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">cd</span> $source_dir
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;❌ 错误：找不到仓库目录 </span>$repo_dir<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div></section>
+
+  <footer class="mt-12 flex flex-wrap"><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://wzk0.github.io/tags/talk">Talk</a><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://wzk0.github.io/tags/life-quality">Life Quality</a></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"><a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href="https://wzk0.github.io/posts/my-flutter/"><span>一些flutter自用/好用的库推荐&#43;记录</span><span
+        class="ltr:ml-1.5 rtl:mr-1.5">→</span></a></nav><div class="giscus mt-24! text-black dark:text-white"></div>
+  <script src="https://giscus.app/client.js" data-repo="wzk0/my_giscus"
+    data-repo-id="R_kgDORaQsWQ" data-category="Announcements"
+    data-category-id="DIC_kwDORaQsWc4C3U14"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="0"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    data-loading="lazy" crossorigin="anonymous" async></script></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://wzk0.github.io/">便当的梅开五度</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>
