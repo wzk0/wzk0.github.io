@@ -22,17 +22,30 @@
     <meta name="description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言几个月前将电脑系统换为Ubuntu后, 我从没想到过Linux能带给我比Windows更多的乐趣.  尽管没有经济基础, 上层建筑还是要有的. —-听话的便当  秉持着这个理念, 我发现了不少实用, 美观, 工具类, 娱乐类的软件! 历经摸爬滚打与各种踩坑, 本文就来给大家推荐Debian系上电子书和电视(IPT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux下电子书与电视的解决方案">
-<meta property="og:url" content="https://wzk0.github.io/old/ral/index.html">
+<meta property="og:url" content="https://wzk0.github.io/4/old/ral/index.html">
 <meta property="og:site_name" content="便当的梅开四度">
 <meta property="og:description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言几个月前将电脑系统换为Ubuntu后, 我从没想到过Linux能带给我比Windows更多的乐趣.  尽管没有经济基础, 上层建筑还是要有的. —-听话的便当  秉持着这个理念, 我发现了不少实用, 美观, 工具类, 娱乐类的软件! 历经摸爬滚打与各种踩坑, 本文就来给大家推荐Debian系上电子书和电视(IPT">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/2022115.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202211051158300.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202211051200098.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202211051203101.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202211051204762.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202211051212261.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202211051215510.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202211051301057.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202211051610107.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202211051609728.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202211051640824.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202211051610006.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202211051612253.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202211051610006.png">
+<meta property="og:image" content="https://wzk0.github.io/4/img/thdbd.jpg">
 <meta property="article:published_time" content="2022-11-05T03:13:46.000Z">
-<meta property="article:modified_time" content="2026-01-18T12:31:36.696Z">
+<meta property="article:modified_time" content="2026-02-27T11:40:11.192Z">
 <meta property="article:author" content="听话的便当">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/2022115.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202211051158300.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -62,12 +75,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/4/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/4/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/4/css/highlight-dark.css" />
   
 
 
@@ -76,15 +89,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/4/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/4/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/4/js/utils.js" ></script>
+  <script  src="/4/js/color-schema.js" ></script>
   
 
   
@@ -112,7 +125,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/4/">
       <strong>便当的梅开四度</strong>
     </a>
 
@@ -131,7 +144,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/4/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -143,7 +156,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/4/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -155,7 +168,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/4/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -167,7 +180,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/4/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -179,7 +192,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/4/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -191,7 +204,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/friends/" target="_self">
+              <a class="nav-link" href="/4/friends/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -221,7 +234,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://raw.githubusercontent.com/wzk0/photo/main/2022115.png') no-repeat center center; background-size: cover;">
+     style="background: url('/4/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -345,24 +358,24 @@
 <li><p>…</p>
 </li>
 </ol>
-<h3 id="应用内截图"><a href="#应用内截图" class="headerlink" title="应用内截图"></a>应用内截图</h3><p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051158300.png" srcset="/img/loading.gif" lazyload alt="首页"></p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051200098.png" srcset="/img/loading.gif" lazyload alt="阅读页"></p>
+<h3 id="应用内截图"><a href="#应用内截图" class="headerlink" title="应用内截图"></a>应用内截图</h3><p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051158300.png" srcset="/4/img/loading.gif" lazyload alt="首页"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051200098.png" srcset="/4/img/loading.gif" lazyload alt="阅读页"></p>
 <blockquote>
 <p>可设置<code>自动隐藏</code>顶栏和底栏, 可设置背景色或自定义, 可以用<code>滚轮或键盘</code>翻页, 或者<code>拖拉底栏</code>快速定位:</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051203101.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051203101.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <blockquote>
 <p>当然了, 章节功能也是必不可少的:</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051204762.png" srcset="/img/loading.gif" lazyload alt="如图所示, 章节也可以固定在左侧"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051204762.png" srcset="/4/img/loading.gif" lazyload alt="如图所示, 章节也可以固定在左侧"></p>
 <blockquote>
 <p><code>图片显示</code>与<code>选中文本</code>时:</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051212261.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051212261.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <blockquote>
 <p>网络书源:</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051215510.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051215510.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><code>官方网站</code> &gt;&gt; <a target="_blank" rel="noopener" href="https://johnfactotum.github.io/foliate/">https://johnfactotum.github.io/foliate/</a></p>
 <p>deb安装包<code>直链</code> &gt;&gt; <a target="_blank" rel="noopener" href="https://github.com/johnfactotum/foliate/releases/download/2.6.4/com.github.johnfactotum.foliate_2.6.4_all.deb">https://github.com/johnfactotum/foliate/releases/download/2.6.4/com.github.johnfactotum.foliate_2.6.4_all.deb</a></p>
 <p>下载后, 在所在文件夹打开终端, 输入:</p>
@@ -387,7 +400,7 @@
 <p>安装后, 打开<code>Foliate(我们的电子书软件)</code>, 在右上角<code>三道杠</code>处选择<code>偏好设置</code>, 往下翻动找到<code>文字转语音命令</code>, 在此处填写:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">espeak -vzh <br></code></pre></td></tr></table></figure>
 
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051301057.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051301057.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>之后就可以在阅读过程中使用<code>朗读功能</code>啦!</p>
 <blockquote>
 <p>当然, 如果你有更好的<code>本地中文tts软件</code>, 也可以将此处的指令改为更好的那个.</p>
@@ -404,10 +417,10 @@
 <li><p>…</p>
 </li>
 </ol>
-<h3 id="应用内截图-1"><a href="#应用内截图-1" class="headerlink" title="应用内截图"></a>应用内截图</h3><p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051610107.png" srcset="/img/loading.gif" lazyload alt="首页"></p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051609728.png" srcset="/img/loading.gif" lazyload alt="播放界面"></p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051640824.png" srcset="/img/loading.gif" lazyload alt="播放界面"></p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051610006.png" srcset="/img/loading.gif" lazyload alt="设置页"></p>
+<h3 id="应用内截图-1"><a href="#应用内截图-1" class="headerlink" title="应用内截图"></a>应用内截图</h3><p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051610107.png" srcset="/4/img/loading.gif" lazyload alt="首页"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051609728.png" srcset="/4/img/loading.gif" lazyload alt="播放界面"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051640824.png" srcset="/4/img/loading.gif" lazyload alt="播放界面"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051610006.png" srcset="/4/img/loading.gif" lazyload alt="设置页"></p>
 <h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p><code>官方Github</code> &gt;&gt; <a target="_blank" rel="noopener" href="https://github.com/linuxmint/hypnotix">https://github.com/linuxmint/hypnotix</a></p>
 <p>deb压缩包<code>直链</code> &gt;&gt; <a target="_blank" rel="noopener" href="https://github.com/linuxmint/hypnotix/releases/download/master.mint21/packages.tar.gz">https://github.com/linuxmint/hypnotix/releases/download/master.mint21/packages.tar.gz</a></p>
 <blockquote>
@@ -423,7 +436,7 @@
 </blockquote>
 <h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><p>如果要使用<code>Hypnotix</code>, <code>不能</code>直接双击软件图标使用(<code>Ubuntu用户</code>刚下载没设置后).</p>
 <p>因为官方告诉我们:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051612253.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051612253.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <blockquote>
 <p>Ubuntu自<code>21.04</code>起, 默认使用的<code>桌面显示服务器</code>正是<code>Wayland</code>.</p>
 <p>不过我也不知道开发者是怎么回事, 标题写的是<code>Wayland</code>, 而设置内容却是<code>x11</code>…</p>
@@ -437,7 +450,7 @@
 
 <p>以后就可以用<code>tv</code>这个指令启动啦!</p>
 <p>启动后, 需要点击<code>右上角齿轮</code>&#x2F;<code>回放</code>, 在此处填写<code>vo=x11</code>.</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051610006.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202211051610006.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p><code>Hypnotix</code>本身带了一份电视源, 可以用这个测试一下是否可以正常使用.</p>
 <p>添加直播源只需点击<code>右上角</code>齿轮旁边的<code>小方框</code>.</p>
 <h3 id="直播源"><a href="#直播源" class="headerlink" title="直播源"></a>直播源</h3><p>这里我也提供几个<code>可用的</code>直播源:</p>
@@ -456,7 +469,7 @@
 <hr>
 <p>欢迎大家在评论区分享<code>本地中文tts软件</code>或<code>自己测试过可用的直播源</code>!</p>
 <p>我是<strong>听话的便当</strong>.</p>
-<p><img src="/img/thdbd.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/4/img/thdbd.jpg" srcset="/4/img/loading.gif" lazyload></p>
 <p>Bye~❛‿˂̵✧</p>
 
                 
@@ -476,7 +489,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/NOTE/" class="category-chain-item">NOTE</a>
+  <a href="/4/categories/NOTE/" class="category-chain-item">NOTE</a>
   
   
 
@@ -491,7 +504,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+        <a href="/4/tags/Linux/" class="print-no-link">#Linux</a>
       
     </div>
   
@@ -504,7 +517,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Linux下电子书与电视的解决方案</div>
-      <div>https://wzk0.github.io/old/ral/</div>
+      <div>https://wzk0.github.io/4/old/ral/</div>
     </div>
     <div class="license-meta">
       
@@ -554,7 +567,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/old/cpl/" title="给Chrome设置代理的方法">
+                      <a href="/4/old/cpl/" title="给Chrome设置代理的方法">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">给Chrome设置代理的方法</span>
                         <span class="visible-mobile">上一篇</span>
@@ -564,7 +577,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/old/omz/" title="Oh My Zsh玩法">
+                      <a href="/4/old/omz/" title="Oh My Zsh玩法">
                         <span class="hidden-mobile">Oh My Zsh玩法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -754,8 +767,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/4/js/events.js" ></script>
+<script  src="/4/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -777,7 +790,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/4/js/img-lazyload.js" ></script>
   
 
 
@@ -876,7 +889,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/4/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -886,7 +899,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/4/js/boot.js" ></script>
 
 
   

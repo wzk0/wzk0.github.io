@@ -22,17 +22,20 @@
     <meta name="description" content="点击获得封面头图  这一阵子迷上了Python. 因为是零基础的计算机小白，对于现在的主流语言一窍不通的我，选择了学习Python这门易上手，实用性强的语言. 于是，便诞生了这篇文章——一个纯小白第一次写Python程序的全记录.  什么是Python虽然一开头就介绍了Python的两个特点，但不过是寥寥. 我们来看一下维基百科对Python的解释:  Python通用高级编程语言是一种广泛使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第一个Python小程序全记录">
-<meta property="og:url" content="https://wzk0.github.io/old/py/index.html">
+<meta property="og:url" content="https://wzk0.github.io/4/old/py/index.html">
 <meta property="og:site_name" content="便当的梅开四度">
 <meta property="og:description" content="点击获得封面头图  这一阵子迷上了Python. 因为是零基础的计算机小白，对于现在的主流语言一窍不通的我，选择了学习Python这门易上手，实用性强的语言. 于是，便诞生了这篇文章——一个纯小白第一次写Python程序的全记录.  什么是Python虽然一开头就介绍了Python的两个特点，但不过是寥寥. 我们来看一下维基百科对Python的解释:  Python通用高级编程语言是一种广泛使用">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/Tumblr_l_56779837917922.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-27-22-24-42-22.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/%E6%AD%8C%E8%AF%8D.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-27-22-37-01-43.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-27-22-47-01-20.jpg">
 <meta property="article:published_time" content="2021-11-22T21:03:31.000Z">
-<meta property="article:modified_time" content="2026-01-18T12:31:36.696Z">
+<meta property="article:modified_time" content="2026-02-27T11:40:11.189Z">
 <meta property="article:author" content="听话的便当">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/Tumblr_l_56779837917922.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-27-22-24-42-22.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -62,12 +65,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/4/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/4/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/4/css/highlight-dark.css" />
   
 
 
@@ -76,15 +79,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/4/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/4/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/4/js/utils.js" ></script>
+  <script  src="/4/js/color-schema.js" ></script>
   
 
   
@@ -112,7 +115,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/4/">
       <strong>便当的梅开四度</strong>
     </a>
 
@@ -131,7 +134,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/4/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -143,7 +146,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/4/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -155,7 +158,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/4/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -167,7 +170,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/4/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -179,7 +182,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/4/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -191,7 +194,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/friends/" target="_self">
+              <a class="nav-link" href="/4/friends/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -221,7 +224,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://raw.githubusercontent.com/wzk0/photo/main/Tumblr_l_56779837917922.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/4/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -427,7 +430,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">import requests <span class="hljs-comment">##导入requests插件</span><br><br>url = <span class="hljs-string">&quot;https://wzk0.github.io&quot;</span>  <span class="hljs-comment">##定义一个待访问的页面为变量&quot;url&quot;</span><br><br>r = requests.get(url) <span class="hljs-comment">##通过requests请求url，并将返回结果定义为变量&quot;r&quot;</span><br><br><span class="hljs-built_in">print</span>(r.text) <span class="hljs-comment">##以文本格式输出r</span><br></code></pre></td></tr></table></figure>
 
 <p>我们来看看运行结果:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-27-22-24-42-22.jpg" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-27-22-24-42-22.jpg" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>是不是很神奇?返回并且输出了HTML代码呢！</p>
 <p>但是里面有很多<code>我们不需要的东西</code>，比如标签什么的.</p>
 <p>那么我们怎么筛选呢?</p>
@@ -436,14 +439,14 @@
 </blockquote>
 <h2 id="插件的使用——json"><a href="#插件的使用——json" class="headerlink" title="插件的使用——json"></a>插件的使用——json</h2><p>json是一种<code>人类可读</code>的语言，我将其称为<code>条理清晰的卡片语言</code>.</p>
 <p>为什么这么说呢，看一张图就明白了:</p>
-<p><img src="https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/%E6%AD%8C%E8%AF%8D.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/%E6%AD%8C%E8%AF%8D.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>这种格式简直比HTML好看不止一点点啊！</p>
 <p>而此时我们访问的这个url，便是下一个子标题要说明的<code>API</code>.</p>
 <p>不懂没有关系！把上一个子标题中的url换一个即可.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">import requests<br>import json  <span class="hljs-comment">##导入插件</span><br><br>url = <span class="hljs-string">&quot;https://autumnfish.cn/search/hot/detail&quot;</span>  <span class="hljs-comment">##定义一个待访问的页面为变量&quot;url&quot;</span><br><br>r = requests.get(url) <span class="hljs-comment">##通过requests请求url，并将返回结果定义为变量&quot;r&quot;</span><br><br>temp = json.loads(r.text) <span class="hljs-comment">##将json格式转换成text格式</span><br><br><span class="hljs-built_in">print</span>(temp) <span class="hljs-comment">##以文本格式输出temp</span><br></code></pre></td></tr></table></figure>
 
 <p>结果如图所示:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-27-22-37-01-43.jpg" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-27-22-37-01-43.jpg" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>可以看到，返回了一大串数据，但却不像HTML一样杂乱.</p>
 <p>这种格式就叫做json！</p>
 <p>那么怎么实现只输出想要的那部分呢?比如说我只想输出返回数据中的”还是会想你”，怎么做呢?</p>
@@ -451,7 +454,7 @@
 <p>而在这些之前，他们都被包括在一个名为’data’的东西里.</p>
 <p>所以，我们只要先输出’data’，再输出’searchWord’就行了！</p>
 <p>我们来试一下:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-27-22-47-01-20.jpg" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-27-22-47-01-20.jpg" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>最后，我们通过输出<code>temp[&#39;data&#39;][0][&#39;searchWord&#39;]</code>这个东西，来实现了输出”还是会想你”.</p>
 <p>再来分析一遍:</p>
 <p>第一次我输出了<code>temp[&#39;data&#39;]</code>，可以看到原本开头的<code>code</code>等东西都被过滤了.</p>
@@ -493,7 +496,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/EDITOR/" class="category-chain-item">EDITOR</a>
+  <a href="/4/categories/EDITOR/" class="category-chain-item">EDITOR</a>
   
   
 
@@ -508,7 +511,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Python/" class="print-no-link">#Python</a>
+        <a href="/4/tags/Python/" class="print-no-link">#Python</a>
       
     </div>
   
@@ -521,7 +524,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>第一个Python小程序全记录</div>
-      <div>https://wzk0.github.io/old/py/</div>
+      <div>https://wzk0.github.io/4/old/py/</div>
     </div>
     <div class="license-meta">
       
@@ -571,7 +574,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/old/hx/" title="使用Termux制作Hexo的详细攻略">
+                      <a href="/4/old/hx/" title="使用Termux制作Hexo的详细攻略">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">使用Termux制作Hexo的详细攻略</span>
                         <span class="visible-mobile">上一篇</span>
@@ -581,7 +584,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/old/win11/" title="如何在VMware上运行Windows11">
+                      <a href="/4/old/win11/" title="如何在VMware上运行Windows11">
                         <span class="hidden-mobile">如何在VMware上运行Windows11</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -771,8 +774,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/4/js/events.js" ></script>
+<script  src="/4/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -794,7 +797,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/4/js/img-lazyload.js" ></script>
   
 
 
@@ -893,7 +896,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/4/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -903,7 +906,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/4/js/boot.js" ></script>
 
 
   

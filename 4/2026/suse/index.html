@@ -22,7 +22,7 @@
     <meta name="description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件   此文章使用CC-BY-NC协议   大家好, 我是便当. 继上一篇说到, 近期我换了openSUSE Tumbleweed. 这个发行版与我之前使用的都不同. 我原先为了更好的软件生态, 要不然选择Debian系, 要不然选择Fedora(RedHat)系, 也就是包管理器为apt &#x2F; dnf的发行版. 一直到去年大概9月份左右, 我一直都">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我为什么选择openSUSE Tumbleweed(附联想小新安装suse后扬声器与麦克风无效的修复过程)">
-<meta property="og:url" content="https://wzk0.github.io/2026/suse/index.html">
+<meta property="og:url" content="https://wzk0.github.io/4/2026/suse/index.html">
 <meta property="og:site_name" content="便当的梅开四度">
 <meta property="og:description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件   此文章使用CC-BY-NC协议   大家好, 我是便当. 继上一篇说到, 近期我换了openSUSE Tumbleweed. 这个发行版与我之前使用的都不同. 我原先为了更好的软件生态, 要不然选择Debian系, 要不然选择Fedora(RedHat)系, 也就是包管理器为apt &#x2F; dnf的发行版. 一直到去年大概9月份左右, 我一直都">
 <meta property="og:locale" content="zh_CN">
@@ -34,9 +34,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2011%3A26%3A13.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2012%3A11%3A14.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2012%3A10%3A45.png">
-<meta property="og:image" content="https://wzk0.github.io/img/thdbd.jpg">
+<meta property="og:image" content="https://wzk0.github.io/4/img/thdbd.jpg">
 <meta property="article:published_time" content="2026-01-19T01:10:47.000Z">
-<meta property="article:modified_time" content="2026-02-20T11:56:06.344Z">
+<meta property="article:modified_time" content="2026-02-27T11:40:11.203Z">
 <meta property="article:author" content="听话的便当">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -70,12 +70,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/4/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/4/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/4/css/highlight-dark.css" />
   
 
 
@@ -84,15 +84,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/4/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/4/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/4/js/utils.js" ></script>
+  <script  src="/4/js/color-schema.js" ></script>
   
 
   
@@ -120,7 +120,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/4/">
       <strong>便当的梅开四度</strong>
     </a>
 
@@ -139,7 +139,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/4/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -151,7 +151,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/4/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -163,7 +163,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/4/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -175,7 +175,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/4/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -187,7 +187,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/4/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -199,7 +199,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/friends/" target="_self">
+              <a class="nav-link" href="/4/friends/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -229,7 +229,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2012%3A11%3A14.png') no-repeat center center; background-size: cover;">
+     style="background: url('/4/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -338,27 +338,27 @@
 </blockquote>
 <p>到了前天, 我也不知道为什么, 可能是看到一些gtk app里还在用<code>gtk2 / 3</code>那一套UI组件, 可能是别的, 想换发行版的心思愈加强烈, 达到了顶峰, 便打开了<a target="_blank" rel="noopener" href="https://distrowatch.com/dwres.php?resource=popularity">DistroWatch的排行榜</a>.</p>
 <p><strong>DistroWatch</strong>是一个专门查看Linux发行版(以及BSD)信息和热度的网站, 这个环节我没有让AI插手.</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2011%3A02%3A27.png" srcset="/img/loading.gif" lazyload alt="也就是在这时, 我遇见了suse"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2011%3A02%3A27.png" srcset="/4/img/loading.gif" lazyload alt="也就是在这时, 我遇见了suse"></p>
 <p>suse目前排名10~11位左右, 前面的发行版十之八九我都使用过, 唯独suse只在当年测试华为笔记本时安装过, 最后没成功, 就再也没接触了.</p>
 <p>我先后下载了这几个发行版:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2011%3A07%3A25.png" srcset="/img/loading.gif" lazyload alt="win11是之前的啦"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2011%3A07%3A25.png" srcset="/4/img/loading.gif" lazyload alt="win11是之前的啦"></p>
 <blockquote>
 <p>甚至还有BSD</p>
 </blockquote>
 <p>在问过AI后, 我从suse开始了安装之旅.</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2011%3A11%3A32.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2011%3A11%3A32.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <h2 id="为什么选择suse"><a href="#为什么选择suse" class="headerlink" title="为什么选择suse"></a>为什么选择suse</h2><p>因为个人喜欢<code>GNOME桌面</code>, 迄今为止用过的所有发行版使用的也都是GNOME. 所以开机的时候并没有太多陌生感. </p>
 <p>我先选择的是<code>live iso</code>而非<code>dvd</code>, 原因便是我想看看suse到底有哪些不同.</p>
 <p>首先便是系统软件, 有很多YaST开头的东西.</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2011%3A18%3A55.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2011%3A20%3A55.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2011%3A18%3A55.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2011%3A20%3A55.png" srcset="/4/img/loading.gif" lazyload></p>
 <blockquote>
 <p>但后续逛Reddit, 发现YaST套件<a target="_blank" rel="noopener" href="https://www.reddit.com/r/openSUSE/comments/1kcv9iw/farewell_yast/">要被弃用了</a></p>
 </blockquote>
 <p>这些影响不大, 我可能也不会用到太多次.</p>
 <p>但! 随后!!</p>
 <p>我发现了一件令我震惊的事!</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2011%3A26%3A13.png" srcset="/img/loading.gif" lazyload alt="支持120Hz刷新率"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2011%3A26%3A13.png" srcset="/4/img/loading.gif" lazyload alt="支持120Hz刷新率"></p>
 <p>在用过的所有发行版中, 刷新率最高也就支持60Hz, suse居然能支持120.</p>
 <p>这直接坚定了我选择suse的心. 但秉着不浪费的原则, 我把其他下载过的发行版也依次试了一下.</p>
 <ul>
@@ -429,8 +429,8 @@
 </blockquote>
 <p>随后重启, 成功修复!</p>
 <h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>suse分为两个版本, 一个是我正在使用的<code>Tumbleweed(风滚草)</code>, 另一个是<code>Leap</code>.</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2012%3A11%3A14.png" srcset="/img/loading.gif" lazyload alt="Tumbleweed"></p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2012%3A10%3A45.png" srcset="/img/loading.gif" lazyload alt="Leap"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2012%3A11%3A14.png" srcset="/4/img/loading.gif" lazyload alt="Tumbleweed"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-01-19%2012%3A10%3A45.png" srcset="/4/img/loading.gif" lazyload alt="Leap"></p>
 <p>可以看到, <code>Leap</code>后面带了版本号, 说明<code>Leap</code>就像Debian, Ubuntu, Fedora一样, 并非滚动更新, 具有相对的稳定性.</p>
 <p>而<code>Tumbleweed</code>则是滚动更新, 同时包含了强大的回滚工具, 这意味着它没有所谓的大版本更新, 而每次更新软件包(实际上<code>Tumbleweed</code>不能仅更新单独的软件包)都是整个系统级的update, 都会创建一次快照, 便于回滚.</p>
 <p>因此, 正如上面所说, <strong>不能</strong>在<code>Tumbleweed</code>中执行<code>sudo zypper update</code>. 应当执行:</p>
@@ -441,7 +441,7 @@
 </blockquote>
 <hr>
 <p>我是<strong>听话的便当</strong>.</p>
-<p><img src="/img/thdbd.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/4/img/thdbd.jpg" srcset="/4/img/loading.gif" lazyload></p>
 <p>Bye~❛‿˂̵✧</p>
 
                 
@@ -461,7 +461,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Note/" class="category-chain-item">Note</a>
+  <a href="/4/categories/Note/" class="category-chain-item">Note</a>
   
   
 
@@ -476,7 +476,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+        <a href="/4/tags/Linux/" class="print-no-link">#Linux</a>
       
     </div>
   
@@ -489,7 +489,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>我为什么选择openSUSE Tumbleweed(附联想小新安装suse后扬声器与麦克风无效的修复过程)</div>
-      <div>https://wzk0.github.io/2026/suse/</div>
+      <div>https://wzk0.github.io/4/2026/suse/</div>
     </div>
     <div class="license-meta">
       
@@ -539,7 +539,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/g-ext/" title="精挑细选的12个GNOME扩展合集">
+                      <a href="/4/2026/g-ext/" title="精挑细选的12个GNOME扩展合集">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">精挑细选的12个GNOME扩展合集</span>
                         <span class="visible-mobile">上一篇</span>
@@ -549,7 +549,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/back/" title="关于我在2026年终于又开始写博客的这件事">
+                      <a href="/4/2026/back/" title="关于我在2026年终于又开始写博客的这件事">
                         <span class="hidden-mobile">关于我在2026年终于又开始写博客的这件事</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -739,8 +739,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/4/js/events.js" ></script>
+<script  src="/4/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -762,7 +762,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/4/js/img-lazyload.js" ></script>
   
 
 
@@ -861,7 +861,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/4/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -871,7 +871,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/4/js/boot.js" ></script>
 
 
   

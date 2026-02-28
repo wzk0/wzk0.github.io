@@ -22,18 +22,20 @@
     <meta name="description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   背景昨晚补充完整好博客文章后，用一键脚本美滋滋地上传了， 结果今天早上打开博客的时候发现– 居然没更新上！！ 我急忙查看了一下仓库的源代码，发现HTML的内容已经存在了，但并没有在Github Pages上出现， 这究竟是怎么回事呢?🤔我开始了如下的调查.  发现了原因我们梳理一下整个过程(对于任意一种错误，我的处">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo无法被渲染到Page的处理">
-<meta property="og:url" content="https://wzk0.github.io/old/hx-w/index.html">
+<meta property="og:url" content="https://wzk0.github.io/4/old/hx-w/index.html">
 <meta property="og:site_name" content="便当的梅开四度">
 <meta property="og:description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   背景昨晚补充完整好博客文章后，用一键脚本美滋滋地上传了， 结果今天早上打开博客的时候发现– 居然没更新上！！ 我急忙查看了一下仓库的源代码，发现HTML的内容已经存在了，但并没有在Github Pages上出现， 这究竟是怎么回事呢?🤔我开始了如下的调查.  发现了原因我们梳理一下整个过程(对于任意一种错误，我的处">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_215140_547.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211229_013211.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211229_013622.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211229_013703.jpg">
 <meta property="article:published_time" content="2021-12-28T05:24:38.000Z">
-<meta property="article:modified_time" content="2026-01-18T12:31:36.692Z">
+<meta property="article:modified_time" content="2026-02-27T11:40:11.178Z">
 <meta property="article:author" content="听话的便当">
 <meta property="article:tag" content="Git">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_215140_547.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211229_013211.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -63,12 +65,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/4/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/4/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/4/css/highlight-dark.css" />
   
 
 
@@ -77,15 +79,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/4/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/4/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/4/js/utils.js" ></script>
+  <script  src="/4/js/color-schema.js" ></script>
   
 
   
@@ -113,7 +115,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/4/">
       <strong>便当的梅开四度</strong>
     </a>
 
@@ -132,7 +134,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/4/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -144,7 +146,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/4/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -156,7 +158,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/4/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -168,7 +170,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/4/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -180,7 +182,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/4/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -192,7 +194,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/friends/" target="_self">
+              <a class="nav-link" href="/4/friends/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -222,7 +224,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_215140_547.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/4/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -344,13 +346,13 @@
 </blockquote>
 <hr>
 <h2 id="找到了问题"><a href="#找到了问题" class="headerlink" title="找到了问题"></a>找到了问题</h2><p>于是我详细查看了仓库，发现了一个不同寻常的地方——</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211229_013211.jpg" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211229_013211.jpg" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>在<code>Actions(活动)</code>页面居然出现了错误情况！(红色和灰色)</p>
 <blockquote>
 <p>话说我之前从来没看过Github的这个页面，这次是随便翻的时候发现了🌚(遇到报错，先随便找找)</p>
 </blockquote>
 <p>我们打开看一下具体是什么问题:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211229_013622.jpg" srcset="/img/loading.gif" lazyload alt="问题"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211229_013622.jpg" srcset="/4/img/loading.gif" lazyload alt="问题"></p>
 <p>果然，问题与我无关，是<code>Github Pages Bot</code>出的错！</p>
 <hr>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>本来呢，到这个时候我都已经准备删库了.</p>
@@ -358,7 +360,7 @@
 <p>啥鬼问题，什么报错，我都没见过啊…好像很严重，还有什么<code>Docker</code>啊..居然还是等级<code>1</code>的报错！</p>
 </blockquote>
 <p>但是直到我发现了这个按钮——</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211229_013703.jpg" srcset="/img/loading.gif" lazyload alt="按钮"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211229_013703.jpg" srcset="/4/img/loading.gif" lazyload alt="按钮"></p>
 <p>只需要点击一下然后等待下面变绿就可以啦！</p>
 <blockquote>
 <p>如果一下不行，那就两下</p>
@@ -388,7 +390,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/EDITOR/" class="category-chain-item">EDITOR</a>
+  <a href="/4/categories/EDITOR/" class="category-chain-item">EDITOR</a>
   
   
 
@@ -403,9 +405,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Git/" class="print-no-link">#Git</a>
+        <a href="/4/tags/Git/" class="print-no-link">#Git</a>
       
-        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+        <a href="/4/tags/Hexo/" class="print-no-link">#Hexo</a>
       
     </div>
   
@@ -418,7 +420,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Hexo无法被渲染到Page的处理</div>
-      <div>https://wzk0.github.io/old/hx-w/</div>
+      <div>https://wzk0.github.io/4/old/hx-w/</div>
     </div>
     <div class="license-meta">
       
@@ -468,7 +470,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/old/nn/" title="nano编辑器的简明完整用法">
+                      <a href="/4/old/nn/" title="nano编辑器的简明完整用法">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">nano编辑器的简明完整用法</span>
                         <span class="visible-mobile">上一篇</span>
@@ -478,7 +480,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/old/gu/" title="一看就会的Git基础用法(Termux及Linux用户)">
+                      <a href="/4/old/gu/" title="一看就会的Git基础用法(Termux及Linux用户)">
                         <span class="hidden-mobile">一看就会的Git基础用法(Termux及Linux用户)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -668,8 +670,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/4/js/events.js" ></script>
+<script  src="/4/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -691,7 +693,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/4/js/img-lazyload.js" ></script>
   
 
 
@@ -790,7 +792,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/4/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -800,7 +802,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/4/js/boot.js" ></script>
 
 
   

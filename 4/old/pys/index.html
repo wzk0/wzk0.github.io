@@ -22,18 +22,31 @@
     <meta name="description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言一直觉得自己Ubuntu上的Python3.x版本较老, 于是今天心血来潮到Python官网看了一下最新的版本号.  最新稳定版是3.11.0, 而我的是3.10.6, 也没有差几个版本.  不过在我关闭网页之前, 打开了3.11.0版本的页面, 然后就看到了:  快了10%~60%! 虽然我一直没真正体会到Py">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次Python 3.11.0的编译安装过程">
-<meta property="og:url" content="https://wzk0.github.io/old/pys/index.html">
+<meta property="og:url" content="https://wzk0.github.io/4/old/pys/index.html">
 <meta property="og:site_name" content="便当的梅开四度">
 <meta property="og:description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言一直觉得自己Ubuntu上的Python3.x版本较老, 于是今天心血来潮到Python官网看了一下最新的版本号.  最新稳定版是3.11.0, 而我的是3.10.6, 也没有差几个版本.  不过在我关闭网页之前, 打开了3.11.0版本的页面, 然后就看到了:  快了10%~60%! 虽然我一直没真正体会到Py">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/2022-12-1-cover.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202212011543042.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202212011544829.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202212011547194.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202212011555171.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202212011612887.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202212011613593.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202212011617190.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202212011618438.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202212011618390.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202212011625557.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202212011629277.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202212011631736.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202212011646564.png">
+<meta property="og:image" content="https://wzk0.github.io/4/img/thdbd.jpg">
 <meta property="article:published_time" content="2022-12-01T07:40:31.000Z">
-<meta property="article:modified_time" content="2026-01-18T12:31:36.696Z">
+<meta property="article:modified_time" content="2026-02-27T11:40:11.190Z">
 <meta property="article:author" content="听话的便当">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/2022-12-1-cover.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/202212011543042.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -63,12 +76,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/4/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/4/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/4/css/highlight-dark.css" />
   
 
 
@@ -77,15 +90,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/4/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/4/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/4/js/utils.js" ></script>
+  <script  src="/4/js/color-schema.js" ></script>
   
 
   
@@ -113,7 +126,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/4/">
       <strong>便当的梅开四度</strong>
     </a>
 
@@ -132,7 +145,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/4/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -144,7 +157,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/4/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -156,7 +169,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/4/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -168,7 +181,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/4/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -180,7 +193,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/4/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -192,7 +205,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/friends/" target="_self">
+              <a class="nav-link" href="/4/friends/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -222,7 +235,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://raw.githubusercontent.com/wzk0/photo/main/2022-12-1-cover.png') no-repeat center center; background-size: cover;">
+     style="background: url('/4/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -321,11 +334,11 @@
 </blockquote>
 <hr>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一直觉得自己Ubuntu上的<code>Python3.x</code>版本较老, 于是今天心血来潮到<a target="_blank" rel="noopener" href="https://python.org/">Python官网</a>看了一下最新的版本号.</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011543042.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011543042.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>最新稳定版是<code>3.11.0</code>, 而我的是<code>3.10.6</code>, 也没有差几个版本.</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011544829.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011544829.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>不过在我关闭网页之前, 打开了<code>3.11.0</code>版本的页面, 然后就看到了:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011547194.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011547194.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>快了10%~60%! 虽然我一直没真正体会到Python的运行效果到底有多慢, 不过这个数字还是很让人兴奋的!</p>
 <p>所以尝试从源代码编译安装<code>Python 3.11.0</code>. 并且尽量不使用搜索引擎.</p>
 <p>使用系统: <code>Ubuntu 22.04.1</code>.</p>
@@ -341,7 +354,7 @@
 <p>打开终端, 执行:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">./configure<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011555171.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011555171.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <blockquote>
 <p>md…居然一次性配置成功了…</p>
 </blockquote>
@@ -369,36 +382,36 @@
 <p>于是谷歌了第二次. 嘿嘿.</p>
 </blockquote>
 <p>通过谷歌发现了cpython的 <a target="_blank" rel="noopener" href="https://github.com/python/cpython/issues/94526">#94526</a>, 里面说是路径编码的问题.</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011612887.png" srcset="/img/loading.gif" lazyload alt="md, 确实是有中文路径了..."></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011612887.png" srcset="/4/img/loading.gif" lazyload alt="md, 确实是有中文路径了..."></p>
 <p>换到一个新文件夹, 这次路径中没有中文了.</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011613593.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011613593.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>那么这次, 以root身份再次执行上面的指令.</p>
 <p>104秒, 编译成功!</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011617190.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011617190.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>输入指令:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">sudo</span> make install<br></code></pre></td></tr></table></figure>
 
 <p>安装成功!</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011618438.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011618438.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>查看Python版本:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">python3 --version<br></code></pre></td></tr></table></figure>
 
 <p>需要刷新一下:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">hash</span> -r<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011618390.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011618390.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>成功啦!</p>
 <h2 id="但是"><a href="#但是" class="headerlink" title="但是"></a>但是</h2><p>当我尝试运行之前写过的Python程序时, 出现了缺少其他曾经安装过的依赖的报错.</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011625557.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011625557.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>很容易联想到是因为root用户的原因. 于是使用普通用户编译. 不过尝试用普通用户安装时报错权限不够(这也是必然的).</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011629277.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011629277.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>但以root身份安装后, 依旧报错. <code>普通用户编译</code>+<code>root用户安装</code>的方法还是失败了:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011631736.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011631736.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <blockquote>
 <p>实际上有一个方法, 就是以<code>sudo pip install xxx</code>的方式再次安装一遍依赖. 但是当曾经的依赖安装得很多的时候, 这个方法不是很合适.</p>
 </blockquote>
 <p>于是查看了模块的路径:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011646564.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202212011646564.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <blockquote>
 <p>模块可以通过<code>sys.path</code>查看.</p>
 </blockquote>
@@ -426,7 +439,7 @@
 <p>这一点, 有点像<code>npm</code>与<code>npm -g</code>(也有点区别…).</p>
 <hr>
 <p>我是<strong>听话的便当</strong>.</p>
-<p><img src="/img/thdbd.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/4/img/thdbd.jpg" srcset="/4/img/loading.gif" lazyload></p>
 <p>Bye~❛‿˂̵✧</p>
 
                 
@@ -446,7 +459,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/EDITOR/" class="category-chain-item">EDITOR</a>
+  <a href="/4/categories/EDITOR/" class="category-chain-item">EDITOR</a>
   
   
 
@@ -461,9 +474,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+        <a href="/4/tags/Linux/" class="print-no-link">#Linux</a>
       
-        <a href="/tags/Python/" class="print-no-link">#Python</a>
+        <a href="/4/tags/Python/" class="print-no-link">#Python</a>
       
     </div>
   
@@ -476,7 +489,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>记一次Python 3.11.0的编译安装过程</div>
-      <div>https://wzk0.github.io/old/pys/</div>
+      <div>https://wzk0.github.io/4/old/pys/</div>
     </div>
     <div class="license-meta">
       
@@ -526,7 +539,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/old/erd/" title="记一次Linux钉钉对syslog的异常写入行为">
+                      <a href="/4/old/erd/" title="记一次Linux钉钉对syslog的异常写入行为">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">记一次Linux钉钉对syslog的异常写入行为</span>
                         <span class="visible-mobile">上一篇</span>
@@ -536,7 +549,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/old/gne/" title="精挑细选的20个Gnome插件合集">
+                      <a href="/4/old/gne/" title="精挑细选的20个Gnome插件合集">
                         <span class="hidden-mobile">精挑细选的20个Gnome插件合集</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -726,8 +739,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/4/js/events.js" ></script>
+<script  src="/4/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -749,7 +762,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/4/js/img-lazyload.js" ></script>
   
 
 
@@ -848,7 +861,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/4/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -858,7 +871,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/4/js/boot.js" ></script>
 
 
   

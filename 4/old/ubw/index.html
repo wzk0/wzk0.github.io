@@ -22,13 +22,13 @@
     <meta name="description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言其实本篇文章的大量内容都来自于我最近的一个仓库中的README. 不过由于README的字数远远大于代码量!!! 于是我决定引用一下,写到博客里. 同时也记录一些学习过程.  起因如果你也使用Ubuntu系统(Ubuntu 22.04.1 LTS)的话,会发现: 尽管系统自带的录屏工具很好用,但是最后录制的格式却">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为Ubuntu编写一个录屏格式自动转换脚本及学习心路">
-<meta property="og:url" content="https://wzk0.github.io/old/ubw/index.html">
+<meta property="og:url" content="https://wzk0.github.io/4/old/ubw/index.html">
 <meta property="og:site_name" content="便当的梅开四度">
 <meta property="og:description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言其实本篇文章的大量内容都来自于我最近的一个仓库中的README. 不过由于README的字数远远大于代码量!!! 于是我决定引用一下,写到博客里. 同时也记录一些学习过程.  起因如果你也使用Ubuntu系统(Ubuntu 22.04.1 LTS)的话,会发现: 尽管系统自带的录屏工具很好用,但是最后录制的格式却">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/ubw.png">
 <meta property="article:published_time" content="2022-08-05T10:37:42.000Z">
-<meta property="article:modified_time" content="2026-01-18T12:31:36.698Z">
+<meta property="article:modified_time" content="2026-01-18T12:31:36.000Z">
 <meta property="article:author" content="听话的便当">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Python">
@@ -63,12 +63,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/4/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/4/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/4/css/highlight-dark.css" />
   
 
 
@@ -77,15 +77,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/4/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/4/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/4/js/utils.js" ></script>
+  <script  src="/4/js/color-schema.js" ></script>
   
 
   
@@ -113,7 +113,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/4/">
       <strong>便当的梅开四度</strong>
     </a>
 
@@ -132,7 +132,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/4/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -144,7 +144,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/4/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -156,7 +156,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/4/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -168,7 +168,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/4/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -180,7 +180,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/4/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -192,7 +192,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/friends/" target="_self">
+              <a class="nav-link" href="/4/friends/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -366,7 +366,7 @@
 <p>但多次测试之后,我又发现了另一个问题:</p>
 <p>转换的效率太低下,以及死循环导致的CPU占用过高.</p>
 <p>第一个问题我通过<code>电脑的逻辑CPU核数为线程数</code>处理了,第二个问题可以通过<code>time</code>的<code>sleep</code>函数进行处理.</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202208041549339.png" srcset="/img/loading.gif" lazyload alt="原因是这个"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202208041549339.png" srcset="/4/img/loading.gif" lazyload alt="原因是这个"></p>
 <p>那么剩下的就是逻辑了,代码贴一下:</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs scss">import os<br>import <span class="hljs-selector-tag">time</span><br><br>def <span class="hljs-built_in">get_good_name</span>(name):<br>	name=name.<span class="hljs-built_in">replace</span>(<span class="hljs-string">&#x27;(&#x27;</span>,<span class="hljs-string">&#x27;\(&#x27;</span>)<br>	name=name.<span class="hljs-built_in">replace</span>(<span class="hljs-string">&#x27;)&#x27;</span>,<span class="hljs-string">&#x27;\)&#x27;</span>)<br>	name=name.<span class="hljs-built_in">replace</span>(<span class="hljs-string">&#x27; &#x27;</span>,<span class="hljs-string">&#x27;\ &#x27;</span>)<br>	return name<br><br>def <span class="hljs-built_in">get_core</span>():<br>	os.<span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;cat /proc/cpuinfo |grep &#x27;processor&#x27;|wc -l &gt; .core&quot;</span>)<br>	with <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;.core&#x27;</span>,<span class="hljs-string">&#x27;r&#x27;</span>)as f:<br>		core=f.<span class="hljs-built_in">read</span>()<br>	os.<span class="hljs-built_in">system</span>(<span class="hljs-string">&#x27;rm -rf .core&#x27;</span>)<br>	return <span class="hljs-built_in">str</span>(core[<span class="hljs-number">0</span>])<br><br>def <span class="hljs-built_in">chck</span>(road,time_s):<br>	ls=os.<span class="hljs-built_in">listdir</span>(road)<br>	if <span class="hljs-string">&#x27;.webm&#x27;</span> in <span class="hljs-built_in">str</span>(ls):<br>		for l in ls:<br>			if <span class="hljs-string">&#x27;.webm&#x27;</span> in l:<br>				info=os.<span class="hljs-built_in">stat</span>(l)<br>				s=info.st_size<br>				time.<span class="hljs-built_in">sleep</span>(<span class="hljs-number">5</span>)<br>				inf=os.<span class="hljs-built_in">stat</span>(l)<br>				ss=inf.st_size<br>				if ss==s:<br>					t=<span class="hljs-string">&#x27;ffmpeg -threads &#x27;</span>+<span class="hljs-built_in">get_core</span>()+<span class="hljs-string">&#x27; -i &#x27;</span>+<span class="hljs-built_in">get_good_name</span>(l)+<span class="hljs-string">&#x27; &#x27;</span>+<span class="hljs-built_in">get_good_name</span>(l[:-<span class="hljs-number">4</span>])+<span class="hljs-string">&#x27;mp4&#x27;</span><br>					r=<span class="hljs-string">&#x27;rm -rf &#x27;</span>+<span class="hljs-built_in">get_good_name</span>(l)<br>					n=<span class="hljs-string">&#x27;nohup.out&#x27;</span><br>					os.<span class="hljs-built_in">system</span>(t)<br>					os.<span class="hljs-built_in">system</span>(r)<br>					if os.path.<span class="hljs-built_in">exists</span>(n):<br>						os.<span class="hljs-built_in">system</span>(<span class="hljs-string">&#x27;rm -rf &#x27;</span>+n)<br>					else:<br>						pass<br>				else:<br>					time.<span class="hljs-built_in">sleep</span>(<span class="hljs-number">5</span>)<br>			else:<br>				pass<br>	else:<br>		time.<span class="hljs-built_in">sleep</span>(time_s)<br><br>while True:<br>	<span class="hljs-built_in">chck</span>(<span class="hljs-string">&#x27;.&#x27;</span>,<span class="hljs-number">300</span>)<br></code></pre></td></tr></table></figure>
 
@@ -382,7 +382,7 @@
 <p>如果改变了,就进行<code>ffmpeg转换</code>;</p>
 <p>没有改变,则再进入周期为5秒的等待.</p>
 <p>加入休眠机制后,CPU占用非常小(跟没有一样):</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202208052107011.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202208052107011.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <hr>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p class="note note-primary">使用方法就是搬的README啦!</p>
 
@@ -403,14 +403,14 @@
 <ul>
 <li>假如此终端未关闭,输入<code>jobs -l</code>即可获取<code>PID</code>:</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202208032119834.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202208032119834.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>随后输入<code>kill -9 PID</code>即可:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202208032120655.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202208032120655.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <ul>
 <li>假如此终端已关闭,输入<code>ps ux | grep python3\ webm2mp4.py</code>可查看<code>PID</code>.</li>
 </ul>
 <p>同理,获取后输入<code>kill -9 PID</code>即可:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202208032123589.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/202208032123589.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <hr>
 <h3 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h3><p>打开<code>/etc/init.d</code>目录,在此编写一个脚本(<code>nano webm2mp4</code>):</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/sh</span><br><br>python3 /home/用户名/Videos/录屏/webm2mp4.py<br></code></pre></td></tr></table></figure>
@@ -438,7 +438,7 @@
 <p>想想之前自己的很多程序,对资源占用是从来没考虑的,唉…</p>
 <hr>
 <p>我是<strong>听话的便当</strong>.</p>
-<p><img src="/img/thdbd.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/4/img/thdbd.jpg" srcset="/4/img/loading.gif" lazyload></p>
 <p>Bye~❛‿˂̵✧</p>
 
                 
@@ -458,7 +458,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/EDITOR/" class="category-chain-item">EDITOR</a>
+  <a href="/4/categories/EDITOR/" class="category-chain-item">EDITOR</a>
   
   
 
@@ -473,9 +473,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+        <a href="/4/tags/Linux/" class="print-no-link">#Linux</a>
       
-        <a href="/tags/Python/" class="print-no-link">#Python</a>
+        <a href="/4/tags/Python/" class="print-no-link">#Python</a>
       
     </div>
   
@@ -488,7 +488,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>为Ubuntu编写一个录屏格式自动转换脚本及学习心路</div>
-      <div>https://wzk0.github.io/old/ubw/</div>
+      <div>https://wzk0.github.io/4/old/ubw/</div>
     </div>
     <div class="license-meta">
       
@@ -538,7 +538,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/old/lve/" title="Linux下的视频创作解决方案">
+                      <a href="/4/old/lve/" title="Linux下的视频创作解决方案">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Linux下的视频创作解决方案</span>
                         <span class="visible-mobile">上一篇</span>
@@ -548,7 +548,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/old/bdc/" title="通过Motrix和脚本高速下载百度网盘文件的方法">
+                      <a href="/4/old/bdc/" title="通过Motrix和脚本高速下载百度网盘文件的方法">
                         <span class="hidden-mobile">通过Motrix和脚本高速下载百度网盘文件的方法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -738,8 +738,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/4/js/events.js" ></script>
+<script  src="/4/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -761,7 +761,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/4/js/img-lazyload.js" ></script>
   
 
 
@@ -860,7 +860,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/4/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -870,7 +870,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/4/js/boot.js" ></script>
 
 
   

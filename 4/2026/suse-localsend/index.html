@@ -22,16 +22,16 @@
     <meta name="description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件   此文章使用CC-BY-NC协议   前言LocalSend 是一款相当好用的局域网文件传输软件, 支持几乎全平台. 不过自从前段时间我开始使用 openSUSE 后, 发现无论是flatpak版的 LocalSend , 还是 rpm &#x2F; 二进制 版的启动后都无法正常使用.  具体表现为: 扫描不到其他设备, 无论是什么网络, 且">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于在openSUSE中LocalSend无法正常使用的解决办法">
-<meta property="og:url" content="https://wzk0.github.io/2026/suse-localsend/index.html">
+<meta property="og:url" content="https://wzk0.github.io/4/2026/suse-localsend/index.html">
 <meta property="og:site_name" content="便当的梅开四度">
 <meta property="og:description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件   此文章使用CC-BY-NC协议   前言LocalSend 是一款相当好用的局域网文件传输软件, 支持几乎全平台. 不过自从前段时间我开始使用 openSUSE 后, 发现无论是flatpak版的 LocalSend , 还是 rpm &#x2F; 二进制 版的启动后都无法正常使用.  具体表现为: 扫描不到其他设备, 无论是什么网络, 且">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-20%2018%3A35%3A22.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-20%2019%3A47%3A16.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-20%2019%3A49%3A26.png">
-<meta property="og:image" content="https://wzk0.github.io/img/thdbd.jpg">
+<meta property="og:image" content="https://wzk0.github.io/4/img/thdbd.jpg">
 <meta property="article:published_time" content="2026-02-20T08:08:13.000Z">
-<meta property="article:modified_time" content="2026-02-20T11:52:12.945Z">
+<meta property="article:modified_time" content="2026-02-27T11:40:11.205Z">
 <meta property="article:author" content="听话的便当">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-20%2018%3A35%3A22.png">
@@ -64,12 +64,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/4/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/4/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/4/css/highlight-dark.css" />
   
 
 
@@ -78,15 +78,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/4/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/4/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/4/js/utils.js" ></script>
+  <script  src="/4/js/color-schema.js" ></script>
   
 
   
@@ -114,7 +114,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/4/">
       <strong>便当的梅开四度</strong>
     </a>
 
@@ -133,7 +133,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/4/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -145,7 +145,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/4/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -157,7 +157,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/4/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -169,7 +169,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/4/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -181,7 +181,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/4/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -193,7 +193,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/friends/" target="_self">
+              <a class="nav-link" href="/4/friends/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -223,7 +223,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://raw.githubusercontent.com/wzk0/photo/main/index-for-my-blog.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/4/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -331,22 +331,22 @@
 <h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>我能想到的最大的可能的错误原因就是防火墙.</p>
 <p>上一篇也提到, <code>openSUSE</code> 的一些默认策略个人感觉是很保守的, 所以自然而然想到这方面.</p>
 <p>于是查看了 <code>LocalSend</code> 的端口占用情况:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-20%2018%3A35%3A22.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-20%2018%3A35%3A22.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>先将 <code>高级设置</code> 勾选(红色箭头所指), 即可看到占用端口为 <code>53317</code> (蓝色箭头所指).</p>
 <p>随后安装 <code>firewall-config</code>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> zypper <span class="hljs-keyword">in</span> firewall-config<br></code></pre></td></tr></table></figure>
 
 <p>打开, 并在 <code>public</code> (红色箭头所指)中添加(绿色箭头所指) <code>53317</code> 端口, 协议为 <code>TCP</code> 和 <code>UDP</code> (如黄色框选).</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-20%2019%3A47%3A16.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-20%2019%3A47%3A16.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>此时重启 <code>LocalSend</code> 即可.</p>
 <p>如需后续永久使用, 只需要将左上角运行时改为永久, 随后像上面一样添加端口就行.</p>
 <blockquote>
 <p>如果仅添加了永久, 则需要重启电脑才能应用.</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-20%2019%3A49%3A26.png" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/2026-02-20%2019%3A49%3A26.png" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <hr>
 <p>我是<strong>听话的便当</strong>.</p>
-<p><img src="/img/thdbd.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/4/img/thdbd.jpg" srcset="/4/img/loading.gif" lazyload></p>
 <p>Bye~❛‿˂̵✧</p>
 
                 
@@ -366,7 +366,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>关于在openSUSE中LocalSend无法正常使用的解决办法</div>
-      <div>https://wzk0.github.io/2026/suse-localsend/</div>
+      <div>https://wzk0.github.io/4/2026/suse-localsend/</div>
     </div>
     <div class="license-meta">
       
@@ -416,7 +416,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/fix-old-tg/" title="2026年还能用的Telegram付费登录问题的解决方案">
+                      <a href="/4/2026/fix-old-tg/" title="2026年还能用的Telegram付费登录问题的解决方案">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">2026年还能用的Telegram付费登录问题的解决方案</span>
                         <span class="visible-mobile">上一篇</span>
@@ -426,7 +426,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/suse-wine/" title="关于在openSUSE中无法使用flatpak Bottle/Steam/Wine相关应用的解决办法">
+                      <a href="/4/2026/suse-wine/" title="关于在openSUSE中无法使用flatpak Bottle/Steam/Wine相关应用的解决办法">
                         <span class="hidden-mobile">关于在openSUSE中无法使用flatpak Bottle/Steam/Wine相关应用的解决办法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -616,8 +616,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/4/js/events.js" ></script>
+<script  src="/4/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -639,7 +639,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/4/js/img-lazyload.js" ></script>
   
 
 
@@ -738,7 +738,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/4/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -748,7 +748,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/4/js/boot.js" ></script>
 
 
   

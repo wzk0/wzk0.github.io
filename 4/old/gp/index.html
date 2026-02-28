@@ -22,17 +22,26 @@
     <meta name="description" content="前言如果你想拥有一个网站—— 必不可少的两样东西是：域名(网址)和空间(存放网站数据的主机). 只需要“简单四步”就可以——  购买域名；  购买服务器；  安装网站环境(虚拟主机的话不需要此步)；  安装网站.   但是实际上,真正要做好一个网站,远远不止这4步； 更何况你可能会止步于空空如也的钱包或是没有深谋远虑的想法； 这个时候如果一股脑花大价钱,最终却可能把行动付诸于东流. 所以这篇文章将">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何部署GitHub Pages？">
-<meta property="og:url" content="https://wzk0.github.io/old/gp/index.html">
+<meta property="og:url" content="https://wzk0.github.io/4/old/gp/index.html">
 <meta property="og:site_name" content="便当的梅开四度">
 <meta property="og:description" content="前言如果你想拥有一个网站—— 必不可少的两样东西是：域名(网址)和空间(存放网站数据的主机). 只需要“简单四步”就可以——  购买域名；  购买服务器；  安装网站环境(虚拟主机的话不需要此步)；  安装网站.   但是实际上,真正要做好一个网站,远远不止这4步； 更何况你可能会止步于空空如也的钱包或是没有深谋远虑的想法； 这个时候如果一股脑花大价钱,最终却可能把行动付诸于东流. 所以这篇文章将">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/20220202153256.png">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/08/image-3.png?w=1024">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/08/404n4q7pct_vgpv20b2xw.png?w=643">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/08/k658h_gnfi6ctq274iq.png?w=1024">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/08/1m94j4b_05_400a073.png?w=354">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/08/l0xcpr4m6x7bet_lj3_0t0d.png?w=873">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/08/5xbp4zxmdvd5ze95.png?w=1024">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/08/2lgwgauaz387o.png?w=1024">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/08/5e0_t7zkv2uk7a2qxvjc7a.png?w=1024">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/08/k_4xedu8bj61ukp44.png?w=1024">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/08/my940yn2uwpxdgyx41xu.png?w=1024">
 <meta property="article:published_time" content="2021-08-21T13:00:45.000Z">
-<meta property="article:modified_time" content="2026-01-18T12:31:36.692Z">
+<meta property="article:modified_time" content="2026-02-27T11:40:11.176Z">
 <meta property="article:author" content="听话的便当">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/20220202153256.png">
+<meta name="twitter:image" content="https://thdbd666666.files.wordpress.com/2021/08/image-3.png?w=1024">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -62,12 +71,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/4/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/4/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/4/css/highlight-dark.css" />
   
 
 
@@ -76,15 +85,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/4/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/4/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/4/js/utils.js" ></script>
+  <script  src="/4/js/color-schema.js" ></script>
   
 
   
@@ -112,7 +121,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/4/">
       <strong>便当的梅开四度</strong>
     </a>
 
@@ -131,7 +140,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/4/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -143,7 +152,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/4/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -155,7 +164,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/4/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -167,7 +176,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/4/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -179,7 +188,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/4/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -191,7 +200,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/friends/" target="_self">
+              <a class="nav-link" href="/4/friends/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -221,7 +230,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://raw.githubusercontent.com/wzk0/photo/main/20220202153256.png') no-repeat center center; background-size: cover;">
+     style="background: url('/4/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -332,36 +341,36 @@
 <h2 id="什么是GitHub-Pages？"><a href="#什么是GitHub-Pages？" class="headerlink" title="什么是GitHub Pages？"></a><strong>什么是GitHub Pages？</strong></h2><p>GitHub Pages是GitHub提供的一个网页寄存服务,于2008年推出.可以用于存放静态网页,包括博客、项目文档甚至整本书.Jekyll软件可以用于将文档转换成静态网页,该软件提供了将网页上传到GitHub Pages的功能.一般GitHub Pages的网站使用github.io的子域名,但是用户也可以使用第三方域名.</p>
 <p>也就是说,当你部署完GitHub Pages后,会得到一个XXX.github.io的网站.这里举个例子</p>
 <p>我的GitHub Pages——你现在正在浏览的这个;</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/08/image-3.png?w=1024" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/08/image-3.png?w=1024" srcset="/4/img/loading.gif" lazyload></p>
 <p>除了域名之外跟其他网站没什么两样</p>
 <h2 id="如何部署GitHub-Pages"><a href="#如何部署GitHub-Pages" class="headerlink" title="如何部署GitHub Pages"></a>如何部署GitHub Pages</h2><p>首先,登录&#x2F;注册一个GitHub账号 <a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a></p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/08/404n4q7pct_vgpv20b2xw.png?w=643" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/08/404n4q7pct_vgpv20b2xw.png?w=643" srcset="/4/img/loading.gif" lazyload></p>
 <p>第一行：输入邮箱；</p>
 <p>第二行：输入密码；</p>
 <p>第三行：输入用户名；(注意：这个用户名是什么,XXX.github.io 里的XXX就是什么.比如我的昵称为byn6,最终得到的就是byn6 .github.io )(用户名为英文)</p>
 <p>第四行：是否允许广告(y为允许,n为不允许)；</p>
 <p>然后会让你人机验证啦,邮箱验证什么的；</p>
 <p>最终完成初始化——</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/08/k658h_gnfi6ctq274iq.png?w=1024" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/08/k658h_gnfi6ctq274iq.png?w=1024" srcset="/4/img/loading.gif" lazyload></p>
 <p>(以上内容仅对非登录用户有用)</p>
 <p>新建一个仓库: <a target="_blank" rel="noopener" href="https://github.com/new">https://github.com/new</a></p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/08/1m94j4b_05_400a073.png?w=354" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/08/1m94j4b_05_400a073.png?w=354" srcset="/4/img/loading.gif" lazyload></p>
 <p>点击绿色按钮新建一个库——</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/08/l0xcpr4m6x7bet_lj3_0t0d.png?w=873" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/08/l0xcpr4m6x7bet_lj3_0t0d.png?w=873" srcset="/4/img/loading.gif" lazyload></p>
 <p>此处库的名字为 你的昵称.github.io；</p>
 <p>权限为Public(公共).[ 注意：这个库的这个权限以后千万不能改为Private,否则会导致永久无法访问此网站 {除非删库重来} ]</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/08/5xbp4zxmdvd5ze95.png?w=1024" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/08/5xbp4zxmdvd5ze95.png?w=1024" srcset="/4/img/loading.gif" lazyload></p>
 <p>creating a new file为创建新的文件；</p>
 <p>uploading an existing file为上传文件；</p>
 <p>如果你手头有编写好的html文件的话就可以选择后者,如果没有也可以在GitHub上现编,这需要有一些html基础知识.</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/08/2lgwgauaz387o.png?w=1024" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/08/2lgwgauaz387o.png?w=1024" srcset="/4/img/loading.gif" lazyload></p>
 <p>(注意：如果上传&#x2F;编写的html文件中没有index.html,就会导致404.)</p>
 <p>于是我编写了一个index.html,在这之前我的网站是这样的——</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/08/5e0_t7zkv2uk7a2qxvjc7a.png?w=1024" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/08/5e0_t7zkv2uk7a2qxvjc7a.png?w=1024" srcset="/4/img/loading.gif" lazyload></p>
 <p>我们来上传一下——</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/08/k_4xedu8bj61ukp44.png?w=1024" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/08/k_4xedu8bj61ukp44.png?w=1024" srcset="/4/img/loading.gif" lazyload></p>
 <p>经过了一段时间之后,网站变成了——</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/08/my940yn2uwpxdgyx41xu.png?w=1024" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/08/my940yn2uwpxdgyx41xu.png?w=1024" srcset="/4/img/loading.gif" lazyload></p>
 <p>完成！</p>
 <p>在主页的基础上,你可以进行其他页面逻辑的联系；(其实不设置主页也是可以的)</p>
 <p>关于GitHub Pages,</p>
@@ -389,7 +398,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/EDITOR/" class="category-chain-item">EDITOR</a>
+  <a href="/4/categories/EDITOR/" class="category-chain-item">EDITOR</a>
   
   
 
@@ -404,7 +413,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Git/" class="print-no-link">#Git</a>
+        <a href="/4/tags/Git/" class="print-no-link">#Git</a>
       
     </div>
   
@@ -417,7 +426,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>如何部署GitHub Pages？</div>
-      <div>https://wzk0.github.io/old/gp/</div>
+      <div>https://wzk0.github.io/4/old/gp/</div>
     </div>
     <div class="license-meta">
       
@@ -467,7 +476,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/old/gb-nj/" title="搭建你的Gitbook（不使用Node.js）">
+                      <a href="/4/old/gb-nj/" title="搭建你的Gitbook（不使用Node.js）">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">搭建你的Gitbook（不使用Node.js）</span>
                         <span class="visible-mobile">上一篇</span>
@@ -477,7 +486,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/old/dnc/" title="如何下载Niconico上的视频？">
+                      <a href="/4/old/dnc/" title="如何下载Niconico上的视频？">
                         <span class="hidden-mobile">如何下载Niconico上的视频？</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -667,8 +676,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/4/js/events.js" ></script>
+<script  src="/4/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -690,7 +699,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/4/js/img-lazyload.js" ></script>
   
 
 
@@ -789,7 +798,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/4/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -799,7 +808,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/4/js/boot.js" ></script>
 
 
   

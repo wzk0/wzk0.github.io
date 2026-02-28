@@ -22,18 +22,18 @@
     <meta name="description" content="此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言大家龙年大吉! 便当拜个晚年. “拥有一个服务器”是我刚接触互联网时一个最憧憬, 禁忌, 梦幻的梦. 憧憬和梦幻不过多解释, 禁忌是因为未成年的实名(使命? 或许都有)限制. 如今, 我上了大学, 有了充足的时间和略多的金钱, 终于狠狠心, 花99米入了香橙派Zero 3 这块小小的单片机.  单片机, 全称单片微型计算机. 其实无论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 单片机把玩之 我用香橙派Zero 3 做服务器">
-<meta property="og:url" content="https://wzk0.github.io/old/my-orangepi-zero-3/index.html">
+<meta property="og:url" content="https://wzk0.github.io/4/old/my-orangepi-zero-3/index.html">
 <meta property="og:site_name" content="便当的梅开四度">
 <meta property="og:description" content="此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言大家龙年大吉! 便当拜个晚年. “拥有一个服务器”是我刚接触互联网时一个最憧憬, 禁忌, 梦幻的梦. 憧憬和梦幻不过多解释, 禁忌是因为未成年的实名(使命? 或许都有)限制. 如今, 我上了大学, 有了充足的时间和略多的金钱, 终于狠狠心, 花99米入了香橙派Zero 3 这块小小的单片机.  单片机, 全称单片微型计算机. 其实无论">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wzk0.github.io/img/thdbd.jpg">
+<meta property="og:image" content="https://wzk0.github.io/4/img/thdbd.jpg">
 <meta property="article:published_time" content="2024-02-22T12:40:57.000Z">
-<meta property="article:modified_time" content="2026-01-18T12:31:36.694Z">
+<meta property="article:modified_time" content="2026-01-18T12:31:36.000Z">
 <meta property="article:author" content="听话的便当">
 <meta property="article:tag" content="Talk">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wzk0.github.io/img/thdbd.jpg">
+<meta name="twitter:image" content="https://wzk0.github.io/4/img/thdbd.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -63,12 +63,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/4/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/4/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/4/css/highlight-dark.css" />
   
 
 
@@ -77,15 +77,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/4/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/4/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/4/js/utils.js" ></script>
+  <script  src="/4/js/color-schema.js" ></script>
   
 
   
@@ -113,7 +113,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/4/">
       <strong>便当的梅开四度</strong>
     </a>
 
@@ -132,7 +132,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/4/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -144,7 +144,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/4/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -156,7 +156,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/4/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -168,7 +168,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/4/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -180,7 +180,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/4/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -192,7 +192,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/friends/" target="_self">
+              <a class="nav-link" href="/4/friends/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -222,7 +222,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/4/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -403,7 +403,7 @@
 <p>相反, 我在这款国产派上看到了实打实的性价比, 相较于树莓派好了不止一星半点(极少称赞国货, 这次献给香橙派啦!)</p>
 <hr>
 <p>我是<strong>听话的便当</strong>.</p>
-<p><img src="/img/thdbd.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/4/img/thdbd.jpg" srcset="/4/img/loading.gif" lazyload></p>
 <p>Bye~❛‿˂̵✧</p>
 
                 
@@ -423,7 +423,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/NOTE/" class="category-chain-item">NOTE</a>
+  <a href="/4/categories/NOTE/" class="category-chain-item">NOTE</a>
   
   
 
@@ -438,9 +438,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Talk/" class="print-no-link">#Talk</a>
+        <a href="/4/tags/Talk/" class="print-no-link">#Talk</a>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+        <a href="/4/tags/Linux/" class="print-no-link">#Linux</a>
       
     </div>
   
@@ -453,7 +453,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Linux 单片机把玩之 我用香橙派Zero 3 做服务器</div>
-      <div>https://wzk0.github.io/old/my-orangepi-zero-3/</div>
+      <div>https://wzk0.github.io/4/old/my-orangepi-zero-3/</div>
     </div>
     <div class="license-meta">
       
@@ -503,7 +503,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/back/" title="关于我在2026年终于又开始写博客的这件事">
+                      <a href="/4/2026/back/" title="关于我在2026年终于又开始写博客的这件事">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">关于我在2026年终于又开始写博客的这件事</span>
                         <span class="visible-mobile">上一篇</span>
@@ -513,7 +513,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/old/python-tg-bot/" title="使用pyTelegramBotAPI零基础搭建Telegram私聊机器人">
+                      <a href="/4/old/python-tg-bot/" title="使用pyTelegramBotAPI零基础搭建Telegram私聊机器人">
                         <span class="hidden-mobile">使用pyTelegramBotAPI零基础搭建Telegram私聊机器人</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -703,8 +703,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/4/js/events.js" ></script>
+<script  src="/4/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -726,7 +726,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/4/js/img-lazyload.js" ></script>
   
 
 
@@ -825,7 +825,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/4/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -835,7 +835,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/4/js/boot.js" ></script>
 
 
   

@@ -22,19 +22,25 @@
     <meta name="description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   这篇文章的阅读技巧:  注意分界线，这样读文章下来会发现内容是一块一块的 注意标题大小区分   今天在Tg看见了一个频道主遇到的问题:  什么?在线编辑无法用，只能删库重来了么?? 这也太让人难受了吧！ 因此，为了我们仓库的安全以及编辑的容易度，必须使用一种更快更好更稳定的方法. 所以今天，就要向大家科普一下已经是老">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一看就会的Git基础用法(Termux及Linux用户)">
-<meta property="og:url" content="https://wzk0.github.io/old/gu/index.html">
+<meta property="og:url" content="https://wzk0.github.io/4/old/gu/index.html">
 <meta property="og:site_name" content="便当的梅开四度">
 <meta property="og:description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   这篇文章的阅读技巧:  注意分界线，这样读文章下来会发现内容是一块一块的 注意标题大小区分   今天在Tg看见了一个频道主遇到的问题:  什么?在线编辑无法用，只能删库重来了么?? 这也太让人难受了吧！ 因此，为了我们仓库的安全以及编辑的容易度，必须使用一种更快更好更稳定的方法. 所以今天，就要向大家科普一下已经是老">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211216_122618_748.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_144431_067.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_151214.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_152718.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_153122.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_151909.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_225854.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_230229.jpg">
 <meta property="article:published_time" content="2021-12-26T06:38:35.000Z">
-<meta property="article:modified_time" content="2026-01-18T12:31:36.692Z">
+<meta property="article:modified_time" content="2026-02-27T11:40:11.177Z">
 <meta property="article:author" content="听话的便当">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Git">
 <meta property="article:tag" content="Termux">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211216_122618_748.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_144431_067.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -64,12 +70,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/4/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/4/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/4/css/highlight-dark.css" />
   
 
 
@@ -78,15 +84,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/4/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/4/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/4/js/utils.js" ></script>
+  <script  src="/4/js/color-schema.js" ></script>
   
 
   
@@ -114,7 +120,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/4/">
       <strong>便当的梅开四度</strong>
     </a>
 
@@ -133,7 +139,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/4/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -145,7 +151,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/4/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -157,7 +163,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/4/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -169,7 +175,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/4/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -181,7 +187,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/4/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -193,7 +199,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/friends/" target="_self">
+              <a class="nav-link" href="/4/friends/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -223,7 +229,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211216_122618_748.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/4/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -328,7 +334,7 @@
 </ul>
 <hr>
 <p>今天在Tg看见了一个频道主遇到的问题:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_144431_067.jpg" srcset="/img/loading.gif" lazyload alt="问题"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_144431_067.jpg" srcset="/4/img/loading.gif" lazyload alt="问题"></p>
 <p>什么?在线编辑无法用，只能删库重来了么??</p>
 <p>这也太让人难受了吧！</p>
 <p>因此，为了我们仓库的安全以及编辑的容易度，必须使用一种<code>更快更好更稳定的方法</code>.</p>
@@ -378,10 +384,10 @@
 <p>这里推荐第一种，可以少输入几行指令🌚</p>
 </blockquote>
 <p>那么<code>在线建立</code>的方法十分简单，我们只需要打开github.com，再点击如图所示的<code>新建仓库标识按钮</code>即可:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_151214.jpg" srcset="/img/loading.gif" lazyload alt="建立"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_151214.jpg" srcset="/4/img/loading.gif" lazyload alt="建立"></p>
 <p>之后添加一个<code>README.md</code>(或者其它随便什么文件都行，因为仓库不能为空)</p>
 <p>如图所示，随便这里面写点啥:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_152718.jpg" srcset="/img/loading.gif" lazyload alt="README.md"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_152718.jpg" srcset="/4/img/loading.gif" lazyload alt="README.md"></p>
 <p>随后将仓库整到本地来，输入指令:</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">git <span class="hljs-keyword">clone</span> <span class="hljs-title">仓库地址.git</span><br></code></pre></td></tr></table></figure>
 
@@ -390,7 +396,7 @@
 </blockquote>
 <hr>
 <p>如果你在建库时，选择了<code>private(私有仓库)</code>，则会出现下面的提示:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_153122.jpg" srcset="/img/loading.gif" lazyload alt="提示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_153122.jpg" srcset="/4/img/loading.gif" lazyload alt="提示"></p>
 <p>提示输入Github的用户名和密码，此时我们不能直接输入用户名和密码，不然一定会报错(因为Guthub已经取消了这种用户名密码明文登陆的方式)</p>
 <p>我们要在<code>https://github.com/settings/tokens</code>这个网址生成一个<code>Personal access tokens</code>，随后复制这个tokens，在输入用户名和密码的时候直接粘贴就可以了.</p>
 <blockquote>
@@ -401,7 +407,7 @@
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">git <span class="hljs-keyword">init</span><br></code></pre></td></tr></table></figure>
 
 <p>如图所示，即完成:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_151909.jpg" srcset="/img/loading.gif" lazyload alt="完成"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_151909.jpg" srcset="/4/img/loading.gif" lazyload alt="完成"></p>
 <hr>
 <p>通过以上两种方式任意一种建立完仓库以后，我们该怎样在本地编辑之后并上传呢?</p>
 <hr>
@@ -449,7 +455,7 @@
 </blockquote>
 <p>完成！我们已经给<code>这次将要提交</code>的<code>缓存区的内容</code>加了一个修改描述！</p>
 <p>如图所示，即完成:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_225854.jpg" srcset="/img/loading.gif" lazyload alt="这里插入一张图片，git commit"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_225854.jpg" srcset="/4/img/loading.gif" lazyload alt="这里插入一张图片，git commit"></p>
 <hr>
 <p>接下来，输入最后一个指令:</p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">git <span class="hljs-built_in">push</span> -u <span class="hljs-built_in">origin</span> main<br></code></pre></td></tr></table></figure>
@@ -463,7 +469,7 @@
 </ul>
 <p>回车后，此时又会进入<code>输入用户名和密码</code>的状态，我们把上面说过的<code>tokens</code>粘贴进去.</p>
 <p>如图所示，即完成:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_230229.jpg" srcset="/img/loading.gif" lazyload alt="这里插入一张图片，git push"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211226_230229.jpg" srcset="/4/img/loading.gif" lazyload alt="这里插入一张图片，git push"></p>
 <p>成功！我们已经把本地的仓库内容全部推送到Github仓库啦！(不信可以去看看)</p>
 <hr>
 <p>可以看到，总共的指令一共有三条:</p>
@@ -507,7 +513,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/EDITOR/" class="category-chain-item">EDITOR</a>
+  <a href="/4/categories/EDITOR/" class="category-chain-item">EDITOR</a>
   
   
 
@@ -522,11 +528,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+        <a href="/4/tags/Linux/" class="print-no-link">#Linux</a>
       
-        <a href="/tags/Git/" class="print-no-link">#Git</a>
+        <a href="/4/tags/Git/" class="print-no-link">#Git</a>
       
-        <a href="/tags/Termux/" class="print-no-link">#Termux</a>
+        <a href="/4/tags/Termux/" class="print-no-link">#Termux</a>
       
     </div>
   
@@ -539,7 +545,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>一看就会的Git基础用法(Termux及Linux用户)</div>
-      <div>https://wzk0.github.io/old/gu/</div>
+      <div>https://wzk0.github.io/4/old/gu/</div>
     </div>
     <div class="license-meta">
       
@@ -589,7 +595,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/old/hx-w/" title="Hexo无法被渲染到Page的处理">
+                      <a href="/4/old/hx-w/" title="Hexo无法被渲染到Page的处理">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Hexo无法被渲染到Page的处理</span>
                         <span class="visible-mobile">上一篇</span>
@@ -599,7 +605,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/old/er/" title="Python实用代码段收藏">
+                      <a href="/4/old/er/" title="Python实用代码段收藏">
                         <span class="hidden-mobile">Python实用代码段收藏</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -789,8 +795,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/4/js/events.js" ></script>
+<script  src="/4/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -812,7 +818,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/4/js/img-lazyload.js" ></script>
   
 
 
@@ -911,7 +917,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/4/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -921,7 +927,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/4/js/boot.js" ></script>
 
 
   

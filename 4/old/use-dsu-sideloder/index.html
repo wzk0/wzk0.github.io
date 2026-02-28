@@ -22,7 +22,7 @@
     <meta name="description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言前些日子写了篇关于使用KernelSU来root手机的教程, 后面连着几天也是一直痴迷于找模块, 装模块. 不过很快便有些腻了, 因为刷的这些模块, 效果似乎不怎么显著? 于是萌生了一个大胆的想法: 刷一个新系统!! 然后就在网上找啊找, 目标是好用, 简洁, 支持莫奈取色的类原生系统, 不过那些类原生们无一例外">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用DSU Sideloder实现安卓双系统">
-<meta property="og:url" content="https://wzk0.github.io/old/use-dsu-sideloder/index.html">
+<meta property="og:url" content="https://wzk0.github.io/4/old/use-dsu-sideloder/index.html">
 <meta property="og:site_name" content="便当的梅开四度">
 <meta property="og:description" content="点击获得封面头图   此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言前些日子写了篇关于使用KernelSU来root手机的教程, 后面连着几天也是一直痴迷于找模块, 装模块. 不过很快便有些腻了, 因为刷的这些模块, 效果似乎不怎么显著? 于是萌生了一个大胆的想法: 刷一个新系统!! 然后就在网上找啊找, 目标是好用, 简洁, 支持莫奈取色的类原生系统, 不过那些类原生们无一例外">
 <meta property="og:locale" content="zh_CN">
@@ -30,9 +30,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/photo_1_2023-08-04_21-36-38.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/photo_2_2023-08-04_21-36-38.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/photo_2023-08-04_21-46-21.jpg">
-<meta property="og:image" content="https://wzk0.github.io/img/thdbd.jpg">
+<meta property="og:image" content="https://wzk0.github.io/4/img/thdbd.jpg">
 <meta property="article:published_time" content="2023-07-14T05:45:49.000Z">
-<meta property="article:modified_time" content="2026-01-18T12:31:36.698Z">
+<meta property="article:modified_time" content="2026-02-27T11:40:11.198Z">
 <meta property="article:author" content="听话的便当">
 <meta property="article:tag" content="Root">
 <meta name="twitter:card" content="summary_large_image">
@@ -66,12 +66,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/4/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/4/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/4/css/highlight-dark.css" />
   
 
 
@@ -80,15 +80,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/4/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/4/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/4/js/utils.js" ></script>
+  <script  src="/4/js/color-schema.js" ></script>
   
 
   
@@ -116,7 +116,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/4/">
       <strong>便当的梅开四度</strong>
     </a>
 
@@ -135,7 +135,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/4/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -147,7 +147,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/4/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -159,7 +159,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/4/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -171,7 +171,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/4/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -183,7 +183,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/4/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -195,7 +195,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/friends/" target="_self">
+              <a class="nav-link" href="/4/friends/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -225,7 +225,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/4/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -342,7 +342,7 @@
 <p>随后, 去谷歌商店下载一个检测软件:</p>
 <p><a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=tk.hack5.treblecheck">https://play.google.com/store/apps/details?id=tk.hack5.treblecheck</a></p>
 <p>安装好后, 若显示如下字样, 则说明可以继续:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/photo_2023-08-04_21-04-57.jpg" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/photo_2023-08-04_21-04-57.jpg" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>点击<code>浏览映像</code>, 选择其中的一个系统并下载其镜像.</p>
 <p>我目前使用的是<code>Unofficial Android 13</code>中的<code>Evolution X</code>, 除了不能收短信以外, 其他都正常.</p>
 <blockquote>
@@ -372,9 +372,9 @@
 <p>点击<code>选择一个要安装的GSI文件</code>并选择我们刚刚下载好的镜像, 下面的<code>DSU用户空间大小</code>即为要分给此系统的储存大小, 我的手机是1T, 所以非常豪迈地分了128给它!</p>
 <p>设置好一切后, 点击安装, 耐心等待即可.</p>
 <p>待安装好双系统后, <code>DSU Sideloader</code>出现以下字样:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/photo_1_2023-08-04_21-36-38.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/photo_1_2023-08-04_21-36-38.jpg" srcset="/4/img/loading.gif" lazyload></p>
 <p>同时通知栏会出现一个常驻的清理不掉的通知:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/photo_2_2023-08-04_21-36-38.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/photo_2_2023-08-04_21-36-38.jpg" srcset="/4/img/loading.gif" lazyload></p>
 <p>切记莫点舍弃! 否则花那么久安装的双系统直接扼杀在摇篮里了.</p>
 <p>怎么启动到双系统呢?</p>
 <p>只需打开<code>DSU Sideloader</code>, 或从那个常驻通知中点击重启即可.</p>
@@ -393,11 +393,11 @@
 <p>打开<code>Termux</code>, 输入<code>su</code>回车, 再输入:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">gsi_tool <span class="hljs-built_in">enable</span><br></code></pre></td></tr></table></figure>
 <p>出现如下字样则说明成功:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/photo_2023-08-04_21-46-21.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/photo_2023-08-04_21-46-21.jpg" srcset="/4/img/loading.gif" lazyload></p>
 <p>此时b系统进入<code>重启后还是b系统</code>模式, 若要退出此模式, 只需将上述指令中的<code>enable</code>换成<code>disable</code>, 再次执行即可.</p>
 <hr>
 <p>我是<strong>听话的便当</strong>.</p>
-<p><img src="/img/thdbd.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/4/img/thdbd.jpg" srcset="/4/img/loading.gif" lazyload></p>
 <p>Bye~❛‿˂̵✧</p>
 
                 
@@ -417,7 +417,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/NOTE/" class="category-chain-item">NOTE</a>
+  <a href="/4/categories/NOTE/" class="category-chain-item">NOTE</a>
   
   
 
@@ -432,7 +432,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Root/" class="print-no-link">#Root</a>
+        <a href="/4/tags/Root/" class="print-no-link">#Root</a>
       
     </div>
   
@@ -445,7 +445,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>使用DSU Sideloder实现安卓双系统</div>
-      <div>https://wzk0.github.io/old/use-dsu-sideloder/</div>
+      <div>https://wzk0.github.io/4/old/use-dsu-sideloder/</div>
     </div>
     <div class="license-meta">
       
@@ -495,7 +495,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/old/fix-dnf-problem-caused-by-release-version-number/" title="解决由Linux发行版版本号导致的dnf 404问题">
+                      <a href="/4/old/fix-dnf-problem-caused-by-release-version-number/" title="解决由Linux发行版版本号导致的dnf 404问题">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">解决由Linux发行版版本号导致的dnf 404问题</span>
                         <span class="visible-mobile">上一篇</span>
@@ -505,7 +505,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/old/ksu-for-beginner/" title="萌新向的root方案:KernelSU使用教程">
+                      <a href="/4/old/ksu-for-beginner/" title="萌新向的root方案:KernelSU使用教程">
                         <span class="hidden-mobile">萌新向的root方案:KernelSU使用教程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -695,8 +695,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/4/js/events.js" ></script>
+<script  src="/4/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -718,7 +718,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/4/js/img-lazyload.js" ></script>
   
 
 
@@ -817,7 +817,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/4/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -827,7 +827,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/4/js/boot.js" ></script>
 
 
   

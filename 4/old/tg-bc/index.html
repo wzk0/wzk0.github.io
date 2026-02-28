@@ -22,17 +22,28 @@
     <meta name="description" content="今天 便当教你如何快速自制一个简单的可以回复指令的TG机器人 前言我们需要: 1,一个Telegram 2,一个谷歌浏览器(登陆过的)(强烈建议电脑端!) 3,一个稳定的VPN(搞着搞着掉线了就不好整了) 接下来 我会以一个电脑端用户的视角进行讲解(结尾打脸) 我们可以首先创建一个记事本文件(.txt)(这是一个好习惯)  看的一头雾水？没关系 我来跟你讲解  第一步 编辑我们的目的是做一个可以回">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何做一个可以回复指令的TG机器人？">
-<meta property="og:url" content="https://wzk0.github.io/old/tg-bc/index.html">
+<meta property="og:url" content="https://wzk0.github.io/4/old/tg-bc/index.html">
 <meta property="og:site_name" content="便当的梅开四度">
 <meta property="og:description" content="今天 便当教你如何快速自制一个简单的可以回复指令的TG机器人 前言我们需要: 1,一个Telegram 2,一个谷歌浏览器(登陆过的)(强烈建议电脑端!) 3,一个稳定的VPN(搞着搞着掉线了就不好整了) 接下来 我会以一个电脑端用户的视角进行讲解(结尾打脸) 我们可以首先创建一个记事本文件(.txt)(这是一个好习惯)  看的一头雾水？没关系 我来跟你讲解  第一步 编辑我们的目的是做一个可以回">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/photo_2022-02-02_22-25-07.jpg">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/07/6yqjp08f4dppvizqo.png?w=917">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/07/utkf6v9_b3i1pmlkr.png?w=286">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/07/oxkk7n3p40ijjwnbgq.png?w=569">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/07/1r27aezjhk9t8wvn3.png?w=590">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/07/fbguzv12gy1n8o2zlzc.png?w=1024">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/07/fv40hjzg61h72gct_kw.png?w=618">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/07/ked3d6h4a8nixgdhr_vo88.png?w=796">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/07/image_editor_output_image1033625411-1626757330959.jpg?w=996">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/07/image_editor_output_image2099745317-1626757806775.jpg?w=905">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/07/image_editor_output_image1679726202-1626758101384.jpg?w=1024">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/07/image_editor_output_image648218213-1626758219786.jpg?w=1024">
+<meta property="og:image" content="https://thdbd666666.files.wordpress.com/2021/07/screenshot_2021-07-20-13-17-51-232_org.thunderdog.challegram.jpg?w=512">
 <meta property="article:published_time" content="2021-07-20T05:20:24.000Z">
-<meta property="article:modified_time" content="2026-01-18T12:31:36.697Z">
+<meta property="article:modified_time" content="2026-02-27T11:40:11.196Z">
 <meta property="article:author" content="听话的便当">
 <meta property="article:tag" content="Telegram">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/photo_2022-02-02_22-25-07.jpg">
+<meta name="twitter:image" content="https://thdbd666666.files.wordpress.com/2021/07/6yqjp08f4dppvizqo.png?w=917">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -62,12 +73,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/4/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/4/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/4/css/highlight-dark.css" />
   
 
 
@@ -76,15 +87,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/4/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/4/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/4/js/utils.js" ></script>
+  <script  src="/4/js/color-schema.js" ></script>
   
 
   
@@ -112,7 +123,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/4/">
       <strong>便当的梅开四度</strong>
     </a>
 
@@ -131,7 +142,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/4/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -143,7 +154,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/4/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -155,7 +166,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/4/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -167,7 +178,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/4/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -179,7 +190,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/4/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -191,7 +202,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/friends/" target="_self">
+              <a class="nav-link" href="/4/friends/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -221,7 +232,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://raw.githubusercontent.com/wzk0/photo/main/photo_2022-02-02_22-25-07.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/4/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -319,21 +330,21 @@
 <p>3,一个稳定的VPN(搞着搞着掉线了就不好整了)</p>
 <p>接下来 我会以一个电脑端用户的视角进行讲解(结尾打脸)</p>
 <p>我们可以首先创建一个<strong>记事本文件</strong>(.txt)(这是一个好习惯)</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/07/6yqjp08f4dppvizqo.png?w=917" srcset="/img/loading.gif" lazyload alt="像是这样"></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/07/6yqjp08f4dppvizqo.png?w=917" srcset="/4/img/loading.gif" lazyload alt="像是这样"></p>
 <p>看的一头雾水？没关系 我来跟你讲解</p>
 <hr>
 <h2 id="第一步-编辑"><a href="#第一步-编辑" class="headerlink" title="第一步 编辑"></a>第一步 编辑</h2><p>我们的目的是做一个可以回复指令的TG机器人,首要的事,应该是创建几条指令.</p>
 <p>打开与 @BotFather 的对话,发送指令<code>/mybots</code>打开上一节创建的机器人,并点击<code>Edit Bot</code>.</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/07/utkf6v9_b3i1pmlkr.png?w=286" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/07/utkf6v9_b3i1pmlkr.png?w=286" srcset="/4/img/loading.gif" lazyload></p>
 <p>点击左下角<code>编辑指令</code>并发送几条编辑好的指令</p>
 <p>格式如下:</p>
 <p>command1(英语和数字都行 不能出现中文) - Description(这是描述)<br>command2 - Another description</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/07/oxkk7n3p40ijjwnbgq.png?w=569" srcset="/img/loading.gif" lazyload alt="像这样"></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/07/oxkk7n3p40ijjwnbgq.png?w=569" srcset="/4/img/loading.gif" lazyload alt="像这样"></p>
 <p>此时我们再和机器人聊天,就会发现多了这些指令:</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/07/1r27aezjhk9t8wvn3.png?w=590" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/07/1r27aezjhk9t8wvn3.png?w=590" srcset="/4/img/loading.gif" lazyload></p>
 <hr>
 <h2 id="第二步-脚本"><a href="#第二步-脚本" class="headerlink" title="第二步 脚本"></a>第二步 脚本</h2><p>打开<a target="_blank" rel="noopener" href="https://script.google.com/home/start">这个网址</a>(注意:本节<strong>所有的网址</strong>打开<strong>都需要翻墙</strong>)起一个好听的名字:001</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/07/fbguzv12gy1n8o2zlzc.png?w=1024" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/07/fbguzv12gy1n8o2zlzc.png?w=1024" srcset="/4/img/loading.gif" lazyload></p>
 <p>这时候你可能会说“啊 wc 我一点写代码的基础都没啊咋整”</p>
 <p>没有关系!我已经给你整理好了:</p>
 <p>打开<a target="_blank" rel="noopener" href="https://shimo.im/docs/wVHJJrW9rtjtdp3p/">这个网址并复制全文</a>全部粘贴进新建项目001(注意:原本新建项目的存在的代码(如上图)<strong>也要替换</strong>)</p>
@@ -344,24 +355,24 @@
 <li>第二十四行记得更换成你机器人的Token  </li>
 <li>第三十七行及之后注意出现的中文“指令名称”“反馈”</li>
 </ol>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/07/fv40hjzg61h72gct_kw.png?w=618" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/07/fv40hjzg61h72gct_kw.png?w=618" srcset="/4/img/loading.gif" lazyload></p>
 <p>如图,是我编辑的指令以及收到相应指令后机器人反馈的消息.</p>
 <hr>
 <h2 id="第三步-部署"><a href="#第三步-部署" class="headerlink" title="第三步 部署"></a>第三步 部署</h2><p>在<strong>保存</strong>完项目之后 点击右上角的部署“新建部署” 选择类型为“Web应用” 执行身份为“我” 有访问权限的人员为“任何人”(如图)</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/07/ked3d6h4a8nixgdhr_vo88.png?w=796" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/07/ked3d6h4a8nixgdhr_vo88.png?w=796" srcset="/4/img/loading.gif" lazyload></p>
 <p>部署完后 会有下面的弹窗 我们复制一下web应用网址 并记录下(记事本的优越性体现出来了)</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/07/image_editor_output_image1033625411-1626757330959.jpg?w=996" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/07/image_editor_output_image1033625411-1626757330959.jpg?w=996" srcset="/4/img/loading.gif" lazyload></p>
 <p>之后 我们打开任意一个<a target="_blank" rel="noopener" href="https://www.urlencoder.org/">url在线编码网站</a></p>
 <p>输入刚刚复制的web应用地址 并点击Encode 会得到这样一串东西(如下图)</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/07/image_editor_output_image2099745317-1626757806775.jpg?w=905" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/07/image_editor_output_image2099745317-1626757806775.jpg?w=905" srcset="/4/img/loading.gif" lazyload></p>
 <p>我们复制一下这串链接 并将自己机器人的API Token和这串链接组合到一个新的超链接里(格式如下)</p>
 <p><strong><a target="_blank" rel="noopener" href="https://api.telegram.org/bot%E8%BF%99%E9%87%8C%E6%94%BE%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84token/setWebhook?url=%E8%BF%99%E9%87%8C%E6%94%BEurlEncode%E8%BF%87%E7%9A%84%E9%82%A3%E4%B8%80%E4%B8%B2%E9%93%BE%E6%8E%A5">https://api.telegram.org/bot这里放机器人的token/setWebhook?url=这里放urlEncode过的那一串链接</a></strong></p>
 <p>随后 我们会得到一个超长的链接(如下图)</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/07/image_editor_output_image1679726202-1626758101384.jpg?w=1024" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/07/image_editor_output_image1679726202-1626758101384.jpg?w=1024" srcset="/4/img/loading.gif" lazyload></p>
 <p>我们复制得到的超长链接 并在浏览器打开 结果发现会出现下面的内容 这说明成功啦!(除非你没按照步骤来)</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/07/image_editor_output_image648218213-1626758219786.jpg?w=1024" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/07/image_editor_output_image648218213-1626758219786.jpg?w=1024" srcset="/4/img/loading.gif" lazyload></p>
 <p>此时我们回到Telegram 再和机器人发送指令:</p>
-<p><img src="https://thdbd666666.files.wordpress.com/2021/07/screenshot_2021-07-20-13-17-51-232_org.thunderdog.challegram.jpg?w=512" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://thdbd666666.files.wordpress.com/2021/07/screenshot_2021-07-20-13-17-51-232_org.thunderdog.challegram.jpg?w=512" srcset="/4/img/loading.gif" lazyload></p>
 <p>它回复了!自动的!</p>
 <p><strong>大功告成!</strong></p>
 <p>本篇到这里就结束啦!前半段的时候还有电脑 现在由于在公交车上只能用手机编辑了</p>
@@ -387,7 +398,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/EDITOR/" class="category-chain-item">EDITOR</a>
+  <a href="/4/categories/EDITOR/" class="category-chain-item">EDITOR</a>
   
   
 
@@ -402,7 +413,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Telegram/" class="print-no-link">#Telegram</a>
+        <a href="/4/tags/Telegram/" class="print-no-link">#Telegram</a>
       
     </div>
   
@@ -415,7 +426,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>如何做一个可以回复指令的TG机器人？</div>
-      <div>https://wzk0.github.io/old/tg-bc/</div>
+      <div>https://wzk0.github.io/4/old/tg-bc/</div>
     </div>
     <div class="license-meta">
       
@@ -465,7 +476,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/old/dbc/" title="怎样获取Bandcamp上的所有音乐？">
+                      <a href="/4/old/dbc/" title="怎样获取Bandcamp上的所有音乐？">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">怎样获取Bandcamp上的所有音乐？</span>
                         <span class="visible-mobile">上一篇</span>
@@ -475,7 +486,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/old/tg-bt/" title="如何做一个TG私聊机器人？">
+                      <a href="/4/old/tg-bt/" title="如何做一个TG私聊机器人？">
                         <span class="hidden-mobile">如何做一个TG私聊机器人？</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -665,8 +676,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/4/js/events.js" ></script>
+<script  src="/4/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -688,7 +699,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/4/js/img-lazyload.js" ></script>
   
 
 
@@ -787,7 +798,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/4/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -797,7 +808,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/4/js/boot.js" ></script>
 
 
   

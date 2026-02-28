@@ -127,7 +127,7 @@
 我的关键词是 免费建站, 博客. 这样一番搜索下来, 我才知道了上面这三个东西.">
   <meta itemprop="datePublished" content="2026-02-27T23:19:07+08:00">
   <meta itemprop="dateModified" content="2026-02-27T23:19:07+08:00">
-  <meta itemprop="wordCount" content="919">
+  <meta itemprop="wordCount" content="878">
   <meta itemprop="keywords" content="Talk,Life Quality"><meta property="og:url" content="https://wzk0.github.io/posts/change-to-hugo/">
   <meta property="og:site_name" content="便当的梅开五度">
   <meta property="og:title" content="从 Hexo 到 Hugo, 以及一些想说的话">
@@ -379,7 +379,7 @@
   </tbody>
 </table>
 <p>Hugo 存在于 openSUSE 的包管理器中, 且没什么依赖真是一件好事.</p>
-<p>我原先都是为了 Hexo 这碟醋装了 <kbd>nodejs</kbd>, <kbd>npm</kbd> 一系列依赖, 如今储存空间又大了一些.</p>
+<p>原先都是为了 Hexo 这碟醋装了 <kbd>nodejs</kbd>, <kbd>npm</kbd> 一系列依赖, 如今储存空间又大了一些.</p>
 <h3 id="建站">建站</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#a6e22e">hugo</span> new site 博客
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> 博客
@@ -557,35 +557,14 @@
 <hr>
 <h2 id="关于旧文章的处理办法">关于旧文章的处理办法</h2>
 <p>由于 Hugo <code>front matter</code> 的 <code>date</code>, <code>tags</code> 和 <code>categories</code> 的命名规则与 Hexo 不同.</p>
-<p>于是我打算将旧文章统一放在 <code>/4</code> 下面. 因此让 <code>Gemini</code> 编写一个 <code>fish</code> 函数来手动处理 <code>hugo build</code> 的产物.</p>
+<p>于是我打算将旧文章统一放在 <code>/4</code> 下面. 因此编写一个 <code>fish</code> 函数来手动处理 <code>hugo build</code> 的产物.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">bup</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">set</span> <span style="color:#a6e22e">-l</span> repo_dir <span style="color:#e6db74">&#34;wzk0.github.io&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">set</span> <span style="color:#a6e22e">-l</span> source_dir <span style="color:#f92672">(</span><span style="color:#a6e22e">pwd</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">set</span> <span style="color:#a6e22e">-l</span> current_time <span style="color:#f92672">(</span><span style="color:#a6e22e">date</span> <span style="color:#e6db74">&#34;+%Y-%m-%d %H:%M:%S&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">test</span> <span style="color:#a6e22e">-d</span> $repo_dir
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">cd</span> $repo_dir
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">find</span> . <span style="color:#a6e22e">-maxdepth</span> <span style="color:#ae81ff">1</span> ! <span style="color:#a6e22e">-name</span> <span style="color:#e6db74">&#39;.git&#39;</span> ! <span style="color:#a6e22e">-name</span> <span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#a6e22e">-exec</span> rm <span style="color:#a6e22e">-rf</span> <span style="color:#f92672">{}</span> +
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cp</span> <span style="color:#a6e22e">-R</span> $source_dir/public/* .
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">test</span> <span style="color:#a6e22e">-d</span> <span style="color:#e6db74">&#34;</span>$source_dir<span style="color:#e6db74">/old_blog_backup&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">mkdir</span> <span style="color:#a6e22e">-p</span> <span style="color:#ae81ff">4</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">cp</span> <span style="color:#a6e22e">-R</span> $source_dir/old_blog_backup/* <span style="color:#ae81ff">4</span>/
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;📤 正在从仓库目录推送...&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">git</span> add .
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">git</span> commit <span style="color:#a6e22e">-m</span> <span style="color:#e6db74">&#34;更新时间: </span>$current_time<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> git push origin <span style="color:#f92672">(</span><span style="color:#a6e22e">git</span> branch <span style="color:#a6e22e">--show-current</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;✨ 部署成功！&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;❌ 推送失败&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">cd</span> $source_dir
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;❌ 错误：找不到仓库目录 </span>$repo_dir<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">cd</span> ~/博客
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rm</span> <span style="color:#a6e22e">-rf</span> public <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">hugo</span> build
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">cd</span> wzk0.github.io
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">find</span> . <span style="color:#a6e22e">-maxdepth</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">-not</span> <span style="color:#a6e22e">-path</span> . <span style="color:#a6e22e">-not</span> <span style="color:#a6e22e">-name</span> <span style="color:#e6db74">&#34;4&#34;</span> <span style="color:#a6e22e">-not</span> <span style="color:#a6e22e">-name</span> <span style="color:#e6db74">&#34;.git&#34;</span> <span style="color:#a6e22e">-exec</span> rm <span style="color:#a6e22e">-rf</span> <span style="color:#f92672">{}</span> +
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">mv</span> ../public/* .
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">git</span> add * . <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">git</span> commit <span style="color:#a6e22e">-m</span> <span style="color:#e6db74">&#34;更新时间: </span>$(<span style="color:#e6db74">date +%Y-%m-%d)&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">git</span> push <span style="color:#a6e22e">-u</span> origin main
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
 </span></span></code></pre></div></section>
 

@@ -22,7 +22,7 @@
     <meta name="description" content="此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言你是否一直很期待拥有一台被root过的手机呢? 你是否总是一腔热血, 打开各种root教程, 最后头大着离去呢? 你是否在无数个夜里, 憧憬着root后的手机, 幻想着自己正在把玩呢? 你是否问遍了天涯海角的科技社区, 只听见大佬甩你一句, 自己网上搜呢? 没关系, 今天这篇零基础的root教程只为尚属于搞机萌新的你我而写! 请一定一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="萌新向的root方案:KernelSU使用教程">
-<meta property="og:url" content="https://wzk0.github.io/old/ksu-for-beginner/index.html">
+<meta property="og:url" content="https://wzk0.github.io/4/old/ksu-for-beginner/index.html">
 <meta property="og:site_name" content="便当的梅开四度">
 <meta property="og:description" content="此文章使用CC-BY-NC协议，协议详情介绍请看此文   前言你是否一直很期待拥有一台被root过的手机呢? 你是否总是一腔热血, 打开各种root教程, 最后头大着离去呢? 你是否在无数个夜里, 憧憬着root后的手机, 幻想着自己正在把玩呢? 你是否问遍了天涯海角的科技社区, 只听见大佬甩你一句, 自己网上搜呢? 没关系, 今天这篇零基础的root教程只为尚属于搞机萌新的你我而写! 请一定一">
 <meta property="og:locale" content="zh_CN">
@@ -31,9 +31,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/1000001667_origin_Screenshot_2023-06-28-10-17-29-122_me.weishu.kernelsu-edit.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/1000001669_origin_Screenshot_2023-06-28-10-22-41-905_org.mozilla.firefox-edit.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/1000001671_origin_Screenshot_2023-06-28-11-04-38-436_me.weishu.kernelsu.jpg">
-<meta property="og:image" content="https://wzk0.github.io/img/thdbd.jpg">
+<meta property="og:image" content="https://wzk0.github.io/4/img/thdbd.jpg">
 <meta property="article:published_time" content="2023-07-07T04:50:46.000Z">
-<meta property="article:modified_time" content="2026-01-18T12:31:36.693Z">
+<meta property="article:modified_time" content="2026-02-27T11:40:11.179Z">
 <meta property="article:author" content="听话的便当">
 <meta property="article:tag" content="Root">
 <meta name="twitter:card" content="summary_large_image">
@@ -67,12 +67,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/4/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/4/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/4/css/highlight-dark.css" />
   
 
 
@@ -81,15 +81,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/4/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/4/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/4/js/utils.js" ></script>
+  <script  src="/4/js/color-schema.js" ></script>
   
 
   
@@ -117,7 +117,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/4/">
       <strong>便当的梅开四度</strong>
     </a>
 
@@ -136,7 +136,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/4/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -148,7 +148,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/4/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -160,7 +160,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/4/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -172,7 +172,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/4/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -184,7 +184,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/4/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -196,7 +196,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/friends/" target="_self">
+              <a class="nav-link" href="/4/friends/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -226,7 +226,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/4/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -358,7 +358,7 @@
 <p>首先, 不论是任何手机, 都应该打开其<code>开发者模式</code>.</p>
 <p>这个模式的打开方式(小米&#x2F;红米)为:</p>
 <p>打开手机的<code>设置</code>, 找到<code>我的设备</code>, 点击<code>全部参数和信息</code>, 然后狂点<code>MIUI版本</code>, 直到下面弹出已进入开发者模式的字样.</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/1000001639_origin_Screenshot_2023-06-27-22-17-56-266_com.android.settings-edit.jpg" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/1000001639_origin_Screenshot_2023-06-27-22-17-56-266_com.android.settings-edit.jpg" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>然后在设置中搜索<code>开发者选项</code>, 往下面翻到<code>设备解锁状态</code>, 点进去.</p>
 <p>最下面有一个什么绑定, 点一下, 接下来七天就不要再点了!</p>
 <blockquote>
@@ -376,7 +376,7 @@
 <p>此时小米解锁工具会显示<code>设备已连接</code>, 点击下方<code>解锁</code>即可.</p>
 <p>经过一个不算漫长的等待时间, 手机会自动开机. 然后和刚购买新机时一样, 开始设置系统语言什么的.</p>
 <p>至此, bl锁就解开啦!</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/1000001658_origin_Screenshot_2023-06-28-09-47-14-523_com.android.settings.jpg" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/1000001658_origin_Screenshot_2023-06-28-09-47-14-523_com.android.settings.jpg" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <h2 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h2><p>现在只是把门打开了, 接下来才是重头戏.</p>
 <p>我们需要安装<code>KernelSU</code>.</p>
 <p>如果你搜索过root手机相关的东西, 一定会看到<code>magisk</code>(又称<code>面具</code>), 这里的<code>KernelSU</code>是和面具一样的存在.</p>
@@ -395,12 +395,12 @@
 <blockquote>
 <p>如果显示<code>不支持</code>, 那就是不支持, 下文也没有帮助了, 对不起!</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/1000001667_origin_Screenshot_2023-06-28-10-17-29-122_me.weishu.kernelsu-edit.jpg" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/1000001667_origin_Screenshot_2023-06-28-10-17-29-122_me.weishu.kernelsu-edit.jpg" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <blockquote>
 <p>我的手机是已经刷过了的, 所以和你的界面可能不一样, 无需在意.</p>
 </blockquote>
 <p>注意这个内核版本号, 接着根据官方所说的进行选择:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/1000001669_origin_Screenshot_2023-06-28-10-22-41-905_org.mozilla.firefox-edit.jpg" srcset="/img/loading.gif" lazyload alt="如图所示"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/1000001669_origin_Screenshot_2023-06-28-10-22-41-905_org.mozilla.firefox-edit.jpg" srcset="/4/img/loading.gif" lazyload alt="如图所示"></p>
 <p>在这里选择: <a target="_blank" rel="noopener" href="https://github.com/tiann/KernelSU/releases/tag/v0.6.1">https://github.com/tiann/KernelSU/releases/tag/v0.6.1</a></p>
 <p>如果你恰好买的也是<code>红米 Note 12 Turbo</code>, 那可以<a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/tiann/KernelSU/releases/download/v0.6.1/android12-5.10.149_2023-01-boot-gz.img.gz">点击此链接</a>下载.</p>
 <p>下载下来的是一个压缩包, 需要解压, 建议使用7z.</p>
@@ -437,7 +437,7 @@
 <p>例如, 我们要给<code>mt管理器</code>授权, 只需要在第二个栏目中点击<code>mt管理器</code>, 打开<code>超级用户</code>即可.</p>
 <p>这个思路有点像代理软件中的分应用代理, 非常有趣.</p>
 <p>除了授权root之外, <code>ksu</code>也支持如<code>magisk</code>里的模块功能.</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/1000001671_origin_Screenshot_2023-06-28-11-04-38-436_me.weishu.kernelsu.jpg" srcset="/img/loading.gif" lazyload alt="我安装的一些模块"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/1000001671_origin_Screenshot_2023-06-28-11-04-38-436_me.weishu.kernelsu.jpg" srcset="/4/img/loading.gif" lazyload alt="我安装的一些模块"></p>
 <p>模块可以通过谷歌<code>爱玩机工具箱</code>或者从<code>酷安</code>里找.</p>
 <p>总之, 使用<code>ksu</code>, 我也在慢慢摸索!</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总的来说, 步骤如下:</p>
@@ -455,7 +455,7 @@
 </ol>
 <hr>
 <p>我是<strong>听话的便当</strong>.</p>
-<p><img src="/img/thdbd.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/4/img/thdbd.jpg" srcset="/4/img/loading.gif" lazyload></p>
 <p>Bye~❛‿˂̵✧</p>
 
                 
@@ -475,7 +475,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/NOTE/" class="category-chain-item">NOTE</a>
+  <a href="/4/categories/NOTE/" class="category-chain-item">NOTE</a>
   
   
 
@@ -490,7 +490,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Root/" class="print-no-link">#Root</a>
+        <a href="/4/tags/Root/" class="print-no-link">#Root</a>
       
     </div>
   
@@ -503,7 +503,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>萌新向的root方案:KernelSU使用教程</div>
-      <div>https://wzk0.github.io/old/ksu-for-beginner/</div>
+      <div>https://wzk0.github.io/4/old/ksu-for-beginner/</div>
     </div>
     <div class="license-meta">
       
@@ -553,7 +553,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/old/use-dsu-sideloder/" title="使用DSU Sideloder实现安卓双系统">
+                      <a href="/4/old/use-dsu-sideloder/" title="使用DSU Sideloder实现安卓双系统">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">使用DSU Sideloder实现安卓双系统</span>
                         <span class="visible-mobile">上一篇</span>
@@ -563,7 +563,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/old/why-not-hw/" title="为什么我不推荐Linux用户买华为笔记本">
+                      <a href="/4/old/why-not-hw/" title="为什么我不推荐Linux用户买华为笔记本">
                         <span class="hidden-mobile">为什么我不推荐Linux用户买华为笔记本</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -753,8 +753,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/4/js/events.js" ></script>
+<script  src="/4/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -776,7 +776,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/4/js/img-lazyload.js" ></script>
   
 
 
@@ -875,7 +875,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/4/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -885,7 +885,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/4/js/boot.js" ></script>
 
 
   

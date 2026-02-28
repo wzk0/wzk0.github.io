@@ -22,18 +22,20 @@
     <meta name="description" content="点击获得封面头图  写在前面:虽然之前发过不少Hexo的搭建与部署教程，但一直都很粗糙，所以这次准备认真地写一篇详细的使用Termux制作Hexo的攻略！  PS:本篇虽为Termux用户所写 但可能会提两嘴Windows和Linux用户，跳过即可.    我已经写好了一个方便Termux用户的一键Hexo脚本，点击这里查看！(不需要记忆那么多指令，输入几个数字完成部署！)   什么是HexoH">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Termux制作Hexo的详细攻略">
-<meta property="og:url" content="https://wzk0.github.io/old/hx/index.html">
+<meta property="og:url" content="https://wzk0.github.io/4/old/hx/index.html">
 <meta property="og:site_name" content="便当的梅开四度">
 <meta property="og:description" content="点击获得封面头图  写在前面:虽然之前发过不少Hexo的搭建与部署教程，但一直都很粗糙，所以这次准备认真地写一篇详细的使用Termux制作Hexo的攻略！  PS:本篇虽为Termux用户所写 但可能会提两嘴Windows和Linux用户，跳过即可.    我已经写好了一个方便Termux用户的一键Hexo脚本，点击这里查看！(不需要记忆那么多指令，输入几个数字完成部署！)   什么是HexoH">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/Tumblr_l_56783869134384.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-26-19-39-44-47.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-27-08-57-25-65.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211222_005506.jpg">
 <meta property="article:published_time" content="2021-11-26T09:38:14.000Z">
-<meta property="article:modified_time" content="2026-01-18T12:31:36.693Z">
+<meta property="article:modified_time" content="2026-02-27T11:40:11.179Z">
 <meta property="article:author" content="听话的便当">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Termux">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/Tumblr_l_56783869134384.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-26-19-39-44-47.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -63,12 +65,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/4/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/4/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/4/css/highlight-dark.css" />
   
 
 
@@ -77,15 +79,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wzk0.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"wzk0.github.io","root":"/4/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2020-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/4/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/4/js/utils.js" ></script>
+  <script  src="/4/js/color-schema.js" ></script>
   
 
   
@@ -113,7 +115,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/4/">
       <strong>便当的梅开四度</strong>
     </a>
 
@@ -132,7 +134,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
+              <a class="nav-link" href="/4/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -144,7 +146,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
+              <a class="nav-link" href="/4/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -156,7 +158,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/4/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -168,7 +170,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/4/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -180,7 +182,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
+              <a class="nav-link" href="/4/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -192,7 +194,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/friends/" target="_self">
+              <a class="nav-link" href="/4/friends/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
                 <span>友链</span>
               </a>
@@ -222,7 +224,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://raw.githubusercontent.com/wzk0/photo/main/Tumblr_l_56783869134384.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/4/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -396,7 +398,7 @@
 <p>就说明成功了！</p>
 <p>查看下<code>hx文件夹</code>有哪些文件:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">dir</span><br></code></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-26-19-39-44-47.jpg" srcset="/img/loading.gif" lazyload alt="有这些东西"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-26-19-39-44-47.jpg" srcset="/4/img/loading.gif" lazyload alt="有这些东西"></p>
 <p>其中，</p>
 <ul>
 <li><p><code>_config.yml</code>是网站的<code>配置文件</code>，在里面可以编辑例如你的<code>网站名</code>，<code>作者</code>，<code>描述</code>等信息.</p>
@@ -484,7 +486,7 @@
 <p>Tips:通用一般主题获取方式:<code>git clone 仓库地址.git ./themes</code></p>
 </blockquote>
 <p>之后，在<code>根目录</code>的<code>_config.yml</code>里，写入主题名如图所示:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-27-08-57-25-65.jpg" srcset="/img/loading.gif" lazyload alt="这里"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/Screenshot_2021-11-27-08-57-25-65.jpg" srcset="/4/img/loading.gif" lazyload alt="这里"></p>
 <h2 id="网页托管与上传"><a href="#网页托管与上传" class="headerlink" title="网页托管与上传"></a>网页托管与上传</h2><p>现在，我们的主题也选择并设置完了！</p>
 <p>接下来怎么让所有人都看见呢?</p>
 <p>众所周知，一个网站是需要<code>域名</code>，<code>托管后端</code>等要花钱的东西的.</p>
@@ -571,7 +573,7 @@
 <hr>
 <p>此外 我还编写了一个Python脚本供不太清楚Hexo目录结构和方法的萌新使用！</p>
 <p>具体功能有如下几个:</p>
-<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211222_005506.jpg" srcset="/img/loading.gif" lazyload alt="功能"></p>
+<p><img src="https://raw.githubusercontent.com/wzk0/photo/main/IMG_20211222_005506.jpg" srcset="/4/img/loading.gif" lazyload alt="功能"></p>
 <p>具体请查看: <a target="_blank" rel="noopener" href="https://github.com/wzk0/quick-hexo">https://github.com/wzk0/quick-hexo</a></p>
 <hr>
 <p>我是<code>听话的便当</code>，</p>
@@ -595,7 +597,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/EDITOR/" class="category-chain-item">EDITOR</a>
+  <a href="/4/categories/EDITOR/" class="category-chain-item">EDITOR</a>
   
   
 
@@ -610,9 +612,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+        <a href="/4/tags/Hexo/" class="print-no-link">#Hexo</a>
       
-        <a href="/tags/Termux/" class="print-no-link">#Termux</a>
+        <a href="/4/tags/Termux/" class="print-no-link">#Termux</a>
       
     </div>
   
@@ -625,7 +627,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>使用Termux制作Hexo的详细攻略</div>
-      <div>https://wzk0.github.io/old/hx/</div>
+      <div>https://wzk0.github.io/4/old/hx/</div>
     </div>
     <div class="license-meta">
       
@@ -675,7 +677,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/old/pm/" title="Termux无服务器运行PagerMaid-Modify">
+                      <a href="/4/old/pm/" title="Termux无服务器运行PagerMaid-Modify">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Termux无服务器运行PagerMaid-Modify</span>
                         <span class="visible-mobile">上一篇</span>
@@ -685,7 +687,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/old/py/" title="第一个Python小程序全记录">
+                      <a href="/4/old/py/" title="第一个Python小程序全记录">
                         <span class="hidden-mobile">第一个Python小程序全记录</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -875,8 +877,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/4/js/events.js" ></script>
+<script  src="/4/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -898,7 +900,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/4/js/img-lazyload.js" ></script>
   
 
 
@@ -997,7 +999,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/4/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -1007,7 +1009,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/4/js/boot.js" ></script>
 
 
   
