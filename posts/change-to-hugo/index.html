@@ -6,15 +6,15 @@
 
 
 
-<html
-  class="not-ready lg:text-base"
-  style="--bg:#faf8f1"
+<html class="not-ready lg:text-base" style="--bg:#faf8f1"
   lang="zh-CN"
-  dir="ltr"
-><head>
+  dir="ltr"><head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
 
   
   <title>从 Hexo 到 Hugo, 以及一些想说的话 - 便当的梅开五度</title>
@@ -63,7 +63,7 @@
 
 当时就是觉得有一个自己的网站很酷, 于是有什么东西都想写下来.
 渐渐地, 因为会员限制, 主题限制, 以及 &ldquo;不酷&rdquo; 的广告横幅, 我想换个方式了." />
-  <meta name="author" content="便当的梅开五度" /><link rel="preload stylesheet" as="style" href="https://wzk0.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+  <meta name="author" content="便当" /><link rel="preload stylesheet" as="style" href="https://wzk0.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
 
   
   <link rel="preload" as="image" href="https://wzk0.github.io/theme.svg" />
@@ -72,7 +72,11 @@
 
   <link rel="preload" as="image" href="https://wzk0.github.io/twitter.svg" /><link rel="preload" as="image" href="https://wzk0.github.io/github.svg" /><link rel="preload" as="image" href="https://wzk0.github.io/rss.svg" />
 
-  <script defer src="https://wzk0.github.io/highlight.min.js" onload="hljs.initHighlightingOnLoad()"></script><link
+  <script
+    defer
+    src="https://wzk0.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script><link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
   integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
@@ -106,12 +110,18 @@
 
 
   
-  <link rel="icon" href="https://wzk0.github.io/favicon.png" />
-  <link rel="apple-touch-icon" href="https://wzk0.github.io/apple-touch-icon.png" />
+  <link
+    rel="icon"
+    href="https://wzk0.github.io/favicon.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://wzk0.github.io/apple-touch-icon.png"
+  />
 
-  <meta name="generator" content="Hugo 0.152.1">
-  <meta itemprop="name" content="从 Hexo 到 Hugo, 以及一些想说的话">
-  <meta itemprop="description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
+  <meta name="generator" content="Hugo 0.162.1">
+	<meta itemprop="name" content="从 Hexo 到 Hugo, 以及一些想说的话">
+	<meta itemprop="description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
 此文章使用 CC-BY-NC 协议.
 目录 前言 那么, 先回忆一下 转到 Hugo 的一些操作 建站 配置 写法 关于旧文章的处理办法 关于 AI 最后 前言 如果您是本站的老读者, 一定见证过这样一件奇异的事:
 网站的框架, 域名和主题明明都是好好的, 却还是变来变去!
@@ -122,13 +132,13 @@
 2021年7月10日, 已经过去这么久了…
 当时就是觉得有一个自己的网站很酷, 于是有什么东西都想写下来.
 渐渐地, 因为会员限制, 主题限制, 以及 “不酷” 的广告横幅, 我想换个方式了.">
-  <meta itemprop="datePublished" content="2026-02-27T23:19:07+08:00">
-  <meta itemprop="dateModified" content="2026-02-27T23:19:07+08:00">
-  <meta itemprop="wordCount" content="940">
-  <meta itemprop="keywords" content="Talk,Life Quality"><meta property="og:url" content="https://wzk0.github.io/posts/change-to-hugo/">
-  <meta property="og:site_name" content="便当的梅开五度">
-  <meta property="og:title" content="从 Hexo 到 Hugo, 以及一些想说的话">
-  <meta property="og:description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
+	<meta itemprop="datePublished" content="2026-02-27T23:19:07+08:00">
+	<meta itemprop="dateModified" content="2026-02-27T23:19:07+08:00">
+	<meta itemprop="wordCount" content="940">
+	<meta itemprop="keywords" content="Talk,Life Quality"><meta property="og:url" content="https://wzk0.github.io/posts/change-to-hugo/">
+	<meta property="og:site_name" content="便当的梅开五度">
+	<meta property="og:title" content="从 Hexo 到 Hugo, 以及一些想说的话">
+	<meta property="og:description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
 此文章使用 CC-BY-NC 协议.
 目录 前言 那么, 先回忆一下 转到 Hugo 的一些操作 建站 配置 写法 关于旧文章的处理办法 关于 AI 最后 前言 如果您是本站的老读者, 一定见证过这样一件奇异的事:
 网站的框架, 域名和主题明明都是好好的, 却还是变来变去!
@@ -139,17 +149,17 @@
 2021年7月10日, 已经过去这么久了…
 当时就是觉得有一个自己的网站很酷, 于是有什么东西都想写下来.
 渐渐地, 因为会员限制, 主题限制, 以及 “不酷” 的广告横幅, 我想换个方式了.">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-02-27T23:19:07+08:00">
-    <meta property="article:modified_time" content="2026-02-27T23:19:07+08:00">
-    <meta property="article:tag" content="Talk">
-    <meta property="article:tag" content="Life Quality">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-02-27T23:19:07+08:00">
+		<meta property="article:modified_time" content="2026-02-27T23:19:07+08:00">
+		<meta property="article:tag" content="Talk">
+		<meta property="article:tag" content="Life Quality">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="从 Hexo 到 Hugo, 以及一些想说的话">
-  <meta name="twitter:description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="从 Hexo 到 Hugo, 以及一些想说的话">
+	<meta name="twitter:description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
 此文章使用 CC-BY-NC 协议.
 目录 前言 那么, 先回忆一下 转到 Hugo 的一些操作 建站 配置 写法 关于旧文章的处理办法 关于 AI 最后 前言 如果您是本站的老读者, 一定见证过这样一件奇异的事:
 网站的框架, 域名和主题明明都是好好的, 却还是变来变去!
@@ -162,9 +172,9 @@
 渐渐地, 因为会员限制, 主题限制, 以及 “不酷” 的广告横幅, 我想换个方式了.">
 
   <link rel="canonical" href="https://wzk0.github.io/posts/change-to-hugo/" />
-</head><body
-    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
-  ><header
+</head>
+<body
+  class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"><header
   class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
 >
   <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
@@ -277,10 +287,10 @@
   </div>
 </header>
 <main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
+    class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"><article>
   <header class="mb-14">
-    <h1 class="my-0! pb-2.5">从 Hexo 到 Hugo, 以及一些想说的话</h1><div class="text-xs antialiased opacity-60"><time>Feb 27, 2026</time></div></header>
+    <h1 class="my-0! pb-2.5">从 Hexo 到 Hugo, 以及一些想说的话</h1><div class="text-xs antialiased opacity-60"><time>Feb 27, 2026</time><span class="mx-1">&middot;</span>
+      <span>便当</span></div></header>
 
   <section><blockquote>
 <p>如果文章中的图片加载不出来, 请您考虑使用代理软件.</p>
@@ -349,52 +359,52 @@
 <h2 id="转到-hugo-的一些操作">转到 Hugo 的一些操作</h2>
 <p><kbd>Gemini</kbd> 为我总结了一些差别:</p>
 <table>
-  <thead>
-      <tr>
-          <th>特性</th>
-          <th>Hexo</th>
-          <th>Hugo</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>安装依赖</strong></td>
-          <td>需要 Node.js, npm</td>
-          <td>单一二进制文件（解压即用）</td>
-      </tr>
-      <tr>
-          <td><strong>文章目录</strong></td>
-          <td><kbd>source/_posts</kbd></td>
-          <td><kbd>content/posts</kbd></td>
-      </tr>
-      <tr>
-          <td><strong>静态资源</strong></td>
-          <td><kbd>source/images</kbd></td>
-          <td><kbd>static/images</kbd></td>
-      </tr>
-      <tr>
-          <td><strong>配置文件</strong></td>
-          <td><kbd>_config.yml</kbd></td>
-          <td><kbd>hugo.toml</kbd>（也支持 yaml/json）</td>
-      </tr>
-      <tr>
-          <td><strong>渲染引擎</strong></td>
-          <td>Nunjucks / Swig / EJS</td>
-          <td>Go Templates</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>特性</th>
+					<th>Hexo</th>
+					<th>Hugo</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>安装依赖</strong></td>
+					<td>需要 Node.js, npm</td>
+					<td>单一二进制文件（解压即用）</td>
+			</tr>
+			<tr>
+					<td><strong>文章目录</strong></td>
+					<td><kbd>source/_posts</kbd></td>
+					<td><kbd>content/posts</kbd></td>
+			</tr>
+			<tr>
+					<td><strong>静态资源</strong></td>
+					<td><kbd>source/images</kbd></td>
+					<td><kbd>static/images</kbd></td>
+			</tr>
+			<tr>
+					<td><strong>配置文件</strong></td>
+					<td><kbd>_config.yml</kbd></td>
+					<td><kbd>hugo.toml</kbd>（也支持 yaml/json）</td>
+			</tr>
+			<tr>
+					<td><strong>渲染引擎</strong></td>
+					<td>Nunjucks / Swig / EJS</td>
+					<td>Go Templates</td>
+			</tr>
+	</tbody>
 </table>
 <p>Hugo 存在于 openSUSE 的包管理器中, 且没什么依赖真是一件好事.</p>
 <p>原先都是为了 Hexo 这碟醋装了 <kbd>nodejs</kbd>, <kbd>npm</kbd> 一系列依赖, 如今储存空间又大了一些.</p>
 <h3 id="建站">建站</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#a6e22e">hugo</span> new site 博客
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#a6e22e">hugo</span> new site 博客
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> 博客
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">git</span> init
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">git</span> submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
 </span></span></code></pre></div><p>四条命令完成建站.</p>
 <p>同时给大家分享一下我的配置文件:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#39;https://wzk0.github.io/&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#39;zh-CN&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#39;https://wzk0.github.io/&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">locale</span> = <span style="color:#e6db74">&#39;zh-CN&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#39;便当的梅开五度&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;paper&#34;</span>
 </span></span><span style="display:flex;"><span>
@@ -464,14 +474,14 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">3</span>
 </span></span></code></pre></div><h3 id="配置">配置</h3>
 <p>对于 <kbd>标签</kbd>, <kbd>分类</kbd> 和 <kbd>关于</kbd> 三个页面, 使用以下指令新建:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#a6e22e">hugo</span> new content about.md
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#a6e22e">hugo</span> new content about.md
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">hugo</span> new content tags/_index.md
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">hugo</span> new content categories/_index.md
 </span></span></code></pre></div><p>对于 <kbd>标签</kbd> 和 <kbd>分类</kbd> 页面, 个人做了一些更改:</p>
 <blockquote>
 <p>👇 博客/themes/paper/layouts/_default/list.html</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{- define &#34;main&#34; -}}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{- define &#34;main&#34; -}}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>{{- if not .IsHome -}}
 </span></span><span style="display:flex;"><span>{{- if or (eq .Type &#34;tags&#34;) (eq .Type &#34;categories&#34;) -}}
@@ -543,7 +553,7 @@
 </span></span></code></pre></div><h3 id="写法">写法</h3>
 <p>Hugo 支持 <kbd>Rich Content</kbd>, 同时我觉得 Paper 的 <kbd>code</kbd> 样式有点丑, 而 <kbd><kbd></kbd> 标签作为 code 似乎更适合.</p>
 <p>遂写一个 <kbd>fish</kbd> 函数处理:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">md2kbd</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">md2kbd</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">python3</span> <span style="color:#a6e22e">-c</span> <span style="color:#e6db74">&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">import re, os
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">pattern = re.compile(r&#39;(?s)```.*?```|`([^`\\n]+)`&#39;)
@@ -565,7 +575,7 @@
 <p>由于 Hugo <kbd>front matter</kbd> 的 <kbd>date</kbd>, <kbd>tags</kbd> 和 <kbd>categories</kbd> 的命名规则与 Hexo 不同.</p>
 <p>手动迁移有些麻烦. 同时原先的文章中有些包含 paper 不支持的 <kbd>html</kbd>.</p>
 <p>于是我打算将旧博客放在 <kbd>/4</kbd> 下面. 因此编写一个 <kbd>fish</kbd> 函数来手动处理 <kbd>hugo build</kbd> 的产物.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">bup</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fish" data-lang="fish"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">bup</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">cd</span> ~/博客
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rm</span> <span style="color:#a6e22e">-rf</span> public <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">hugo</span> build
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">cd</span> wzk0.github.io
@@ -577,7 +587,7 @@
 <h2 id="关于-ai">关于 AI</h2>
 <p>由于 paper 不支持文章侧边目录, 所以以后的每一篇文章, 我都会在开头加上由 AI 生成的目录.</p>
 <p>我的提示词如下:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>你是一个 hugo 目录总结助手, 我总是会发给你我的 markdown 格式的文本, 你需要做的事就是:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>你是一个 hugo 目录总结助手, 我总是会发给你我的 markdown 格式的文本, 你需要做的事就是:
 </span></span><span style="display:flex;"><span>1. 根据标题等级总结出文章的目录. 如果此篇文章内容分级不深, 仅用了二级标题##, 且内容与列举多项有关, 或我主动强调, 你都要发给我表格形式的markdown代码.
 </span></span><span style="display:flex;"><span>2. 当分级多且深时, 发给我- 这样的目录, 也是 markdown 代码.
 </span></span><span style="display:flex;"><span>3. 所有标点符号应该为半角, 英文与中文之间必须有空格, 标点符号后必须有空格.
@@ -587,13 +597,26 @@
 <p>感谢一直以来读者朋友们的支持. 希望换到 Hugo 以后, 我的博客热情能再高一些, 同时也能给大家带来更多的帮助.</p>
 </section>
 
-  <footer class="mt-12 flex flex-wrap"><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://wzk0.github.io/tags/talk">Talk</a><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://wzk0.github.io/tags/life-quality">Life Quality</a></footer><nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"><a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href="https://wzk0.github.io/posts/my-flutter/"><span>一些flutter自用/好用的库推荐&#43;记录</span><span
-        class="ltr:ml-1.5 rtl:mr-1.5">→</span></a></nav><div class="giscus mt-24! text-black dark:text-white"></div>
-  <script src="https://giscus.app/client.js" data-repo="wzk0/my_giscus"
-    data-repo-id="R_kgDORaQsWQ" data-category="Announcements"
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://wzk0.github.io/tags/talk"
+      >Talk</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://wzk0.github.io/tags/life-quality"
+      >Life Quality</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://wzk0.github.io/posts/my-flutter/"
+      ><span>一些flutter自用/好用的库推荐&#43;记录</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav><div class="giscus mt-24! text-black dark:text-white"></div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="wzk0/my_giscus"
+    data-repo-id="R_kgDORaQsWQ"
+    data-category="Announcements"
     data-category-id="DIC_kwDORaQsWc4C3U14"
     data-mapping="pathname"
     data-strict="1"
@@ -602,7 +625,10 @@
     data-input-position="top"
     data-theme="light"
     data-lang="zh-CN"
-    data-loading="lazy" crossorigin="anonymous" async></script></article></main><footer
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+  ></script></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >
   <div class="mr-auto">&copy;2026
@@ -619,4 +645,5 @@
   >
 </footer>
 </body>
+
 </html>

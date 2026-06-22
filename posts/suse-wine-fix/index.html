@@ -6,15 +6,15 @@
 
 
 
-<html
-  class="not-ready lg:text-base"
-  style="--bg:#faf8f1"
+<html class="not-ready lg:text-base" style="--bg:#faf8f1"
   lang="zh-CN"
-  dir="ltr"
-><head>
+  dir="ltr"><head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
 
   
   <title>关于在openSUSE中无法使用flatpak Bottle/Steam/Wine相关应用的解决办法 - 便当的梅开五度</title>
@@ -31,26 +31,26 @@
 
 目录
 
-  
-      
-          章节
-          内容
-      
-  
-  
-      
-          前言
-          问题背景与系统环境说明
-      
-      
-          过程
-          问题排查与现象描述
-      
-      
-          解决
-          SELinux 策略修改方案
-      
-  
+	
+			
+					章节
+					内容
+			
+	
+	
+			
+					前言
+					问题背景与系统环境说明
+			
+			
+					过程
+					问题排查与现象描述
+			
+			
+					解决
+					SELinux 策略修改方案
+			
+	
 
 
 前言
@@ -72,7 +72,7 @@ sudo getsebool selinuxuser_execmod
 如果显示selinuxuser_execmod &ndash;&gt; disabled, 请继续往下看👇:
 sudo setsebool -P selinuxuser_execmod 1
 如此便可解决 openSUSE 上 SELinux 的默认策略存在着的兼容性问题." />
-  <meta name="author" content="便当的梅开五度" /><link rel="preload stylesheet" as="style" href="https://wzk0.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
+  <meta name="author" content="便当" /><link rel="preload stylesheet" as="style" href="https://wzk0.github.io/main.min.e86ae67e01e2d2055106abf72be7357c950191060e5f159f24e2790fd8237e8c.css" integrity="sha256-6GrmfgHi0gVRBqv3K&#43;c1fJUBkQYOXxWfJOJ5D9gjfow=" />
 
   
   <link rel="preload" as="image" href="https://wzk0.github.io/theme.svg" />
@@ -81,7 +81,11 @@ sudo setsebool -P selinuxuser_execmod 1
 
   <link rel="preload" as="image" href="https://wzk0.github.io/twitter.svg" /><link rel="preload" as="image" href="https://wzk0.github.io/github.svg" /><link rel="preload" as="image" href="https://wzk0.github.io/rss.svg" />
 
-  <script defer src="https://wzk0.github.io/highlight.min.js" onload="hljs.initHighlightingOnLoad()"></script><link
+  <script
+    defer
+    src="https://wzk0.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad()"
+  ></script><link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
   integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
@@ -115,12 +119,18 @@ sudo setsebool -P selinuxuser_execmod 1
 
 
   
-  <link rel="icon" href="https://wzk0.github.io/favicon.png" />
-  <link rel="apple-touch-icon" href="https://wzk0.github.io/apple-touch-icon.png" />
+  <link
+    rel="icon"
+    href="https://wzk0.github.io/favicon.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://wzk0.github.io/apple-touch-icon.png"
+  />
 
-  <meta name="generator" content="Hugo 0.152.1">
-  <meta itemprop="name" content="关于在openSUSE中无法使用flatpak Bottle/Steam/Wine相关应用的解决办法">
-  <meta itemprop="description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
+  <meta name="generator" content="Hugo 0.162.1">
+	<meta itemprop="name" content="关于在openSUSE中无法使用flatpak Bottle/Steam/Wine相关应用的解决办法">
+	<meta itemprop="description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
 此文章使用 CC-BY-NC 协议.
 目录 章节 内容 前言 问题背景与系统环境说明 过程 问题排查与现象描述 解决 SELinux 策略修改方案 前言 换了 openSUSE 作为主力系统已经有一阵子了. 用起来确实很顺心.
 只是在某些设置上, 我觉得suse可能过于保守了.
@@ -134,13 +144,13 @@ sudo setsebool -P selinuxuser_execmod 1
 首先:
 sudo getsebool selinuxuser_execmod 如果显示selinuxuser_execmod –&gt; disabled, 请继续往下看👇:
 sudo setsebool -P selinuxuser_execmod 1 如此便可解决 openSUSE 上 SELinux 的默认策略存在着的兼容性问题.">
-  <meta itemprop="datePublished" content="2026-02-27T21:14:21+08:00">
-  <meta itemprop="dateModified" content="2026-02-27T21:14:21+08:00">
-  <meta itemprop="wordCount" content="81">
-  <meta itemprop="keywords" content="Linux,OpenSUSE,Game,Fix"><meta property="og:url" content="https://wzk0.github.io/posts/suse-wine-fix/">
-  <meta property="og:site_name" content="便当的梅开五度">
-  <meta property="og:title" content="关于在openSUSE中无法使用flatpak Bottle/Steam/Wine相关应用的解决办法">
-  <meta property="og:description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
+	<meta itemprop="datePublished" content="2026-02-27T21:14:21+08:00">
+	<meta itemprop="dateModified" content="2026-02-27T21:14:21+08:00">
+	<meta itemprop="wordCount" content="81">
+	<meta itemprop="keywords" content="Linux,OpenSUSE,Game,Fix"><meta property="og:url" content="https://wzk0.github.io/posts/suse-wine-fix/">
+	<meta property="og:site_name" content="便当的梅开五度">
+	<meta property="og:title" content="关于在openSUSE中无法使用flatpak Bottle/Steam/Wine相关应用的解决办法">
+	<meta property="og:description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
 此文章使用 CC-BY-NC 协议.
 目录 章节 内容 前言 问题背景与系统环境说明 过程 问题排查与现象描述 解决 SELinux 策略修改方案 前言 换了 openSUSE 作为主力系统已经有一阵子了. 用起来确实很顺心.
 只是在某些设置上, 我觉得suse可能过于保守了.
@@ -154,19 +164,19 @@ sudo setsebool -P selinuxuser_execmod 1 如此便可解决 openSUSE 上 SELinux 
 首先:
 sudo getsebool selinuxuser_execmod 如果显示selinuxuser_execmod –&gt; disabled, 请继续往下看👇:
 sudo setsebool -P selinuxuser_execmod 1 如此便可解决 openSUSE 上 SELinux 的默认策略存在着的兼容性问题.">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-02-27T21:14:21+08:00">
-    <meta property="article:modified_time" content="2026-02-27T21:14:21+08:00">
-    <meta property="article:tag" content="Linux">
-    <meta property="article:tag" content="OpenSUSE">
-    <meta property="article:tag" content="Game">
-    <meta property="article:tag" content="Fix">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-02-27T21:14:21+08:00">
+		<meta property="article:modified_time" content="2026-02-27T21:14:21+08:00">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="OpenSUSE">
+		<meta property="article:tag" content="Game">
+		<meta property="article:tag" content="Fix">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="关于在openSUSE中无法使用flatpak Bottle/Steam/Wine相关应用的解决办法">
-  <meta name="twitter:description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="关于在openSUSE中无法使用flatpak Bottle/Steam/Wine相关应用的解决办法">
+	<meta name="twitter:description" content="如果文章中的图片加载不出来, 请您考虑使用代理软件.
 此文章使用 CC-BY-NC 协议.
 目录 章节 内容 前言 问题背景与系统环境说明 过程 问题排查与现象描述 解决 SELinux 策略修改方案 前言 换了 openSUSE 作为主力系统已经有一阵子了. 用起来确实很顺心.
 只是在某些设置上, 我觉得suse可能过于保守了.
@@ -182,9 +192,9 @@ sudo getsebool selinuxuser_execmod 如果显示selinuxuser_execmod –&gt; disab
 sudo setsebool -P selinuxuser_execmod 1 如此便可解决 openSUSE 上 SELinux 的默认策略存在着的兼容性问题.">
 
   <link rel="canonical" href="https://wzk0.github.io/posts/suse-wine-fix/" />
-</head><body
-    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
-  ><header
+</head>
+<body
+  class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"><header
   class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
 >
   <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
@@ -297,10 +307,10 @@ sudo setsebool -P selinuxuser_execmod 1 如此便可解决 openSUSE 上 SELinux 
   </div>
 </header>
 <main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
+    class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"><article>
   <header class="mb-14">
-    <h1 class="my-0! pb-2.5">关于在openSUSE中无法使用flatpak Bottle/Steam/Wine相关应用的解决办法</h1><div class="text-xs antialiased opacity-60"><time>Feb 27, 2026</time></div></header>
+    <h1 class="my-0! pb-2.5">关于在openSUSE中无法使用flatpak Bottle/Steam/Wine相关应用的解决办法</h1><div class="text-xs antialiased opacity-60"><time>Feb 27, 2026</time><span class="mx-1">&middot;</span>
+      <span>便当</span></div></header>
 
   <section><blockquote>
 <p>如果文章中的图片加载不出来, 请您考虑使用代理软件.</p>
@@ -311,26 +321,26 @@ sudo setsebool -P selinuxuser_execmod 1 如此便可解决 openSUSE 上 SELinux 
 <hr>
 <h2 id="目录">目录</h2>
 <table>
-  <thead>
-      <tr>
-          <th>章节</th>
-          <th>内容</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><a href="#%E5%89%8D%E8%A8%80">前言</a></td>
-          <td>问题背景与系统环境说明</td>
-      </tr>
-      <tr>
-          <td><a href="#%E8%BF%87%E7%A8%8B">过程</a></td>
-          <td>问题排查与现象描述</td>
-      </tr>
-      <tr>
-          <td><a href="#%E8%A7%A3%E5%86%B3">解决</a></td>
-          <td>SELinux 策略修改方案</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>章节</th>
+					<th>内容</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><a href="#%E5%89%8D%E8%A8%80">前言</a></td>
+					<td>问题背景与系统环境说明</td>
+			</tr>
+			<tr>
+					<td><a href="#%E8%BF%87%E7%A8%8B">过程</a></td>
+					<td>问题排查与现象描述</td>
+			</tr>
+			<tr>
+					<td><a href="#%E8%A7%A3%E5%86%B3">解决</a></td>
+					<td>SELinux 策略修改方案</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
 <h2 id="前言">前言</h2>
@@ -348,21 +358,42 @@ sudo setsebool -P selinuxuser_execmod 1 如此便可解决 openSUSE 上 SELinux 
 <h2 id="解决">解决</h2>
 <p>于是一番苦找, 终于在<a href="https://github.com/flathub/com.valvesoftware.Steam/issues/1282">这里</a>找到了解决办法:</p>
 <p>首先:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo getsebool selinuxuser_execmod
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo getsebool selinuxuser_execmod
 </span></span></code></pre></div><p>如果显示<kbd>selinuxuser_execmod &ndash;&gt; disabled</kbd>, 请继续往下看👇:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo setsebool -P selinuxuser_execmod <span style="color:#ae81ff">1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo setsebool -P selinuxuser_execmod <span style="color:#ae81ff">1</span>
 </span></span></code></pre></div><p>如此便可解决 <a href="https://bugzilla.opensuse.org/show_bug.cgi?id=1206292"><kbd>openSUSE 上 SELinux 的默认策略</kbd></a>存在着的兼容性问题.</p>
 </section>
 
-  <footer class="mt-12 flex flex-wrap"><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://wzk0.github.io/tags/linux">Linux</a><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://wzk0.github.io/tags/opensuse">openSUSE</a><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://wzk0.github.io/tags/game">Game</a><a class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://wzk0.github.io/tags/fix">fix</a></footer><nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"><a class="ltr:pr-3 rtl:pl-3" href="https://wzk0.github.io/posts/suse-localsend-fix/"><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>关于在openSUSE中LocalSend无法正常使用的解决办法</span></a><a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href="https://wzk0.github.io/posts/gnome-extension/"><span>精挑细选的12个GNOME扩展合集</span><span
-        class="ltr:ml-1.5 rtl:mr-1.5">→</span></a></nav><div class="giscus mt-24! text-black dark:text-white"></div>
-  <script src="https://giscus.app/client.js" data-repo="wzk0/my_giscus"
-    data-repo-id="R_kgDORaQsWQ" data-category="Announcements"
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://wzk0.github.io/tags/linux"
+      >Linux</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://wzk0.github.io/tags/opensuse"
+      >openSUSE</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://wzk0.github.io/tags/game"
+      >Game</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://wzk0.github.io/tags/fix"
+      >fix</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://wzk0.github.io/posts/suse-localsend-fix/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>关于在openSUSE中LocalSend无法正常使用的解决办法</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://wzk0.github.io/posts/gnome-extension/"
+      ><span>精挑细选的12个GNOME扩展合集</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav><div class="giscus mt-24! text-black dark:text-white"></div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="wzk0/my_giscus"
+    data-repo-id="R_kgDORaQsWQ"
+    data-category="Announcements"
     data-category-id="DIC_kwDORaQsWc4C3U14"
     data-mapping="pathname"
     data-strict="1"
@@ -371,7 +402,10 @@ sudo setsebool -P selinuxuser_execmod 1 如此便可解决 openSUSE 上 SELinux 
     data-input-position="top"
     data-theme="light"
     data-lang="zh-CN"
-    data-loading="lazy" crossorigin="anonymous" async></script></article></main><footer
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+  ></script></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >
   <div class="mr-auto">&copy;2026
@@ -388,4 +422,5 @@ sudo setsebool -P selinuxuser_execmod 1 如此便可解决 openSUSE 上 SELinux 
   >
 </footer>
 </body>
+
 </html>
